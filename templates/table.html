@@ -3,15 +3,16 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<link href="table.css" rel="stylesheet" type="text/css" />
-<link href="food_item.css" rel="stylesheet" type="text/css" />
+    {% load staticfiles %}
+<link href="{% static "table.css" %}" rel="stylesheet" type="text/css" />
+<link href="{% static "food_item.css" %}" rel="stylesheet" type="text/css" />
 
 <title>Untitled 1</title>
 </head>
 
 <body>
 <div class="bigContainer">
-	<div class="logoBar"><img class="logo" src="logoSoReWa.jpg"><h1 class="name">これ は 何 です か.</h1></div>
+	<div class="logoBar"><img class="logo" src="{% static "imgs/logoSoReWa.jpg" %}"><h1 class="name">これ は 何 です か.</h1></div>
 	<div class="categoriesContainer">
 		<h2>Categorias</h2>
 	  	<ul class="categoryList">

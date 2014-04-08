@@ -37,3 +37,7 @@ def delete_category(request):
 
 def edit_category(request):
     pass
+
+
+def table(request):
+    return render(request, 'table.html')

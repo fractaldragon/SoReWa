@@ -8,7 +8,7 @@ class Product(models.Model):
     price = models.FloatField(default=0.0)
     description = models.CharField(max_length=700, blank=True)
     is_available = models.BooleanField(default=True)
-    image = models.ImageField(upload_to='imgs/', default='imgs/None/logoSoReWa.jpg', )
+    image = models.ImageField(upload_to=settings.STATIC_URL+'imgs/', default=settings.STATIC_URL+'imgs/logoSoReWa.jpg', )
 
     def image_tag(self):
         return u'<img src="%s" />' % self.image
