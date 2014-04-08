@@ -1,0 +1,111 @@
+﻿*
+{
+	margin:0px;
+	padding:0px;
+}
+
+h2 {
+  font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid black;
+
+}
+
+.categoryItem
+{
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+}
+
+li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 200px;
+ 
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+ 
+
+.bigContainer
+{
+	position:relative;
+}
+
+.logoBar
+{
+	position:fixed;
+	z-index:1;
+	top:0px;
+	left:0px;
+	height:40px;
+	width:100%;
+	background-color:aquamarine;
+}
+
+.logo{
+	
+	float:left;
+	width:40px;
+	height:40px;
+}
+
+.name
+{
+	
+	float:left;
+
+}
+
+.categoriesContainer
+{
+	position:absolute;
+	top:60px;
+	left:0px;
+	width:200px;
+	height:400px;
+	background-color:bisque;
+}
+
+.productContainer
+{
+	position:absolute;
+	top:60px;
+	left:210px;
+	width:300px;
+	height:400px;
+	background-color:blueviolet;
+
+}
+
+.orderContainer
+{
+	position:absolute;
+	top:60px;
+	left:520px;
+	width:300px;
+	height:400px;
+	background-color:cornflowerblue;
+
+}
+
+.buttonContainer
+{
+	position:fixed;
+	z-index:1;
+	top:480px;
+	height:40px;
+	width:100%;
+	background-color:aquamarine;
+
+}
