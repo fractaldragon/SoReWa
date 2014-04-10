@@ -1,0 +1,40 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'SoReWa admin' %}{% endblock %}
+
+       {% block extrastyle %}
+        <style>
+            #header
+            {
+                background: #2d6b15; /* Old browsers */
+                background: -moz-linear-gradient(top, #2d6b15 2%, #5be52d 75%, #4c2b29 99%, #4c2b29 99%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#2d6b15), color-stop(75%,#5be52d), color-stop(99%,#4c2b29), color-stop(99%,#4c2b29)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* IE10+ */
+                background: linear-gradient(to bottom, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d6b15', endColorstr='#4c2b29',GradientType=0 ); /* IE6-9
+
+
+            }
+            .section
+            {
+                background: #2d6b15; /* Old browsers */
+                background: -moz-linear-gradient(top, #2d6b15 2%, #5be52d 75%, #4c2b29 99%, #4c2b29 99%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#2d6b15), color-stop(75%,#5be52d), color-stop(99%,#4c2b29), color-stop(99%,#4c2b29)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* IE10+ */
+                background: linear-gradient(to bottom, #2d6b15 2%,#5be52d 75%,#4c2b29 99%,#4c2b29 99%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d6b15', endColorstr='#4c2b29',GradientType=0 ); /* IE6-9
+            }
+        </style>
+        {% endblock %}
+
+
+{% block branding %}
+<h1 id="site-name">{% trans 'SoReWa administration' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
