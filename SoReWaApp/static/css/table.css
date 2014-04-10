@@ -82,7 +82,7 @@ li a:hover {
 	position:absolute;
 	top:60px;
 	left:210px;
-	width:300px;
+	width:500px;
 	height:400px;
 	background-color:blueviolet;
 
@@ -92,8 +92,8 @@ li a:hover {
 {
 	position:absolute;
 	top:60px;
-	left:520px;
-	width:300px;
+	left:720px;
+	width:500px;
 	height:400px;
 	background-color:cornflowerblue;
 
