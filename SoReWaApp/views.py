@@ -40,4 +40,13 @@ def edit_category(request):
 
 
 def table(request):
-    return render(request, 'table.html')
+    try:
+            category = Category.objects.all()
+
+    except Category.DoesNotExist:
+        print "No Categories in the database yet."
+        return render(request, 'table.html')
+
+    else:
+        #show categories and products
+        return render(request, 'table.html', {'category_list': category})

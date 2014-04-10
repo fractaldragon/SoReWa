@@ -16,8 +16,11 @@
 	<div class="categoriesContainer">
 		<h2>Categorias</h2>
 	  	<ul class="categoryList">
-		    <li class="categoryItem"><a href="#">Comidas</a></li>
-		    <li class="categoryItem"><a href="#">Bebidas</a></li>
+            {% for category in category_list %}
+                <li class="categoryItem"><a href="#">{{ category.name }}</a></li>
+            {% endfor %}
+		    <li class="categoryItem"><a href="#">C</a></li>
+		    <li class="categoryItem"><a href="#">B</a></li>
 		</ul>
 	</div>
 	<div class="productContainer">
@@ -28,7 +31,7 @@
 				<h3>Nombre del plato</h3>
 			</span>
 			<span  class="productThumbnail">
-                <!-- <img src="/media/ {{url producto}}"> -->
+                <!-- <img src="/media/ url producto}}"> -->
 				<img src="/media/imgs/ch.jpg">
 			</span>
 			<span  class="productDescription">Aca  mismoAca alguna descripcion del plato con los productos que incluye e ingredientes de este mismo, Aca  mismoAca alguna descripcion del plato con los productos que incluye e ingredientes de este mismo			</span>
