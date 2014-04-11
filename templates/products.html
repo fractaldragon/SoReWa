@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+    <link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+
+        <ul>
+            {% for product in products_list %}
+
+
+            <li class="productListItem">
+                <span  class="productName">
+                    <h3>{{ product.name }}</h3>
+                </span>
+                <span  class="productThumbnail">
+                    <!-- <img src="/media/ url producto}}"> -->
+                    <img src="/media/{{ product.image }}">
+                </span>
+                <span  class="productDescription">{{product.description}}</span>
+                <span  class="productPrice">
+                    <p>${{product.price}}</p>
+                </span>
+                <span class="productAddRemoveButtons">
+                    <input type="button" class="productAddButton" value=" + ">
+                    <input type="button" class="productRemoveButton" value="  -  ">
+                </span>
+            </li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+</body>
+</html>

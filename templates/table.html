@@ -17,39 +17,19 @@
 		<h2>Categorias</h2>
 	  	<ul class="categoryList">
             {% for category in category_list %}
-                <li class="categoryItem"><a href="product_search_valor id " target="product_iframe">{{ category.name }}</a></li>
+                <li class="categoryItem"><a href="category_products/{{ category.name }}/ " target="product_iframe">{{ category.name }}</a></li>
             {% endfor %}
 		    <li class="categoryItem"><a href="#">C</a></li>
 		    <li class="categoryItem"><a href="#">B</a></li>
 		</ul>
 	</div>
 	<div class="productContainer">
-        <iframe id="product_iframe">
-aca voy a cargar los productos
+        <h2>Productos</h2>
+        <iframe class="iframeContainer"  name="product_iframe">
+
         </iframe>
 
-	<h2>Productos</h2>
-	<ul>
-		<li class="productListItem">
-			<span  class="productName">
-				<h3>Nombre del plato</h3>
-			</span>
-			<span  class="productThumbnail">
-                <!-- <img src="/media/ url producto}}"> -->
-				<img src="/media/imgs/ch.jpg">
-			</span>
-			<span  class="productDescription">Aca  mismoAca alguna descripcion del plato con los productos que incluye e ingredientes de este mismo, Aca  mismoAca alguna descripcion del plato con los productos que incluye e ingredientes de este mismo			</span>
-			<span  class="productPrice">
-				<p>$999999.99</p>
-			</span>
-			<span class="productAddRemoveButtons">
-				<input type="button" class="productAddButton" value=" + ">
-				<input type="button" class="productRemoveButton" value="  -  ">
-			</span>
-		</li>		
 
-		
-	</ul>
 </div>
 	<div class="orderContainer">
 	<h2>Tu Orden</h2>
