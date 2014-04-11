@@ -4,12 +4,26 @@
 	padding:0px;
 }
 
+body
+{
+
+	background: #ff8e00; /* Old browsers */
+	background-image:url();
+}
+
 h2 {
   font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #65016C;
 
+}
+
+.imageContainer
+{
+
+opacity:0.4;
+filter:alpha(opacity=40);
 }
 
 .categoryItem
@@ -50,7 +64,7 @@ li a:hover {
 	left:0px;
 	height:40px;
 	width:100%;
-	background-color:aquamarine;
+	background: linear-gradient(#FF8E00, #FFC173);
 }
 
 .logo{
@@ -71,47 +85,54 @@ li a:hover {
 {
 	position:absolute;
 	top:60px;
-	left:0px;
+	left:10px;
 	width:200px;
 	height:400px;
-	background-color:bisque;
+	background-color:#E6FB71;
+	border:2px solid #A5B92E;
+	border-radius:25px;
 }
 
 .productContainer
 {
 	position:absolute;
 	top:60px;
-	left:210px;
+	left:220px;
 	width:500px;
 	height:400px;
-	background-color:blueviolet;
+	background-color:#FFC173;
+	border:2px solid #FF8E00;
+	border-radius:25px;
 
 }
 
 .iframeContainer
 {
     width:99%;
-    height:99%;
+    height:80%;
 }
 
 .orderContainer
 {
 	position:absolute;
 	top:60px;
-	left:720px;
+	left:730px;
 	width:500px;
 	height:400px;
-	background-color:cornflowerblue;
+	background-color:#FFAA40;
+	border:2px solid #FF8E00;
+	border-radius:25px;
 
 }
 
 .buttonContainer
 {
 	position:fixed;
+    float:bottom;
 	z-index:1;
-	top:480px;
+	bottom:0px;
 	height:40px;
 	width:100%;
-	background-color:aquamarine;
+	background: linear-gradient(#FFC173, #FF8E00);
 
 }
