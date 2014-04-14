@@ -14,7 +14,7 @@
 
             <li class="productListItem">
                 <span  class="productName">
-                    <h3>{{ product.name }}</h3>
+                    {{ product.name }}
                 </span>
                 <span  class="productThumbnail">
                     <!-- <img src="/media/ url producto}}"> -->
@@ -25,7 +25,7 @@
                     <p>${{product.price}}</p>
                 </span>
                 <span class="productAddRemoveButtons">
-                    <input type="button" class="productAddButton" value=" + ">
+                    <input type="button" class="productAddButton" value=" + "><a href="category_products/Food/ " target="order_iframe"></a></input>
                     <input type="button" class="productRemoveButton" value="  -  ">
                 </span>
             </li>

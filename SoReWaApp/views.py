@@ -72,9 +72,11 @@ def get_products_from_category(request, offset):
     try:
         offset = str(offset)
         print offset
-        category = Category.objects.get(name=offset)
-        print category.products.all()
-        return render(request,'products.html', {'products_list': category.products.all()})
+        if len(offset) <= 50:
+            category = Category.objects.get(name=offset)
+            print category.products.all()
+            return render(request, 'products.html', {'products_list': category.products.all()})
+
     except Category.DoesNotExist:
         print "No Categories in the database yet."
         raise Http404()

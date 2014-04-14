@@ -34,7 +34,8 @@
 	position:absolute;
 	top:20px;
 	left:130px;
-	font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+	font: bold 18px/1.5 Helvetica, Verdana, sans-serif;
+	width:55%;
 }
 
 .productDescription
@@ -43,7 +44,7 @@
 
 	top:60px;
 	left:130px;
-	width:100%;
+	width:55%;
 	height:auto;
 	font: 200 12px/1.5 Georgia, Times New Roman, serif;
 }
@@ -61,7 +62,7 @@
 {
 	position:absolute;
 	top:40px;
-	left:540px;	
+	left:420px;
 }
 
 .productAddButton
