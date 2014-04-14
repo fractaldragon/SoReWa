@@ -6,7 +6,7 @@
 .productListItem
 {
 	
-	width:500px;
+	width:470px;
 	height:160px;
 	position:relative;
 	border-bottom: 1px solid #ccc;
@@ -34,7 +34,7 @@
 	position:absolute;
 	top:20px;
 	left:130px;
-	font: bold 18px/1.5 Helvetica, Verdana, sans-serif;
+	font: bold 15px/1.5 Helvetica, Verdana, sans-serif;
 	width:55%;
 }
 
@@ -63,6 +63,7 @@
 	position:absolute;
 	top:40px;
 	left:420px;
+	width:50px;
 }
 
 .productAddButton
@@ -87,6 +88,6 @@
 ul {
 position:absolute;
 	list-style-type: none;
-  	width: 500px;
+  	width: 460px;
   }
 
