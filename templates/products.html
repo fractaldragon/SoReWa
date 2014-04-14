@@ -18,11 +18,10 @@
                 </span>
                 <span  class="productThumbnail">
                     <!-- <img src="/media/ url producto}}"> -->
-                    {% if '/logoSoReWa.jpg' in product.image %}
-                        <img src="/static/{{ product.image }}">
-                    {% else %}
+                        <a href="/category_products/Food/ " target="order_iframe">
                         <img src="/media/{{ product.image }}">
-                    {% endif %}
+                            </a>
+
                 </span>
                 <span  class="productDescription">{{product.description}}</span>
                 <span  class="productPrice">
