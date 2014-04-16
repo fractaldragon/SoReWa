@@ -15,7 +15,6 @@ class Product(models.Model):
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True
 
-
     def __unicode__(self):
         return u'%s' % self.name
 
@@ -28,7 +27,4 @@ class Category(models.Model):
 
     def __unicode__(self):
         return u'%s ' % self.name
-
-
-
 

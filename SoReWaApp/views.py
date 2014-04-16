@@ -73,7 +73,7 @@ def get_products_from_category(request, offset):
         offset = str(offset)
         print offset
         if len(offset) <= 50:
-            category = Category.objects.get(name=offset)
+            category = Category.objects.get(name=offset, is_available=True)
             print category.products.all()
             return render(request, 'products.html', {'products_list': category.products.all()})
 
