@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/models.py" afterPath="$PROJECT_DIR$/SoReWaApp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/products.html" afterPath="$PROJECT_DIR$/templates/products.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/static/css/table.css" afterPath="$PROJECT_DIR$/SoReWaApp/static/css/table.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/table.html" afterPath="$PROJECT_DIR$/templates/table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/views.py" afterPath="$PROJECT_DIR$/SoReWaApp/views.py" />
+    <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="button icons on bottom bar">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SoReWa.iws" />
@@ -34,7 +28,7 @@
       <file leaf-file-name="table.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="87" selection-start="757" selection-end="867" vertical-scroll-proportion="0.26169264" vertical-offset="71" max-vertical-offset="969">
+            <state line="18" column="87" selection-start="757" selection-end="867" vertical-scroll-proportion="0.41012216" vertical-offset="71" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -144,10 +138,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1376" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -487,18 +481,23 @@
       <created>1397576932465</created>
       <updated>1397576932465</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="button icons on bottom bar">
+      <created>1397682561516</created>
+      <updated>1397682561516</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2554859" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1796875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25367647" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -508,7 +507,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -544,7 +542,8 @@
     <MESSAGE value="food item css, admin page css" />
     <MESSAGE value="order iframe acces through img from products just a test" />
     <MESSAGE value="removed test category items" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed test category items" />
+    <MESSAGE value="button icons on bottom bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="button icons on bottom bar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -862,7 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="87" selection-start="757" selection-end="867" vertical-scroll-proportion="0.26169264" vertical-offset="71" max-vertical-offset="969">
+        <state line="18" column="87" selection-start="757" selection-end="867" vertical-scroll-proportion="0.41012216" vertical-offset="71" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
