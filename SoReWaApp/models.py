@@ -28,3 +28,23 @@ class Category(models.Model):
     def __unicode__(self):
         return u'%s ' % self.name
 
+
+class Order(models.Model):
+    table_number = models.PositiveIntegerField()
+    date = models.DateTimeField(blank=True, null=True)
+    is_paid = models.BooleanField(default=False)
+    products_list = models.ManyToManyField(Product, blank=True, null=True)
+    #products_served = models.ManyToManyField(Product, blank=True, null=True)
+
+
+class Table (models.Model):
+    number = models.PositiveIntegerField(unique=True)# todo validate in views the size of the number
+    order = models.ForeignKey(Order, blank=True, null=True)
+    is_occupied = models.BooleanField(default=False)
+    calls_waiter = models.BooleanField(default=False)
+    calls_order = models.BooleanField(default=False)
+    calls_bill = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return u'%s ' % self.number
+
