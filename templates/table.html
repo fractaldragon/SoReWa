@@ -22,7 +22,7 @@
     </div>
     <div class="imageContainer"><img src="{% static "imgs/bambu.png" %}"></div>
 	<div class="categoriesContainer">
-		<h2>Categorias</h2>
+		<h2>Categories</h2>
 	  	<ul class="categoryList">
             {% for category in category_list %}
                 <li class="categoryItem"><a href="/category_products/{{ category.name }}/ " target="product_iframe">{{ category.name }}</a></li>
@@ -31,7 +31,7 @@
 		</ul>
 	</div>
 	<div class="productContainer">
-        <h2>Productos</h2>
+        <h2>Products</h2>
         <iframe class="iframeContainer"  name="product_iframe">
 
         </iframe>
@@ -39,7 +39,7 @@
 
 </div>
 	<div class="orderContainer">
-	<h2>Tu Orden</h2>
+	<h2>Your Order</h2>
        <iframe class="iframeContainer"  name="order_iframe">
 
        </iframe>

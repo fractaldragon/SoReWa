@@ -19,7 +19,7 @@ def create_menu(request):
         pass
 
 
-def choose_table(request): 
+def choose_table(request):
     """# Set a session value:
 request.session["fav_color"] = "blue"
 
@@ -33,6 +33,14 @@ del request.session["fav_color"]
 # Check if the session has a given key:
 if "fav_color" in request.session:
     ..."""
+
+    try:
+            table_list = Table.objects.all()
+            print table_list
+
+    except Category.DoesNotExist:
+        print "No tables in db."
+
     error = False
     if "table_number" in request.session:
         print "session table number: %s" % request.session["table_number"]
@@ -45,7 +53,7 @@ if "fav_color" in request.session:
             else:
                 print "got session but table is NOT occupied"
                 del request.session["table_number"]
-                return render(request, 'table_selector.html', {'error': error})
+                return render(request, 'table_selector.html', {'error': error, 'table_list':table_list})
 
         except Table.DoesNotExist:
             print "Table does not exist in the system"
@@ -76,12 +84,13 @@ if "fav_color" in request.session:
                 except Table.DoesNotExist:
                     print "la mesa no existe"
 
-    return render(request, 'table_selector.html', {'error': error})
+    return render(request, 'table_selector.html', {'error': error, 'table_list': table_list})
 
 
 def table(request):
     try:
-            category = Category.objects.all()
+        #category = Category.objects.all()
+        category = Category.objects.filter(is_available=True)
 
     except Category.DoesNotExist:
         print "No Categories in the database yet."

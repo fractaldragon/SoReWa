@@ -11,7 +11,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='imgs/', default=settings.STATIC_URL+'imgs/logoSoReWa.jpg', )
 
     def image_tag(self):
-        return u'<img src="%s" />' % self.image
+        return u'<img class="img_thumbnail" src="%s" />' % self.image
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True
 
@@ -39,7 +39,7 @@ class Order(models.Model):
 
 
 class Table (models.Model):
-    number = models.PositiveIntegerField(unique=True)# todo validate in views the size of the number
+    number = models.PositiveIntegerField(unique=True)
     order = models.ForeignKey(Order, blank=True, null=True)
     is_occupied = models.BooleanField(default=False)
     calls_waiter = models.BooleanField(default=False)
