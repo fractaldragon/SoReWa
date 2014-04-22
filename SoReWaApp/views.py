@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
-from SoReWaApp.models import Category, Product
+from SoReWaApp.models import Category, Product, Table
 # Create your views here.
 
 
@@ -19,7 +19,7 @@ def create_menu(request):
         pass
 
 
-def choose_table(request): #todo cambiar a numero de mesa, validate session
+def choose_table(request): 
     """# Set a session value:
 request.session["fav_color"] = "blue"
 
@@ -33,26 +33,49 @@ del request.session["fav_color"]
 # Check if the session has a given key:
 if "fav_color" in request.session:
     ..."""
-   # request.session["table_number"] = "2"
     error = False
     if "table_number" in request.session:
-        print " table number: %s" % request.session["table_number"]
-    else:
-        print"no table_number"
-    if 'table_number' in request.GET:
-        table_number = request.GET['table_number']
-        if not table_number or not (table_number.isdigit()):
-            print "error"
-            error = True
-        else: #todo simplify this
-            try:
-                category = Category.objects.all()
-            except Category.DoesNotExist:
-                print "No Categories in the database yet."
-                return render(request, 'table.html')
+        print "session table number: %s" % request.session["table_number"]
+
+        try:
+            session_table = Table.objects.get(number=request.session["table_number"])
+            if session_table.is_occupied:
+                print "got table %s and table is occupied" % request.session["table_number"]
+                return redirect('SoReWaApp.views.table')
             else:
-                #show categories and products
-                return render(request, 'table.html', {'category_list': category})
+                print "got session but table is NOT occupied"
+                del request.session["table_number"]
+                return render(request, 'table_selector.html', {'error': error})
+
+        except Table.DoesNotExist:
+            print "Table does not exist in the system"
+
+    else:
+        print"no table_number in session"
+        if 'table_number' in request.GET:
+            table_number = request.GET['table_number']
+
+            if not table_number or not (table_number.isdigit()):
+                print "error"
+                error = True
+            else:
+                #if number is occupied
+                try:
+                    chosen_table = Table.objects.get(number=table_number)
+
+                    if chosen_table.is_occupied:
+                        print "table is occupied"
+                        error = True
+                    else:
+                        request.session["table_number"] = "%s" % table_number
+                        chosen_table.is_occupied = True
+                        chosen_table.save()
+                        print "table number %s assigned" % table_number
+                        return redirect('SoReWaApp.views.table')
+
+                except Table.DoesNotExist:
+                    print "la mesa no existe"
+
     return render(request, 'table_selector.html', {'error': error})
 
 

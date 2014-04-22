@@ -34,6 +34,7 @@ class Order(models.Model):
     date = models.DateTimeField(blank=True, null=True)
     is_paid = models.BooleanField(default=False)
     products_list = models.ManyToManyField(Product, blank=True, null=True)
+    total = models.FloatField(default=0.0)
     #products_served = models.ManyToManyField(Product, blank=True, null=True)
 
 

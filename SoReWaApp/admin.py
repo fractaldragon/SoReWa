@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Product, Category
+from models import Product, Category, Table
 # Register your models here.
 
 
@@ -14,5 +14,11 @@ class ProductAdmin(admin.ModelAdmin):
     #readonly_fields = ('image',)
 
 
+class TableAdmin(admin.ModelAdmin):
+    list_display = ('number', 'order', 'is_occupied', 'calls_waiter', 'calls_order', 'calls_bill')
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Table, TableAdmin)
+
