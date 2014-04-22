@@ -82,7 +82,8 @@ if "fav_color" in request.session:
                         return redirect('SoReWaApp.views.table')
 
                 except Table.DoesNotExist:
-                    print "la mesa no existe"
+                    print "table does not exist"
+                    error = True
 
     return render(request, 'table_selector.html', {'error': error, 'table_list': table_list})
 

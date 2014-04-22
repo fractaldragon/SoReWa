@@ -1,0 +1,104 @@
+﻿
+*
+{
+	margin:0px;
+	padding:0px;
+}
+
+body
+{
+
+	background: #ff8e00; /* Old browsers */
+	background-image:url("");
+}
+
+h2 {
+  font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #65016C;
+
+}
+
+.imageContainer
+{
+
+opacity:0.4;
+filter:alpha(opacity=40);
+}
+
+
+
+li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 200px;
+ 
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+ 
+
+.bigContainer
+{
+	position:absolute;
+	top:100px;
+	left:10px;
+	height:50%px
+}
+
+.logoBar
+{
+	position:fixed;
+	z-index:1;
+	top:0px;
+	left:0px;
+	height:40px;
+	width:100%;
+	background: linear-gradient(#FF8E00, #FFC173);
+}
+
+.logo{
+	
+	float:left;
+	width:40px;
+	height:40px;
+}
+
+.name
+{
+	
+	float:left;
+
+}
+
+
+#table_number_list
+{
+
+    width:15%;
+    font-size:50px;
+}
+
+#table_number_button
+{
+
+    top:200px;
+    left:200px;
+}
+
+.Error
+{
+    color:#9C02A7;
+}
+
+

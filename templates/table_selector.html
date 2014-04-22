@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     {% load staticfiles %}
-<link href="{% static "css/table.css" %}" rel="stylesheet" type="text/css" />
+<link href="{% static "css/table_selector.css" %}" rel="stylesheet" type="text/css" />
 <title>Untitled 1</title>
 </head>
 
@@ -24,29 +24,30 @@
 var x=document.forms["myForm"]["table_number"].value;
 if (x==null || x=="")
   {
-  alert("Debes ingresar el numero de la mesa");
+  alert("You must type the number of your table");
   return false;
   }
 }
     </script>
 <div>
 <div class="logoBar"><img class="logo" src="{% static "imgs/logoSoReWa.jpg" %}"><h1 class="name"> それ は 何 です か.</h1></div>
+<div class="imageContainer"><img src="{% static "imgs/bambu.png" %}"></div>
 
-<div>
-	<div> Select the number of your Table:</div>
-	<div>
-		<form  name="myForm" action="" method="get" onsubmit="return validateForm()" >
-			<input list="table_numbers" name="table_number" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" >
+<div class="bigContainer">
+	<div id="table_number_label"> Select the number of your Table:</div>
+	<div id="table_number_form">
+		<form   name="myForm" action="" method="get" onsubmit="return validateForm()" >
+			<input id="table_number_list" list="table_numbers" name="table_number" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" >
 				<datalist id="table_numbers">
 					{% for table in table_list %}
-                     <option value="{{table.number}}">
+                     <option class="option_table_number" value="{{table.number}}">
                     {% endfor %}
 				</datalist>
-				<span id="error" style="color: Red; display: none">* Input digits (0 - 9)</span>
-			<input type="submit" value="Choose Table" >
 
+			<input id="table_number_button" type="submit" value="Choose Table" >
+            <span class="Error" id="error" style=" display: none">* Input digits (0 - 9)</span>
             {% if error %}
-                <span>table is already occupied, please select another</span>
+                <span class="Error">table is already occupied, please select another</span>
             {% endif %}
 		</form>
 	</div>

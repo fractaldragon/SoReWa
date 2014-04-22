@@ -26,6 +26,13 @@ opacity:0.4;
 filter:alpha(opacity=40);
 }
 
+#background_img
+{
+    float:right;
+    height:40%;
+    width:50%;
+}
+
 .categoryItem
 {
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
@@ -85,8 +92,8 @@ li a:hover {
 {
 	position:absolute;
 	top:60px;
-	left:10px;
-	width:200px;
+	left:1%;
+	width:18%;
 	height:400px;
 	background-color:#E6FB71;
 	border:2px solid #A5B92E;
@@ -97,8 +104,8 @@ li a:hover {
 {
 	position:absolute;
 	top:60px;
-	left:220px;
-	width:500px;
+	left:20%;
+	width:28%;
 	height:400px;
 	background-color:#FFC173;
 	border:2px solid #FF8E00;
@@ -122,8 +129,8 @@ li a:hover {
 {
 	position:absolute;
 	top:60px;
-	left:730px;
-	width:500px;
+	left:50%;
+	width:28%;
 	height:400px;
 	background-color:#FFAA40;
 	border:2px solid #FF8E00;
