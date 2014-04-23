@@ -35,7 +35,9 @@ class Order(models.Model):
     is_paid = models.BooleanField(default=False)
     products_list = models.ManyToManyField(Product, blank=True, null=True)
     total = models.FloatField(default=0.0)
-    #products_served = models.ManyToManyField(Product, blank=True, null=True)
+
+    def __unicode__(self):
+        return u'%s' % self.table_number
 
 
 class Table (models.Model):
