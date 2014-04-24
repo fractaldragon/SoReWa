@@ -28,7 +28,12 @@
                     <p>${{product.price}}</p>
                 </span>
                 <span class="productAddRemoveButtons">
-                   <a href="/category_products/Food/ " target="order_iframe"> <input type="button" class="productAddButton" value=" + "></a>
+                    <form action="/add_product_to_order/" target="order_iframe"method="post">
+                        {% csrf_token %}
+                         <input name="product_name"  value="{{ product.name }}" >
+                        <input class="productAddButton" type="submit" value="+">
+                     </form>
+
                     <a href="/category_products/Drinks/ " target="order_iframe"><input type="button" class="productRemoveButton" value="  -  "></a>
                 </span>
             </li>

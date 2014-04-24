@@ -53,6 +53,7 @@ if "fav_color" in request.session:
                 return redirect('SoReWaApp.views.table')
             else:
                 print "got session but table is NOT occupied"
+                del request.session["table_order_number"]
                 del request.session["table_number"]
                 return render(request, 'table_selector.html', {'error': error, 'table_list': table_list})
 
@@ -79,8 +80,8 @@ if "fav_color" in request.session:
                         request.session["table_number"] = "%s" % table_number
                         chosen_table.is_occupied = True
                         chosen_table.save()
-                        table_order = Order(table_number=table_number, date=datetime.datetime.now())
-                        table_order.save()
+                        #table_order = Order(table_number=table_number, date=datetime.datetime.now())
+                        #table_order.save()
                         print "table number %s assigned" % table_number
                         return redirect('SoReWaApp.views.table')
 
@@ -95,7 +96,15 @@ def table(request):
     try:
         #category = Category.objects.all()
         category = Category.objects.filter(is_available=True)
-
+        """
+        #todo borrar esto
+        productos_orden = Order.objects.filter(order_number=1)
+        total=0
+        for p in productos_orden:
+            total = total+p.product.price
+        ###################################
+        print 'el costo total es %s' % total
+        """
     except Category.DoesNotExist:
         print "No Categories in the database yet."
         return render(request, 'table.html')
@@ -120,6 +129,7 @@ def get_products_from_category(request, offset):
 
 
 def add_to_order(request):
+
     if "table_number" in request.session:
         print "session table number: %s" % request.session["table_number"]
 
@@ -132,10 +142,56 @@ def add_to_order(request):
                     if request.POST.get('product_name', ''):
                         product_name = request.POST['product_name']
 
-                        if len(product_name) <= 100: #todo no dejar quemada la variable del tamanho
+                        if len(product_name) <= 100: #todo use a var instead of a number
                             try:
                                 chosen_product = Product.objects.get(name=product_name)
-                                session_table.order.products_list.add(chosen_product)
+
+                                if "table_order_number" in request.session:
+                                    t = Table.objects.get(number=request.session["table_number"])
+                                    order = Order(order_number=request.session["table_order_number"],
+                                                  table_number=t,
+                                                  date=datetime.datetime.now(), sent_to_kitchen=False,
+                                                  product=chosen_product)
+                                    order.save()
+                                    return redirect('SoReWaApp.views.table')
+                                else:
+                                    #todo asignar nuevo numero de orden sino encuentro table order number en la session
+                                    try:
+                                        next_order_number = Order.objects.filter(table_number=request.session["table_number"])
+                                        val = 0
+                                        for i in next_order_number:
+                                            if i.order_number > val:
+                                                val = i.order_number
+                                        val += 1
+                                        t = Table.objects.get(number=request.session["table_number"])
+                                        order = Order(order_number=val,
+                                                      table_number=t,
+                                                      date=datetime.datetime.now(), sent_to_kitchen=False,
+                                                      product=chosen_product)
+                                        order.save()
+                                        request.session["table_order_number"] = "%s" % val
+                                        return redirect('SoReWaApp.views.table')
+
+                                    except Table.DoesNotExist:
+                                        print "Table does not in order table"
+                                        t = Table.objects.get(number=request.session["table_number"])
+                                        order = Order(order_number=1,
+                                                      table_number=t,
+                                                      date=datetime.datetime.now(), sent_to_kitchen=False,
+                                                      product=chosen_product)
+                                        order.save()
+                                        request.session["table_order_number"] = "1"
+                                        return redirect('SoReWaApp.views.table')
+
+                                    pass
+
+                                """
+                                sino hay orden de mesa la creo con la mesa y un nuevo numero de orden, este numero lo guardo en la session de la mesa,
+                                  pregunto si el numero ya existe en la bd sino existe, creo la nueva orden
+                                   si ya existe y no esta pagada en table orders agrego producto
+                                   si ya esta pagada elijo otro numero y creo una nueva orden
+                                """
+                                #session_table.order.products_list.add(chosen_product)
 
                             except Product.DoesNotExist:
                                 print "product does not exist"
@@ -151,6 +207,7 @@ def add_to_order(request):
 
             else:
                 print "got session but table is NOT occupied"
+                del request.session["table_order_number"]
                 del request.session["table_number"]
                 return redirect('SoReWaApp.views.choose_table')
 
