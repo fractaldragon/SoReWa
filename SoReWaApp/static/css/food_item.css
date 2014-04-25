@@ -97,3 +97,9 @@ position:absolute;
   	width: 90%;
   }
 
+.for_input
+{
+    visibility:hidden;
+    width:2px;
+    height;2px;
+}

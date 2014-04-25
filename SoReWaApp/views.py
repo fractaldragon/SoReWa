@@ -153,7 +153,7 @@ def add_to_order(request):
                                                   date=datetime.datetime.now(), sent_to_kitchen=False,
                                                   product=chosen_product)
                                     order.save()
-                                    return redirect('SoReWaApp.views.table')
+                                    return redirect('SoReWaApp.views.view_table_order')
                                 else:
                                     #todo asignar nuevo numero de orden sino encuentro table order number en la session
                                     try:
@@ -170,7 +170,7 @@ def add_to_order(request):
                                                       product=chosen_product)
                                         order.save()
                                         request.session["table_order_number"] = "%s" % val
-                                        return redirect('SoReWaApp.views.table')
+                                        return redirect('SoReWaApp.views.view_table_order')
 
                                     except Table.DoesNotExist:
                                         print "Table does not in order table"
@@ -181,7 +181,7 @@ def add_to_order(request):
                                                       product=chosen_product)
                                         order.save()
                                         request.session["table_order_number"] = "1"
-                                        return redirect('SoReWaApp.views.table')
+                                        return redirect('SoReWaApp.views.view_table_order')
 
                                     pass
 
@@ -218,9 +218,25 @@ def add_to_order(request):
         return redirect('SoReWaApp.views.choose_table')
 
 
-
 def remove_from_order(request):
     pass
+
+
+def view_table_order(request):
+
+    if ("table_number" in request.session) and ("table_order_number" in request.session): #el primero sino lo tengo me lleva  aelegir numero mesa, el segundo sino lo tengo me lleva a la mesa
+        print "found table number: %s and order: %s" % (request.session["table_number"], request.session["table_order_number"])
+
+        try:
+                tableorder = Order.objects.filter(table_number=request.session["table_number"], order_number=request.session["table_order_number"])
+                return render(request, 'view_order.html',{'products_list': tableorder})
+
+
+        except Category.DoesNotExist:
+            print "No Categories in the database yet."
+            raise Http404()
+
+    return render(request, 'view_order.html')
 
 
 """Well, that is weird. MayRelatedManager definitely *does* have an
@@ -249,4 +265,7 @@ the following works fine:
 
 So it works for me, I can't imagine what is happening with your setup.
 What version of Django are you using? """
+
+
+
 
