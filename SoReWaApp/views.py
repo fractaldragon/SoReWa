@@ -93,6 +93,7 @@ if "fav_color" in request.session:
 
 
 def table(request):
+    # todo check if user has table number in session, if not go to table choose
     try:
         #category = Category.objects.all()
         category = Category.objects.filter(is_available=True)
@@ -219,12 +220,19 @@ def add_to_order(request):
 
 
 def remove_from_order(request):
+    """
+         p = Publisher.objects.get(name="O'Reilly")
+        p.delete()
+        Publisher.objects.filter(country='USA').delete()
+        Publisher.objects.all().delete()
+         Publisher.objects.filter(country='USA').delete()
+    """
     pass
 
 
 def view_table_order(request):
 
-    if ("table_number" in request.session) and ("table_order_number" in request.session): #el primero sino lo tengo me lleva  aelegir numero mesa, el segundo sino lo tengo me lleva a la mesa
+    if ("table_number" in request.session) and ("table_order_number" in request.session): #el primero sino lo tengo me lleva  a elegir numero mesa, el segundo sino lo tengo me lleva a la mesa
         print "found table number: %s and order: %s" % (request.session["table_number"], request.session["table_order_number"])
 
         try:
@@ -232,9 +240,12 @@ def view_table_order(request):
                 return render(request, 'view_order.html',{'products_list': tableorder})
 
 
-        except Category.DoesNotExist:
-            print "No Categories in the database yet."
+        except Order.DoesNotExist:
+            print "No Order in the database yet."
             raise Http404()
+    else:
+        print "No Order or no table number."
+        raise Http404()
 
     return render(request, 'view_order.html')
 
