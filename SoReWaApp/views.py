@@ -220,6 +220,32 @@ def add_to_order(request):
 
 
 def remove_from_order(request):
+    if "table_number" in request.session:
+        if "table_order_number" in request:
+            try:
+                session_table = Table.objects.get(number=request.session["table_number"])
+                if session_table.is_occupied:
+                    if request.method == 'POST':
+                        print "Remove from table:got post"
+                        if request.POST.get('product_name', ''):
+                            product_name = request.POST['product_name']
+                        else:
+                            print "Remove from table: No product Name"
+                    else:
+                        print "Remove from table: no post"
+                else:
+                    print "Remove from order: Table not occupied"
+            except Table.DoesNotExist:
+                print "Remove from order:Table does not exist"
+                return redirect('SoReWaApp.views.choose_table')
+
+        else:
+            print "Remove from order: No order in session"
+            pass
+    else:
+        print "Remove from order: No table number in session"
+        pass
+
     """
          p = Publisher.objects.get(name="O'Reilly")
         p.delete()
@@ -227,7 +253,7 @@ def remove_from_order(request):
         Publisher.objects.all().delete()
          Publisher.objects.filter(country='USA').delete()
     """
-    pass
+
 
 
 def view_table_order(request):
