@@ -93,6 +93,8 @@ if "fav_color" in request.session:
 
 def table(request):
     # todo check if user has table number in session, if not go to table choose
+    #todo if table occuppied, i have number, and order show order in table
+    #todo use var for waiter call, order, and bill to pop alerts or to block buttons
     if "table_number" in request.session:
         try:
             #category = Category.objects.all()
