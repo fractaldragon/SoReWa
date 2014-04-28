@@ -198,15 +198,18 @@ def add_to_order(request):
 
                             except Product.DoesNotExist:
                                 print "product does not exist"
+                                return redirect('SoReWaApp.views.view_table_order')
 
                         else:
                             print "Product name too long!"
+                            return redirect('SoReWaApp.views.view_table_order')
 
                     else:
                         print "No product Name"
+                        return redirect('SoReWaApp.views.view_table_order')
                 else:
                     print"no tengo post"
-                    return render(request, 'add_product.html')
+                    return redirect('SoReWaApp.views.view_table_order')
 
             else:
                 print "got session but table is NOT occupied"
@@ -240,8 +243,12 @@ def remove_from_order(request):  #todo check if order number exist for the given
                                     product_list = Order.objects.filter(table_number=request.session["table_number"],
                                                                         order_number=request.session["table_order_number"],
                                                                         product=chosen_product)
-                                    if product_list:
-                                        product_list[0].delete()
+                                    if product_list: # if i have multiple, i have to check just 1 to remove if it hasnt been sent to kitchen
+
+                                        for p in product_list:
+                                            if not p.sent_to_kitchen:
+                                                p.delete()
+                                                break
                                     else:
                                         print "EMPTY ORDER!!!"
 
@@ -259,6 +266,7 @@ def remove_from_order(request):  #todo check if order number exist for the given
                             return redirect('SoReWaApp.views.view_table_order')
                     else:
                         print "Remove from table: no post"
+                        return redirect('SoReWaApp.views.view_table_order')
                 else:
                     print "Remove from order: Table not occupied"
             except Table.DoesNotExist:
@@ -267,9 +275,11 @@ def remove_from_order(request):  #todo check if order number exist for the given
 
         else:
             print "Remove from order: No order in session"
+            return redirect('SoReWaApp.views.table')
 
     else:
         print "Remove from order: No table number in session"
+        return redirect('SoReWaApp.views.choose_table')
 
 
     """
