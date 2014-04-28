@@ -94,25 +94,28 @@ if "fav_color" in request.session:
 
 def table(request):
     # todo check if user has table number in session, if not go to table choose
-    try:
-        #category = Category.objects.all()
-        category = Category.objects.filter(is_available=True)
-        """
-        #todo borrar esto
-        productos_orden = Order.objects.filter(order_number=1)
-        total=0
-        for p in productos_orden:
-            total = total+p.product.price
-        ###################################
-        print 'el costo total es %s' % total
-        """
-    except Category.DoesNotExist:
-        print "No Categories in the database yet."
-        return render(request, 'table.html')
+    if "table_number" in request.session:
+        try:
+            #category = Category.objects.all()
+            category = Category.objects.filter(is_available=True)
+            """
+            #todo borrar esto
+            productos_orden = Order.objects.filter(order_number=1)
+            total=0
+            for p in productos_orden:
+                total = total+p.product.price
+            ###################################
+            print 'el costo total es %s' % total
+            """
+        except Category.DoesNotExist:
+            print "No Categories in the database yet."
+            return render(request, 'table.html')
 
+        else:
+            #show categories and products
+            return render(request, 'table.html', {'category_list': category})
     else:
-        #show categories and products
-        return render(request, 'table.html', {'category_list': category})
+        return redirect('SoReWaApp.views.choose_table')
 
 
 def get_products_from_category(request, offset):
@@ -255,7 +258,6 @@ def remove_from_order(request):
     """
 
 
-
 def view_table_order(request):
 
     if ("table_number" in request.session) and ("table_order_number" in request.session): #el primero sino lo tengo me lleva  a elegir numero mesa, el segundo sino lo tengo me lleva a la mesa
@@ -264,7 +266,6 @@ def view_table_order(request):
         try:
                 tableorder = Order.objects.filter(table_number=request.session["table_number"], order_number=request.session["table_order_number"])
                 return render(request, 'view_order.html',{'products_list': tableorder})
-
 
         except Order.DoesNotExist:
             print "No Order in the database yet."
