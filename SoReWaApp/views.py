@@ -6,7 +6,6 @@ from SoReWaApp.models import Category, Product, Table, Order
 
 
 def create_menu(request):
-
     try:
         category = Category.objects.all()
     except Category.DoesNotExist:
@@ -36,8 +35,8 @@ if "fav_color" in request.session:
     ..."""
 
     try:
-            table_list = Table.objects.all()
-            print table_list
+        table_list = Table.objects.all()
+        print table_list
 
     except Table.DoesNotExist:
         print "No tables in db."
@@ -133,7 +132,6 @@ def get_products_from_category(request, offset):
 
 
 def add_to_order(request):
-
     if "table_number" in request.session:
         print "session table number: %s" % request.session["table_number"]
 
@@ -146,7 +144,7 @@ def add_to_order(request):
                     if request.POST.get('product_name', ''):
                         product_name = request.POST['product_name']
 
-                        if len(product_name) <= 100: #todo use a var instead of a number
+                        if len(product_name) <= 100:  #todo use a var instead of a number
                             try:
                                 chosen_product = Product.objects.get(name=product_name)
 
@@ -161,7 +159,8 @@ def add_to_order(request):
                                 else:
                                     #todo asignar nuevo numero de orden sino encuentro table order number en la session
                                     try:
-                                        next_order_number = Order.objects.filter(table_number=request.session["table_number"])
+                                        next_order_number = Order.objects.filter(
+                                            table_number=request.session["table_number"])
                                         val = 0
                                         for i in next_order_number:
                                             if i.order_number > val:
@@ -222,18 +221,42 @@ def add_to_order(request):
         return redirect('SoReWaApp.views.choose_table')
 
 
-def remove_from_order(request):
+def remove_from_order(request):  #todo check if order number exist for the given table, also in add product
     if "table_number" in request.session:
-        if "table_order_number" in request:
+        if "table_order_number" in request.session:
             try:
-                session_table = Table.objects.get(number=request.session["table_number"])
+
+                session_table = Table.objects.get(number=request.session["table_order_number"])
+
                 if session_table.is_occupied:
                     if request.method == 'POST':
                         print "Remove from table:got post"
                         if request.POST.get('product_name', ''):
                             product_name = request.POST['product_name']
+
+                            if len(product_name) <= 100:  #todo use a var instead of a number
+                                try:
+                                    chosen_product = Product.objects.get(name=product_name)
+                                    product_list = Order.objects.filter(table_number=request.session["table_number"],
+                                                                        order_number=request.session["table_order_number"],
+                                                                        product=chosen_product)
+                                    if product_list:
+                                        product_list[0].delete()
+                                    else:
+                                        print "EMPTY ORDER!!!"
+
+
+                                    return redirect('SoReWaApp.views.view_table_order')
+
+                                except Product.DoesNotExist:
+                                    print "Remove from table: product not in order"
+                                    return redirect('SoReWaApp.views.view_table_order')
+                            else:
+                                print "Remove from table:product name too long"
+                                return redirect('SoReWaApp.views.view_table_order')
                         else:
                             print "Remove from table: No product Name"
+                            return redirect('SoReWaApp.views.view_table_order')
                     else:
                         print "Remove from table: no post"
                 else:
@@ -244,10 +267,10 @@ def remove_from_order(request):
 
         else:
             print "Remove from order: No order in session"
-            pass
+
     else:
         print "Remove from order: No table number in session"
-        pass
+
 
     """
          p = Publisher.objects.get(name="O'Reilly")
@@ -259,13 +282,15 @@ def remove_from_order(request):
 
 
 def view_table_order(request):
-
-    if ("table_number" in request.session) and ("table_order_number" in request.session): #el primero sino lo tengo me lleva  a elegir numero mesa, el segundo sino lo tengo me lleva a la mesa
-        print "found table number: %s and order: %s" % (request.session["table_number"], request.session["table_order_number"])
+    if ("table_number" in request.session) and (
+                "table_order_number" in request.session):  #el primero sino lo tengo me lleva  a elegir numero mesa, el segundo sino lo tengo me lleva a la mesa
+        print "found table number: %s and order: %s" % (
+            request.session["table_number"], request.session["table_order_number"])
 
         try:
-                tableorder = Order.objects.filter(table_number=request.session["table_number"], order_number=request.session["table_order_number"])
-                return render(request, 'view_order.html',{'products_list': tableorder})
+            tableorder = Order.objects.filter(table_number=request.session["table_number"],
+                                              order_number=request.session["table_order_number"])
+            return render(request, 'view_order.html', {'products_list': tableorder})
 
         except Order.DoesNotExist:
             print "No Order in the database yet."
