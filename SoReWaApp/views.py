@@ -313,7 +313,7 @@ def view_table_order(request):
             raise Http404()
     else:
         print "No Order or no table number."
-        raise Http404()
+        return render(request, 'view_order.html')
 
     return render(request, 'view_order.html')
 
@@ -335,7 +335,7 @@ def call_waiter(request):
                 return render(request, 'table.html')
             else:
                 #show categories and products
-                return render(request, 'table.html', {'category_list': category, 'load_order': True,'load_product': False })
+                return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
     else:
         return redirect('SoReWaApp.views.choose_table')
 
@@ -343,11 +343,70 @@ def call_waiter(request):
 def call_order(request):
     if "table_number" in request.session:
         if "table_order_number" in request.session:
-            pass
-    pass
+
+            try:
+                product_list = Order.objects.filter(table_number=request.session["table_number"],
+                                                    order_number=request.session["table_order_number"],
+                                                    )
+
+                if product_list:
+
+                    has_pending_products = False
+
+                    for p in product_list:
+                        if not p.sent_to_kitchen:
+                            has_pending_products = True
+                            p.sent_to_kitchen = True
+                            p.save()
+
+                    if has_pending_products:
+                        try:
+                            order_table = Table.objects.get(number=request.session["table_number"])
+                            order_table.calls_order = True
+                            order_table.save()
+
+                        except Table.DoesNotExist:
+                            print "Call Order: table does not exist"
+                        else:
+                            try:
+                                category = Category.objects.filter(is_available=True)
+                            except Category.DoesNotExist:
+                                print "No Categories in the database yet."
+                                return render(request, 'table.html')
+                            else:
+                                #show categories and products
+                                return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+
+                    else: # todo show alert, notification , a order once made cannot be modified by client, if you have you'll need to call a waiter
+                        print"Call Order: no pending products"
+                        try:
+                                category = Category.objects.filter(is_available=True)
+                        except Category.DoesNotExist:
+                            print "No Categories in the database yet."
+                            return render(request, 'table.html')
+                        else:
+                            #show categories and products
+                            return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+
+                else:
+                    print("Call Order: product list empty")
+                    return redirect('SoReWaApp.views.table')
+                    # todo if there are no products in order block order button and raise alert saying no products in order
+
+            except Order.DoesNotExist:
+                print "Call Order: order doesent exist"
+
+        else:
+            print('Call Order: has no table order number in session')  # no product has been added to order once
+            return redirect('SoReWaApp.views.table')
+    else:
+        return redirect('SoReWaApp.views.choose_table')
 
 
 def call_bill(request):
+    # if i have no products cant call bill
+    # if i have products, but they haven't been sent to the kitchen cant call bill
+    # products that have not been sent to the kitchen will be removed, and the total wil be calculated with the ones that have been sent to the kitchen
     if "table_number" in request.session:
         if "table_order_number" in request.session:
             pass
