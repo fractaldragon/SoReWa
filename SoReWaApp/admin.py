@@ -33,5 +33,5 @@ admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Table, TableAdmin)
 admin.site.register(Order, OrderAdmin)
-admin.site.register(TableOrders, TableOrdersAdmin)
+#admin.site.register(TableOrders, TableOrdersAdmin)
 

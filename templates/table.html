@@ -11,10 +11,26 @@
 </head>
 
 <body>
+
+<script type="text/javascript">
+
+
+        function showWaiterPopup()
+        {
+
+
+          alert("a Waiter has been notified, please wait");
+          return false;
+
+        }
+    </script>
+
+
 <div class="bigContainer">
 	<div class="logoBar"><img class="logo" src="{% static "imgs/logoSoReWa.jpg" %}"><h1 class="name"> それ は 何 です か.</h1></div>
     <div class="buttonContainer">
-        <div class="waiterButton"><img class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Call Waiter"></div>
+
+        <div class="waiterButton"><form action="/call_waiter/" onmouseup="return showWaiterPopup() "><input type="image" class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Call Waiter" /></form></div>
         <div class="orderButton"><img class="buttonImg" src="{% static "imgs/order-icon.png" %}" alt="Make Order"></div>
         <div class="payButton"><img class="buttonImg" src="{% static "imgs/pay-icon.png" %}" alt="Pay"></div>
         <div class="wallButton"><img class="buttonImg" src="" alt="Social Wall"></div>
@@ -32,17 +48,29 @@
 	</div>
 	<div class="productContainer">
         <h2>Products</h2>
+        {% if load_product %}
+         <iframe class="iframeContainer" src="/category_products/0"  name="product_iframe">
+
+        </iframe>
+        {% else %}
         <iframe class="iframeContainer"  name="product_iframe">
 
         </iframe>
+        {% endif %}
 
 
 </div>
 	<div class="orderContainer">
 	<h2>Your Order</h2>
-       <iframe class="iframeContainer"  name="order_iframe">
+        {% if load_order %}
+       <iframe class="iframeContainer" src="view_table_order/"  name="order_iframe">
 
        </iframe>
+        {% else %}
+         <iframe class="iframeContainer"  name="order_iframe">
+
+       </iframe>
+        {% endif %}
 	</div>
 
 </div>

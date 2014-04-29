@@ -1,6 +1,6 @@
 import datetime
 from django.shortcuts import render, redirect
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from SoReWaApp.models import Category, Product, Table, Order
 # Create your views here.
 
@@ -52,7 +52,6 @@ if "fav_color" in request.session:
                 return redirect('SoReWaApp.views.table')
             else:
                 print "got session but table is NOT occupied"
-                del request.session["table_order_number"]
                 del request.session["table_number"]
                 return render(request, 'table_selector.html', {'error': error, 'table_list': table_list})
 
@@ -97,6 +96,9 @@ def table(request):
     #todo use var for waiter call, order, and bill to pop alerts or to block buttons
     if "table_number" in request.session:
         try:
+            table_occupied = Table.objects.get(number=request.session["table_number"])
+            if not table_occupied.is_occupied:
+                return redirect('SoReWaApp.views.choose_table')
             #category = Category.objects.all()
             category = Category.objects.filter(is_available=True)
             """
@@ -123,10 +125,12 @@ def get_products_from_category(request, offset):
     try:
         offset = str(offset)
         print offset
-        if len(offset) <= 50:
+        if len(offset) <= 50 and len(offset) != 0:
             category = Category.objects.get(name=offset, is_available=True)
-            print category.products.all()
             return render(request, 'products.html', {'products_list': category.products.all()})
+        else:
+            all_products = Product.objects.all()
+            return render(request, 'products.html', {'products_list': all_products})
 
     except Category.DoesNotExist:
         print "No Categories in the database yet."
@@ -231,7 +235,7 @@ def remove_from_order(request):  #todo check if order number exist for the given
         if "table_order_number" in request.session:
             try:
 
-                session_table = Table.objects.get(number=request.session["table_order_number"])
+                session_table = Table.objects.get(number=request.session["table_number"])
 
                 if session_table.is_occupied:
                     if request.method == 'POST':
@@ -312,6 +316,42 @@ def view_table_order(request):
         raise Http404()
 
     return render(request, 'view_order.html')
+
+
+def call_waiter(request):
+    if "table_number" in request.session:
+        print('Call Waiter from table: %s') % request.session["table_number"]
+        try:
+            table_waiter = Table.objects.get(number=request.session["table_number"])
+            table_waiter.calls_waiter = True
+            table_waiter.save()
+        except Table.DoesNotExist:
+            return redirect('SoReWaApp.views.choose_table')
+        else:
+            try:
+                category = Category.objects.filter(is_available=True)
+            except Category.DoesNotExist:
+                print "No Categories in the database yet."
+                return render(request, 'table.html')
+            else:
+                #show categories and products
+                return render(request, 'table.html', {'category_list': category, 'load_order': True,'load_product': False })
+    else:
+        return redirect('SoReWaApp.views.choose_table')
+
+
+def call_order(request):
+    if "table_number" in request.session:
+        if "table_order_number" in request.session:
+            pass
+    pass
+
+
+def call_bill(request):
+    if "table_number" in request.session:
+        if "table_order_number" in request.session:
+            pass
+    pass
 
 
 """Well, that is weird. MayRelatedManager definitely *does* have an
