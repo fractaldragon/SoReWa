@@ -409,8 +409,40 @@ def call_bill(request):
     # products that have not been sent to the kitchen will be removed, and the total wil be calculated with the ones that have been sent to the kitchen
     if "table_number" in request.session:
         if "table_order_number" in request.session:
-            pass
-    pass
+            # try catch missing here
+            table_calling_bill = Table.objects.get(number=request.session["table_number"])
+            table_order_products = Order.objects.filter(table_number=request.session["table_number"], order_number=request.session["table_order_number"])
+            has_product_to_pay = False
+            for order_product in table_order_products:
+                if order_product.sent_to_kitchen:
+                    has_product_to_pay = True
+                    if not table_calling_bill.calls_bill:
+                        table_calling_bill.calls_bill = True
+                        table_calling_bill.save()
+                        print "table %s wants to pay" % request.session["table_number"]
+
+                        for p in table_order_products:
+                            if not p.sent_to_kitchen:
+                                p.delete()
+                                # todo validations for table calling bill and remove not ordered items, also return statements
+                    break
+            if has_product_to_pay:
+                print "has to pay"
+            else:
+                print "doesnt pay "
+        else:
+            print "Call Bill: no table order number"
+    else:
+        print "Call Bill: No table number!!!"
+
+
+
+
+
+
+
+
+
 
 
 """Well, that is weird. MayRelatedManager definitely *does* have an

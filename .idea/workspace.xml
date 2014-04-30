@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/products.html" afterPath="$PROJECT_DIR$/templates/products.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/table.html" afterPath="$PROJECT_DIR$/templates/table.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/views.py" afterPath="$PROJECT_DIR$/SoReWaApp/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -41,7 +40,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="362" column="28" selection-start="16436" selection-end="16436" vertical-scroll-proportion="0.5879265" vertical-offset="3023" max-vertical-offset="4760">
+            <state line="426" column="126" selection-start="20112" selection-end="20112" vertical-scroll-proportion="0.57726467" vertical-offset="4010" max-vertical-offset="5304">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#687#3220#0" expanded="false" />
@@ -56,7 +55,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="74" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="1139">
+            <state line="57" column="14" selection-start="2082" selection-end="2092" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="1139">
               <folding />
             </state>
           </provider>
@@ -74,7 +73,7 @@
       <file leaf-file-name="table.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="86" selection-start="789" selection-end="789" vertical-scroll-proportion="-10.230769" vertical-offset="278" max-vertical-offset="1445">
+            <state line="34" column="156" selection-start="1261" selection-end="1261" vertical-scroll-proportion="-8.5" vertical-offset="357" max-vertical-offset="1445">
               <folding />
             </state>
           </provider>
@@ -146,16 +145,16 @@
         <option value="$PROJECT_DIR$/SoReWaApp/admin.py" />
         <option value="$PROJECT_DIR$/SoReWa/urls.py" />
         <option value="$PROJECT_DIR$/templates/products.html" />
-        <option value="$PROJECT_DIR$/SoReWaApp/views.py" />
         <option value="$PROJECT_DIR$/templates/table.html" />
+        <option value="$PROJECT_DIR$/SoReWaApp/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1376" />
-    <option name="height" value="784" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -572,18 +571,22 @@
       <created>1398790501349</created>
       <updated>1398790501349</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="order button">
+      <created>1398813911303</created>
+      <updated>1398813911303</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1376" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38053098" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1985294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2168421" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -615,7 +618,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="GPL3" />
     <MESSAGE value="view image in user webpage from media folder, not working on admin page thou" />
     <MESSAGE value="generate category in table page" />
     <MESSAGE value="css for admin page" />
@@ -640,7 +642,8 @@
     <MESSAGE value="css min width height for table" />
     <MESSAGE value="titles added to html pages" />
     <MESSAGE value="call waiter button" />
-    <option name="LAST_COMMIT_MESSAGE" value="call waiter button" />
+    <MESSAGE value="order button" />
+    <option name="LAST_COMMIT_MESSAGE" value="order button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -978,6 +981,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="14" selection-start="2082" selection-end="2092" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="67" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
@@ -992,23 +1002,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="74" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="1139">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="86" selection-start="789" selection-end="789" vertical-scroll-proportion="-10.230769" vertical-offset="278" max-vertical-offset="1445">
+        <state line="34" column="156" selection-start="1261" selection-end="1261" vertical-scroll-proportion="-8.5" vertical-offset="357" max-vertical-offset="1445">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="362" column="28" selection-start="16436" selection-end="16436" vertical-scroll-proportion="0.5879265" vertical-offset="3023" max-vertical-offset="4760">
+        <state line="426" column="126" selection-start="20112" selection-end="20112" vertical-scroll-proportion="0.57726467" vertical-offset="4010" max-vertical-offset="5304">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#687#3220#0" expanded="false" />
