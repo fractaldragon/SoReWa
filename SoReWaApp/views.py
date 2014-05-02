@@ -428,12 +428,17 @@ def call_bill(request):
                     break
             if has_product_to_pay:
                 print "has to pay"
+                # notify user and block buttons
+                return redirect('SoReWaApp.views.table')
             else:
                 print "doesnt pay "
+                return redirect('SoReWaApp.views.table')# todo block pay button, when he adds products and order unblock button
         else:
             print "Call Bill: no table order number"
+            return redirect('SoReWaApp.views.table')
     else:
         print "Call Bill: No table number!!!"
+        return redirect('SoReWaApp.views.choose_table')
 
 
 
