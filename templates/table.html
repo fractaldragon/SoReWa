@@ -14,26 +14,84 @@
 
 <script type="text/javascript">
 
+       function hideStuff(stuffid)
+       {
+            document.getElementById(stuffid).style.visibility="hidden";
+       }
+
+        function showNotification()
+        {
+            alert(" {{ notification_message }} ")
+            return false;
+        }
 
         function showWaiterPopup()
         {
-
-
           alert("a Waiter has been notified, please wait");
           return false;
-
         }
-    </script>
+
+        function showOrderSentPopup()
+        {
+          alert("Your order has been sent, please wait");
+          return false;
+        }
+
+        function callBill()
+        {
+
+            var call_bill = confirm("Once you have ordered the bill, unordered products will be removed, and table orders will be blocked");
+            if(call_bill == true)
+            {
+                 window.location.replace("/call_bill/");
+                 alert(call_bill);
+
+            }
+            else
+            {
+
+
+            }
+        }
+
+
+   </script>
 
 
 <div class="bigContainer">
-	<div class="logoBar"><img class="logo" src="{% static "imgs/logoSoReWa.jpg" %}"><h1 class="name"> それ は 何 です か.</h1></div>
+	<div id="barra" class="logoBar" onclick="hidestuff('barra');"><img class="logo" src="{% static "imgs/logoSoReWa.jpg" %}"><h1 class="name"> それ は 何 です か.</h1></div>
     <div class="buttonContainer">
 
-        <div class="waiterButton"><form action="/call_waiter/" onmouseup="return showWaiterPopup() "><input type="image" class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Call Waiter" /></form></div>
-        <div class="orderButton"><form action="/call_order/" onmouseup=""><input type="image" class="buttonImg" src="{% static "imgs/order-icon.png" %}" alt="Make Order"  /></form></div>
-        <div class="payButton"><form action="/call_bill/" onmouseup=""><input type="image" class="buttonImg" src="{% static "imgs/pay-icon.png" %}" alt="Pay"  /></form></div>
-        <div class="wallButton"><img class="buttonImg" src="" alt="Social Wall"></div>
+
+
+             <div class="waiterButton">
+                <form action="/call_waiter/" onmouseup="return showWaiterPopup() ">
+                    <input type="image" class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Call Waiter" />
+                </form>
+             </div>
+
+
+
+
+            <div class="orderButton">
+                <form action="/call_order/" onmouseup="return showOrderSentPopup() ">
+                    <input type="image" class="buttonImg" src="{% static "imgs/order-icon.png" %}" alt="Make Order"  />
+                </form>
+
+            </div>
+
+
+
+            <div class="payButton">
+                <form action="/call_bill/" onmouseup="return callBill() ">
+                    <input type="image" class="buttonImg" src="{% static "imgs/pay-icon.png" %}" alt="Pay"  />
+                </form>
+            </div>
+
+
+
+
+
 
     </div>
     <div class="imageContainer"><img id="background_img" src="{% static "imgs/bambu.png" %}"></div>
@@ -73,6 +131,9 @@
         {% endif %}
 	</div>
 
+    {% if show_notification %}
+        <div id="noty" onclick="hideStuff('noty')"><p>{{ noty_message }}</p></div>
+    {% endif %}
 </div>
 </body>
 

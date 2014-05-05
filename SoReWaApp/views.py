@@ -91,32 +91,28 @@ if "fav_color" in request.session:
 
 
 def table(request):
-    # todo check if user has table number in session, if not go to table choose
     #todo if table occuppied, i have number, and order show order in table
     #todo use var for waiter call, order, and bill to pop alerts or to block buttons
     if "table_number" in request.session:
         try:
             table_occupied = Table.objects.get(number=request.session["table_number"])
             if not table_occupied.is_occupied:
-                return redirect('SoReWaApp.views.choose_table')
+                table_occupied.is_occupied = True
+                table_occupied.save()
+                return render(request, 'table.html')
+                #return redirect('SoReWaApp.views.choose_table') # todo check the logic with table not ocupied but have session
             #category = Category.objects.all()
             category = Category.objects.filter(is_available=True)
-            """
-            #todo borrar esto
-            productos_orden = Order.objects.filter(order_number=1)
-            total=0
-            for p in productos_orden:
-                total = total+p.product.price
-            ###################################
-            print 'el costo total es %s' % total
-            """
+
         except Category.DoesNotExist:
             print "No Categories in the database yet."
             return render(request, 'table.html')
 
         else:
+            # todo show hide buttons on calls
             #show categories and products
-            return render(request, 'table.html', {'category_list': category})
+            return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+
     else:
         return redirect('SoReWaApp.views.choose_table')
 
@@ -161,9 +157,19 @@ def add_to_order(request):
                                                   date=datetime.datetime.now(), sent_to_kitchen=False,
                                                   product=chosen_product)
                                     order.save()
-                                    return redirect('SoReWaApp.views.view_table_order')
+                                    #return redirect('SoReWaApp.views.view_table_order')
+
+                                    try:
+                                        tableorder = Order.objects.filter(table_number=request.session["table_number"],
+                                                                          order_number=request.session["table_order_number"])
+                                        return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'product_name': product_name, 'message': " has been added to order"})
+
+                                    except Order.DoesNotExist:
+                                        print "No Order in the database yet."
+                                        raise Http404()
+
                                 else:
-                                    #todo asignar nuevo numero de orden sino encuentro table order number en la session
+
                                     try:
                                         next_order_number = Order.objects.filter(
                                             table_number=request.session["table_number"])
@@ -254,12 +260,30 @@ def remove_from_order(request):  #todo check if order number exist for the given
                                         for p in product_list:
                                             if not p.sent_to_kitchen:
                                                 p.delete()
-                                                break
+                                                try:
+                                                    tableorder = Order.objects.filter(table_number=request.session["table_number"],
+                                                                          order_number=request.session["table_order_number"])
+                                                    return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'product_name': product_name, 'message': " has been Removed from order"})
+
+                                                except Order.DoesNotExist:
+                                                    print "No Order in the database yet."
+                                                    raise Http404()
+                                                else:
+                                                    print "EMPTY ORDER!!!"
+
+                                    #return redirect('SoReWaApp.views.view_table_order')
+                                    try:
+                                        tableorder = Order.objects.filter(table_number=request.session["table_number"],
+                                                              order_number=request.session["table_order_number"])
+                                        return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'message': " already ordered, cannot remove product, call a waiter if you need something"})
+
+                                    except Order.DoesNotExist:
+                                        print "No Order in the database yet."
+                                        raise Http404()
                                     else:
                                         print "EMPTY ORDER!!!"
 
 
-                                    return redirect('SoReWaApp.views.view_table_order')
 
                                 except Product.DoesNotExist:
                                     print "Remove from table: product not in order"
@@ -298,24 +322,32 @@ def remove_from_order(request):  #todo check if order number exist for the given
 
 
 def view_table_order(request):
-    if ("table_number" in request.session) and (
-                "table_order_number" in request.session):  #el primero sino lo tengo me lleva  a elegir numero mesa, el segundo sino lo tengo me lleva a la mesa
-        print "found table number: %s and order: %s" % (
-            request.session["table_number"], request.session["table_order_number"])
 
-        try:
-            tableorder = Order.objects.filter(table_number=request.session["table_number"],
-                                              order_number=request.session["table_order_number"])
-            return render(request, 'view_order.html', {'products_list': tableorder})
+    if "table_number" in request.session:
+        if "table_order_number" in request.session:  #el primero sino lo tengo me lleva  a elegir numero mesa, el segundo sino lo tengo me lleva a la mesa
+            print "found table number: %s and order: %s" % (
+                request.session["table_number"], request.session["table_order_number"])
 
-        except Order.DoesNotExist:
-            print "No Order in the database yet."
-            raise Http404()
-    else:
-        print "No Order or no table number."
+            try:
+                tableorder = Order.objects.filter(table_number=request.session["table_number"],
+                                                  order_number=request.session["table_order_number"])
+
+                if tableorder:
+                    return render(request, 'view_order.html', {'products_list': tableorder})
+                else:
+                    return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have products in the order yet."})
+
+            except Order.DoesNotExist:
+                print "No Order in the database yet."
+                return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet."})
+        else:
+            print "No Order in session "
+            return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet."})
+
         return render(request, 'view_order.html')
 
-    return render(request, 'view_order.html')
+    else:
+        return redirect('SoReWaApp.views.choose_table')
 
 
 def call_waiter(request):
@@ -341,18 +373,15 @@ def call_waiter(request):
 
 
 def call_order(request):
+    print "entre!"
     if "table_number" in request.session:
         if "table_order_number" in request.session:
-
             try:
                 product_list = Order.objects.filter(table_number=request.session["table_number"],
-                                                    order_number=request.session["table_order_number"],
+                                                    order_number=request.session["table_order_number"]
                                                     )
-
                 if product_list:
-
                     has_pending_products = False
-
                     for p in product_list:
                         if not p.sent_to_kitchen:
                             has_pending_products = True
@@ -391,10 +420,9 @@ def call_order(request):
                 else:
                     print("Call Order: product list empty")
                     return redirect('SoReWaApp.views.table')
-                    # todo if there are no products in order block order button and raise alert saying no products in order
 
             except Order.DoesNotExist:
-                print "Call Order: order doesent exist"
+                print "Call Order: order doesnt exist"
 
         else:
             print('Call Order: has no table order number in session')  # no product has been added to order once
@@ -423,16 +451,38 @@ def call_bill(request):
 
                         for p in table_order_products:
                             if not p.sent_to_kitchen:
+                                print "%s removed" % p.product.name
                                 p.delete()
-                                # todo validations for table calling bill and remove not ordered items, also return statements
+                    else:
+                        for p in table_order_products:
+                            if not p.sent_to_kitchen:
+                                print "%s removed" % p.product.name
+                                p.delete()
+
                     break
             if has_product_to_pay:
                 print "has to pay"
-                # notify user and block buttons
+                #todo  notify user and block buttons, delete order var and show table order and total,this page must redirect to table, again for next users
+
+                try:
+                    tableorder = Order.objects.filter(table_number=request.session["table_number"],
+                                                      order_number=request.session["table_order_number"],sent_to_kitchen=True)
+                    order_total = 0
+
+                    for p in tableorder:
+                        if p.sent_to_kitchen:
+                            order_total = order_total+p.product.price
+                    ###################################
+                    print 'el costo total es %s' % order_total
+                    return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'message': "Your Order cost is: $ %s " % order_total })
+
+                except Order.DoesNotExist:
+                    print "No Order in the database yet."
+                    raise Http404()
                 return redirect('SoReWaApp.views.table')
             else:
                 print "doesnt pay "
-                return redirect('SoReWaApp.views.table')# todo block pay button, when he adds products and order unblock button
+                return redirect('SoReWaApp.views.table',)
         else:
             print "Call Bill: no table order number"
             return redirect('SoReWaApp.views.table')

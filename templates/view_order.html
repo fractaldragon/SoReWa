@@ -6,9 +6,20 @@
     <link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<script type="text/javascript">
+
+       function hideStuff(stuffid)
+       {
+            document.getElementById(stuffid).style.visibility="hidden";
+       }
+
+
+   </script>
+
+
     <div>
 
-        <ul>
+        <ul id="orderList">
             {% for order_product in products_list %}
 
 
@@ -18,15 +29,16 @@
                 </span>
                 <span  class="productThumbnail">
                     <!-- <img src="/media/ url producto}}"> -->
-                        <a href="/category_products/Food/ " target="order_iframe">
+
                         <img src="/media/{{ order_product.product.image }}">
-                            </a>
+
 
                 </span>
                 <span  class="productDescription">{{order_product.product.description}}</span>
                 <span  class="productPrice">
                     <p>${{order_product.product.price}}</p>
                 </span>
+                {% if not order_product.sent_to_kitchen %}
                 <span class="productAddRemoveButtons">
                     <form action="/remove_product_from_order/" target="order_iframe"method="post">
                         {% csrf_token %}
@@ -36,12 +48,16 @@
 
 
                 </span>
+                {% endif %}
             </li>
 
             {% endfor %}
 
         </ul>
-
+    {% if show_notification %}
+            <div id="noty" onclick="hideStuff('noty')"><p>{{ product_name }} {{ message }}</p></div>
+        {% endif %}
     </div>
+
 </body>
 </html>
