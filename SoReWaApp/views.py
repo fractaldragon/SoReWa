@@ -96,13 +96,14 @@ def table(request):
     if "table_number" in request.session:
         try:
             table_occupied = Table.objects.get(number=request.session["table_number"])
+            category = Category.objects.filter(is_available=True)
             if not table_occupied.is_occupied:
                 table_occupied.is_occupied = True
                 table_occupied.save()
-                return render(request, 'table.html')
+                return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
                 #return redirect('SoReWaApp.views.choose_table') # todo check the logic with table not ocupied but have session
             #category = Category.objects.all()
-            category = Category.objects.filter(is_available=True)
+
 
         except Category.DoesNotExist:
             print "No Categories in the database yet."
@@ -367,13 +368,24 @@ def call_waiter(request):
                 return render(request, 'table.html')
             else:
                 #show categories and products
-                return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+
+                try:
+                    ordered_product_list = Order.objects.filter(table_number=request.session["table_number"],
+                                                    order_number=request.session["table_order_number"],
+                                                    sent_to_kitchen=True)
+                    if ordered_product_list:
+                        return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False, 'show_pay_button': True})
+                    else:
+                        return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+                except Order.DoesNotExist:
+                    print "No order."
+                    return render(request, 'table.html')
+
     else:
         return redirect('SoReWaApp.views.choose_table')
 
 
 def call_order(request):
-    print "entre!"
     if "table_number" in request.session:
         if "table_order_number" in request.session:
             try:
@@ -404,7 +416,7 @@ def call_order(request):
                                 return render(request, 'table.html')
                             else:
                                 #show categories and products
-                                return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+                                return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False, 'show_pay_button': True})
 
                     else: # todo show alert, notification , a order once made cannot be modified by client, if you have you'll need to call a waiter
                         print"Call Order: no pending products"
@@ -415,7 +427,7 @@ def call_order(request):
                             return render(request, 'table.html')
                         else:
                             #show categories and products
-                            return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+                            return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False, 'show_pay_button': True})
 
                 else:
                     print("Call Order: product list empty")
@@ -474,6 +486,7 @@ def call_bill(request):
                             order_total = order_total+p.product.price
                     ###################################
                     print 'el costo total es %s' % order_total
+                    del request.session["table_order_number"]# todo comment for testing
                     return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'message': "Your Order cost is: $ %s " % order_total })
 
                 except Order.DoesNotExist:

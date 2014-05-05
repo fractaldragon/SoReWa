@@ -81,12 +81,13 @@
             </div>
 
 
-
+         {% if show_pay_button %}
             <div class="payButton">
                 <form action="/call_bill/" onmouseup="return callBill() ">
                     <input type="image" class="buttonImg" src="{% static "imgs/pay-icon.png" %}" alt="Pay"  />
                 </form>
             </div>
+         {% endif %}
 
 
 
