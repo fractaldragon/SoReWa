@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+    <link href=" {% static "css/table_item.css" %}" rel="stylesheet" type="text/css" />
+    <title>Table list</title>
+</head>
+<body>
+
+<div>
+<ul class="tableList">
+
+    {% for table in table_list %}
+			    <li class="tableItem">
+			    <div class="tableLabel"><a  href="/table_order/{{table.number}}" target="order_iframe">Table {{table.number}}</a></div>
+				    <div class="iconContainer">
+                        {% if table.calls_waiter %}
+					    <img class="waiterCallIcon" src="{% static "imgs/waiter-icon.png" %}">
+                        {% endif %}
+                        {% if table.calls_order %}
+					    <img class="orderCallIcon" src="{% static "imgs/order-icon.png" %}" >
+                        {% endif %}
+                        {% if table.calls_bill  %}
+					    <img class="payCallIcon" src="{% static "imgs/pay-icon.png" %}">
+                        {% endif %}
+				    </div>
+			    </li>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

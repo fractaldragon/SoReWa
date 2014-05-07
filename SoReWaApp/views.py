@@ -1,7 +1,7 @@
 import datetime
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse
-from SoReWaApp.models import Category, Product, Table, Order
+from SoReWaApp.models import Category, Product, Table, Order, TableOrders
 # Create your views here.
 
 
@@ -134,6 +134,16 @@ def get_products_from_category(request, offset):
         raise Http404()
 
 
+def get_products(request):
+    try:
+        all_products = Product.objects.all()
+        return render(request, '.html', {'products_list': all_products})
+
+    except Product.DoesNotExist:
+        print "No products in the database yet."
+        raise Http404()
+
+
 def add_to_order(request):
     if "table_number" in request.session:
         print "session table number: %s" % request.session["table_number"]
@@ -185,6 +195,8 @@ def add_to_order(request):
                                                       date=datetime.datetime.now(), sent_to_kitchen=False,
                                                       product=chosen_product)
                                         order.save()
+                                        table_order = TableOrders(table_id=t, actual_order=order )
+                                        table_order.save()
                                         request.session["table_order_number"] = "%s" % val
                                         return redirect('SoReWaApp.views.view_table_order')
 
@@ -196,6 +208,8 @@ def add_to_order(request):
                                                       date=datetime.datetime.now(), sent_to_kitchen=False,
                                                       product=chosen_product)
                                         order.save()
+                                        table_order = TableOrders(table_id=t, actual_order=order )
+                                        table_order.save()
                                         request.session["table_order_number"] = "1"
                                         return redirect('SoReWaApp.views.view_table_order')
 
@@ -503,6 +517,49 @@ def call_bill(request):
         print "Call Bill: No table number!!!"
         return redirect('SoReWaApp.views.choose_table')
 
+
+def waiter_add_product(request):
+    #need table nr, order nr, product name
+    pass
+
+
+def waiter_remove_product(request):
+    # need table nr, order nr, product name
+    pass
+
+
+def waiter_check_tables(request):
+    try:
+        table_list = Table.objects.filter(is_occupied=True)
+        return render(request, 'table_list.html', {'table_list': table_list})
+    except Table.DoesNotExist:
+        return render(request, 'table_list.html')
+    pass
+
+
+def waiter_view_table_order(request, offset):
+    # need table nr, order nr
+    try:
+        offset = int(offset)
+        print offset
+        if offset < 100 and offset != 0: # url offset has a 2 digit number
+            table = TableOrders.objects.get(table_id=offset, is_paid=False)
+            tableorder = Order.objects.filter(table_number=table.table_id,
+                                              order_number=table.actual_order.order_number)
+            return render(request, 'view_order.html', {'products_list': tableorder})
+        else:
+
+            return render(request, 'products.html', )
+
+    except TableOrders.DoesNotExist:
+        print "No table in the database yet."
+        raise Http404()
+
+    pass
+
+
+def waiter_mark_table_as_paid(request):
+    pass
 
 
 

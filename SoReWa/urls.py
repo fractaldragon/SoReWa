@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from SoReWaApp.views import table, get_products_from_category, choose_table, add_to_order, view_table_order, remove_from_order, \
-    call_order, call_waiter, call_bill
+    call_order, call_waiter, call_bill, waiter_check_tables, waiter_view_table_order
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     url(r'^call_waiter/$', call_waiter),
     url(r'^call_order/$', call_order),
     url(r'^call_bill/$', call_bill),
+    url(r'^view_tables/$', waiter_check_tables),
+    url(r'^table_order/(\d{1,2})/$', waiter_view_table_order),
 
 
 )
