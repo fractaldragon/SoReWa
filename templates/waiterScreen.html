@@ -3,8 +3,9 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<link href="waiterScreen.css" rel="stylesheet" type="text/css" />
-<title>Untitled 1</title>
+    {% load staticfiles %}
+<link href="{% static "css/waiterScreen.css" %}" rel="stylesheet" type="text/css" />
+<title>SoReWa Waiter UI</title>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
 		<div id="table_list_container">
 			<h2>Tables</h2>
 			
-			<iframe class="iframeContainer" src="table_item.html" name="table_iframe"></iframe>
+			<iframe class="iframeContainer" src="/view_tables/" name="table_iframe"></iframe>
 			
 		  	
 			    
@@ -27,7 +28,7 @@
 		</div>
 		<div id="product_container">
 			<h2>Products</h2>
-			<iframe class="iframeContainer" src="food_item.html" name="product_iframe"></iframe>
+			<iframe class="iframeContainer" src="/products/" name="product_iframe"></iframe>
 
 			
 		</div>	

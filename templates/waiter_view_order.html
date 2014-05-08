@@ -4,8 +4,9 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     {% load staticfiles %}
     <link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript">
+</head>
+<body>
+<script type="text/javascript">
 
        function hideStuff(stuffid)
        {
@@ -14,11 +15,14 @@
 
 
    </script>
+    <div>
+    <form action="/add_product_to_order/" method="post">
+        {% csrf_token %}
+        <p>table number: </p> <input type="text" name="product_name"  value="{{ product.name }}">
 
-</head>
-<body >
-
-
+        <input type="submit" value="Submit">
+    </form>
+    </div>
 
     <div>
 
@@ -41,17 +45,19 @@
                 <span  class="productPrice">
                     <p>${{order_product.product.price}}</p>
                 </span>
-                {% if not order_product.sent_to_kitchen %}
+
                 <span class="productAddRemoveButtons">
-                    <form action="/remove_product_from_order/" target="order_iframe"method="post">
+                    <form action="/waiter_remove_product/" target="order_iframe"method="post">
                         {% csrf_token %}
-                         <input class="for_input" name="product_name"  value="{{ order_product.product.name }}" >
-                        <input class="productRemoveButton" type="image" src="{% static "imgs/remove.png" %}" value=" remove ">
+                        <input class="for_input" name="product_name"  value="{{ order_product.product.name }}" >
+                        <input class="for_input" name="table_number"  value="{{ table_number }}" >
+                        <input class="for_input" name="order_number"  value="{{ table_order_number }}" >
+                        <input class="productRemoveButton" type="submit" value=" - ">
                      </form>
 
 
                 </span>
-                {% endif %}
+
             </li>
 
             {% endfor %}

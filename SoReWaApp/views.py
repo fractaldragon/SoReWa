@@ -20,20 +20,6 @@ def create_menu(request):
 
 
 def choose_table(request):
-    """# Set a session value:
-request.session["fav_color"] = "blue"
-
-# Get a session value -- this could be called in a different view,
-# or many requests later (or both):
-fav_color = request.session["fav_color"]
-
-# Clear an item from the session:
-del request.session["fav_color"]
-
-# Check if the session has a given key:
-if "fav_color" in request.session:
-    ..."""
-
     try:
         table_list = Table.objects.all()
         print table_list
@@ -136,12 +122,13 @@ def get_products_from_category(request, offset):
 
 def get_products(request):
     try:
-        all_products = Product.objects.all()
-        return render(request, '.html', {'products_list': all_products})
+        all_products = Product.objects.all().order_by("name")
+        return render(request, 'waiter_simple_product_list.html', {'products_list': all_products})
 
     except Product.DoesNotExist:
         print "No products in the database yet."
-        raise Http404()
+        return render(request, 'waiter_simple_product_list.html')
+
 
 
 def add_to_order(request):
@@ -169,6 +156,11 @@ def add_to_order(request):
                                                   product=chosen_product)
                                     order.save()
                                     #return redirect('SoReWaApp.views.view_table_order')
+                                    try:
+                                        table_order = TableOrders.objects.get(table_id=request.session["table_number"], is_paid=False)
+                                    except TableOrders.DoesNotExist:
+                                            table_order = TableOrders(table_id=t, actual_order=order)
+                                            table_order.save()
 
                                     try:
                                         tableorder = Order.objects.filter(table_number=request.session["table_number"],
@@ -382,18 +374,21 @@ def call_waiter(request):
                 return render(request, 'table.html')
             else:
                 #show categories and products
+                if "table_order_number" in request.session:
+                    try: # todo check error when calling waiter and table doesnt have order number
+                        ordered_product_list = Order.objects.filter(table_number=request.session["table_number"],
+                                                        order_number=request.session["table_order_number"],
+                                                        sent_to_kitchen=True)
+                        if ordered_product_list:
+                            return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False, 'show_pay_button': True})
+                        else:
+                            return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
+                    except Order.DoesNotExist:
+                        print "No order."
+                        return render(request, 'table.html')
+                else:
+                    return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
 
-                try:
-                    ordered_product_list = Order.objects.filter(table_number=request.session["table_number"],
-                                                    order_number=request.session["table_order_number"],
-                                                    sent_to_kitchen=True)
-                    if ordered_product_list:
-                        return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False, 'show_pay_button': True})
-                    else:
-                        return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False})
-                except Order.DoesNotExist:
-                    print "No order."
-                    return render(request, 'table.html')
 
     else:
         return redirect('SoReWaApp.views.choose_table')
@@ -501,6 +496,9 @@ def call_bill(request):
                     ###################################
                     print 'el costo total es %s' % order_total
                     del request.session["table_order_number"]# todo comment for testing
+                    #request.session["table_order_number"] = 0
+
+
                     return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'message': "Your Order cost is: $ %s " % order_total })
 
                 except Order.DoesNotExist:
@@ -525,13 +523,56 @@ def waiter_add_product(request):
 
 def waiter_remove_product(request):
     # need table nr, order nr, product name
-    pass
+    if request.method == 'POST':
+        print "Waiter remove from table:got post"
+        if request.POST.get('product_name', '') and request.POST.get('table_number', '') and request.POST.get('order_number', '') :
+            product_name = request.POST['product_name']
+            table_number = request.POST['table_number']
+            order_number = request.POST['order_number']
+
+            try:
+                table_number = int(table_number)
+                order_number = int(order_number)
+
+                if table_number < 100 and table_number != 0 and len(product_name) <= 100:  # url offset has a 2 digit number
+                    chosen_product = Product.objects.get(name=product_name)
+                    product_list = Order.objects.filter(table_number=table_number,
+                                                        order_number=order_number,
+                                                        product=chosen_product)
+
+                    if product_list: # if i have multiple, i have to check just 1 to remove
+
+                        for p in product_list:
+                            p.delete()
+                            break
+
+
+
+
+                    tableorder = Order.objects.filter(table_number=table_number,
+                                                      order_number=order_number)
+                    return render(request, 'waiter_view_order.html', {'products_list': tableorder, 'table_number': table_number, 'table_order_number': order_number})
+                else:
+
+                    return redirect('SoReWaApp.views.waiter_view_table_order ')
+
+            except TableOrders.DoesNotExist:
+                print "No table in the database yet."
+                raise Http404()
 
 
 def waiter_check_tables(request):
     try:
+        #table_list = TableOrders.objects.filter(is_paid=False)
         table_list = Table.objects.filter(is_occupied=True)
-        return render(request, 'table_list.html', {'table_list': table_list})
+# todo logic if table is occupied
+        # if occupied, but no paid , dont give link
+        if table_list:
+            return render(request, 'table_list.html', {'table_list': table_list})
+        else:
+
+            return render(request, 'table_list.html')
+
     except Table.DoesNotExist:
         return render(request, 'table_list.html')
     pass
@@ -546,27 +587,30 @@ def waiter_view_table_order(request, offset):
             table = TableOrders.objects.get(table_id=offset, is_paid=False)
             tableorder = Order.objects.filter(table_number=table.table_id,
                                               order_number=table.actual_order.order_number)
-            return render(request, 'view_order.html', {'products_list': tableorder})
+            return render(request, 'waiter_view_order.html', {'products_list': tableorder, 'table_number': offset, 'table_order_number':table.actual_order.order_number})
         else:
 
-            return render(request, 'products.html', )
+            return render(request, 'waiter_view_order.html', )
 
     except TableOrders.DoesNotExist:
-        print "No table in the database yet."
-        raise Http404()
-
-    pass
+        print "waiter_view_table_order: no table order"
+        return render(request, 'waiter_view_order.html', )
 
 
 def waiter_mark_table_as_paid(request):
     pass
 
 
+def waiter_manage_tables (request):
+    return render(request, 'waiterScreen.html')
 
 
 
 
 
+
+
+# todo auto reload order iframe in waiter and table
 
 
 
@@ -597,6 +641,20 @@ the following works fine:
 So it works for me, I can't imagine what is happening with your setup.
 What version of Django are you using? """
 
+
+"""# Set a session value:
+request.session["fav_color"] = "blue"
+
+# Get a session value -- this could be called in a different view,
+# or many requests later (or both):
+fav_color = request.session["fav_color"]
+
+# Clear an item from the session:
+del request.session["fav_color"]
+
+# Check if the session has a given key:
+if "fav_color" in request.session:
+    ..."""
 
 
 

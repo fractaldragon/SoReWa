@@ -8,7 +8,7 @@
 body,html
 {
 
-	background: #ff8e00; /* Old browsers */
+	background: #E3EFDF; /* Old browsers */
 	background-image:url();
     height:100%;
 
@@ -18,16 +18,11 @@ h2 {
   font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #65016C;
+  border-bottom: 1px solid #815B2F;
 
 }
 
-.imageContainer
-{
 
-opacity:0.4;
-filter:alpha(opacity=40);
-}
 
 #background_img
 {
@@ -39,14 +34,14 @@ filter:alpha(opacity=40);
 .categoryItem
 {
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-	border-bottom: 1px solid #C936D3;
+	border-bottom: 1px solid #958777;
 }
 
 li a {
   text-decoration: none;
   color: #000;
   display: block;
-  width: 200px;
+  width: 90%x;
  
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -78,16 +73,36 @@ li a:hover {
 	z-index:1;
 	top:0px;
 	left:0px;
-	height:40px;
+	height:85px;
 	width:100%;
-	background: linear-gradient(#FF8E00, #FFC173);
+	background: #C7AE92;
+}
+.barraSuperior
+{
+    position:absolute;
+	float:left;
+
+	top:10px;
+	left:0px;
+}
+
+.barraInferior
+{
+    position:absolute;
+	float:left;
+
+	top:0px;
+	left:0px;
 }
 
 .logo{
-	
+	 position:absolute;
 	float:left;
-	width:40px;
-	height:40px;
+	left:0px;
+	height:75px;
+	width:340px;
+
+
 }
 
 .name
@@ -101,12 +116,12 @@ li a:hover {
 {
 
 	position:absolute;
-	top:60px;
+	top:95px;
 	left:1%;
 	width:18%;
-	height:65%;
-	background-color:#E6FB71;
-	border:2px solid #A5B92E;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
 	border-radius:25px;
 }
 
@@ -114,19 +129,19 @@ li a:hover {
 {
 
 	position:absolute;
-	top:60px;
+	top:95px;
 	left:20%;
 	width:28%;
-	height:65%;
-	background-color:#FFC173;
-	border:2px solid #FF8E00;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
 	border-radius:25px;
 
 }
 
 .categoryList
 {
-    width:200px;
+    width:95%;
 }
 
 .iframeContainer
@@ -140,12 +155,12 @@ li a:hover {
 {
 
 	position:absolute;
-	top:60px;
+	top:95px;
 	left:50%;
 	width:28%;
-	height:65%;
-	background-color:#FFAA40;
-	border:2px solid #FF8E00;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92 ;
 	border-radius:25px;
 
 }
@@ -153,13 +168,14 @@ li a:hover {
 .buttonContainer
 {
     min-width:600px;
+    min-height:259px;
 	position:fixed;
     float:bottom;
 	z-index:1;
 	bottom:0px;
-	height:150px;
+	height:259px;
 	width:100%;
-	background: linear-gradient(#FFC173, #FF8E00);
+	background: #E3CEB6;
 
 }
 
@@ -168,9 +184,8 @@ li a:hover {
     position:absolute;
     left:0px;
     width:25%;
-    height:150px;
-    border-right: 2px solid #BF8030;
-    border-left: 2px solid #BF8030;
+    height:100%;
+
 
 }
 .orderButton
@@ -178,27 +193,24 @@ li a:hover {
     position:absolute;
     left:25%;
     width:25%;
-    height:150px;
-     border-right: 2px solid #BF8030;
-     border-left: 2px solid #BF8030;
+    height:100%;
+
 }
 .payButton
 {
     position:absolute;
     left:50%;
     width:25%;
-    height:150px;
-     border-right: 2px solid #BF8030;
-     border-left: 2px solid #BF8030;
+    height:100%;
+
 }
 .wallButton
 {
     position:absolute;
     left:75%;
     width:25%;
-    height:150px;
-     border-right: 2px solid #BF8030;
-     border-left: 2px solid #BF8030;
+    height:100%;
+
 }
 
 .buttonImg
@@ -206,7 +218,6 @@ li a:hover {
     position:absolute;
     left:40%;
     top:20%;
-    height:50%;
-    width:25%;
+
 }
 

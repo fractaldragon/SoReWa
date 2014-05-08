@@ -5,15 +5,25 @@
     {% load staticfiles %}
     <link href=" {% static "css/table_item.css" %}" rel="stylesheet" type="text/css" />
     <title>Table list</title>
+    <script type="text/JavaScript">
+    <!--
+    function timedRefresh(timeoutPeriod) {
+        setTimeout("location.reload(true);",timeoutPeriod);
+    }
+    //   -->
+</script>
 </head>
-<body>
+<body onload="JavaScript:timedRefresh(5000);">
+
 
 <div>
 <ul class="tableList">
 
     {% for table in table_list %}
 			    <li class="tableItem">
-			    <div class="tableLabel"><a  href="/table_order/{{table.number}}" target="order_iframe">Table {{table.number}}</a></div>
+			    <div class="tableLabel">
+                    <a  href="/table_order/{{table.number}}" target="order_iframe">
+                        Table {{table.number}}</a></div>
 				    <div class="iconContainer">
                         {% if table.calls_waiter %}
 					    <img class="waiterCallIcon" src="{% static "imgs/waiter-icon.png" %}">
@@ -27,6 +37,8 @@
 				    </div>
 			    </li>
     {% endfor %}
+
+    </ul>
 </div>
 
 
