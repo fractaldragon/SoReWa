@@ -5,82 +5,82 @@
 	padding:0px;
 }
 
-body
+body,html
 {
 
-	background: #ff8e00; /* Old browsers */
-	background-image:url("");
+	background: #E3EFDF; /* Old browsers */
+	background-image:url();
+    height:100%;
+
 }
 
 h2 {
   font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #65016C;
+  border-bottom: 1px solid #815B2F;
 
 }
-
-.imageContainer
-{
-
-opacity:0.4;
-filter:alpha(opacity=40);
-}
-
-
-
-li a {
-  text-decoration: none;
-  color: #000;
-  display: block;
-  width: 200px;
- 
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-}
-
-li a:hover {
-  font-size: 30px;
-  background: #f6f6f6;
-}
- 
 
 .bigContainer
 {
-	position:absolute;
-	top:100px;
-	left:10px;
-	height:50%px
+    min-width:1000px;
+    min-height:800px;
+	position:relative;
+	height:100%;
 }
+
 
 .logoBar
 {
+    min-width:1000px;
 	position:fixed;
 	z-index:1;
 	top:0px;
 	left:0px;
-	height:40px;
+	height:85px;
 	width:100%;
-	background: linear-gradient(#FF8E00, #FFC173);
+	background: #C7AE92;
+}
+.barraSuperior
+{
+    position:absolute;
+	float:left;
+
+	top:10px;
+	left:0px;
 }
 
 .logo{
-	
+	 position:absolute;
 	float:left;
-	width:40px;
-	height:40px;
+	left:0px;
+	height:75px;
+	width:340px;
+
+
 }
 
 .name
 {
 	
 	float:left;
+	 top:90px;
 
 }
 
+#table_number_label
+{
+     position:absolute;
+    top:90px;
+}
+
+#table_number_form
+{
+ position:absolute;
+ top:120px;
+
+}
 
 #table_number_list
 {
@@ -91,9 +91,8 @@ li a:hover {
 
 #table_number_button
 {
+position:absolute;
 
-    top:200px;
-    left:200px;
 }
 
 .Error

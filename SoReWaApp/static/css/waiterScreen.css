@@ -5,69 +5,94 @@
 
 }
 
+body,html
+{
+
+	background: #E3EFDF; /* Old browsers */
+	background-image:url();
+    height:100%;
+
+}
+
 .bigContainer
 {
+    min-width:1000px;
+    min-height:800px;
 	position:relative;
+	height:100%;
+
+
 }
 
 .logoBar
 {
+    min-width:1000px;
 	position:fixed;
 	z-index:1;
 	top:0px;
 	left:0px;
-	height:40px;
+	height:85px;
 	width:100%;
+	background: #C7AE92;
+}
+.barraSuperior
+{
+    position:absolute;
+	float:left;
 
-	background: linear-gradient(#FF8E00, #FFC173);
+	top:10px;
+	left:0px;
 }
 
 .logo{
-
+	 position:absolute;
 	float:left;
-	width:40px;
-	height:40px;
+	left:0px;
+	height:75px;
+	width:340px;
+
+
 }
 
 #table_list_container
 {
 
 	position:absolute;
-	top:60px;
+	top:95px;
 	left:1%;
 	width:18%;
-	height:65%;
-	background-color:#E6FB71;
-	border:2px solid #A5B92E;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
 	border-radius:25px;
 	}
 
 #order_container
 {
 	position:absolute;
-	top:60px;
+	top:95px;
 	left:20%;
 	width:28%;
-	height:65%;
-	background-color:#FFC173;
-	border:2px solid #FF8E00;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
 	border-radius:25px;
+
 }
 
 #product_container
 {
 	position:absolute;
-	top:60px;
+	top:95px;
 	left:50%;
 	width:28%;
-	height:65%;
-	background-color:#FFAA40;
-	border:2px solid #FF8E00;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92 ;
 	border-radius:25px;
 
 
 }
-
 
 
 
@@ -76,10 +101,27 @@ h2 {
   font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #65016C;
+  border-bottom: 1px solid #815B2F;
 
 }
 
+li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 90%x;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
 
 .iframeContainer
 {
