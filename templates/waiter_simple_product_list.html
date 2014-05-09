@@ -28,6 +28,18 @@
                     <p>${{product.price}}</p>
                 </span>
 
+                <span class="productAddRemoveButtons">
+                    <form action="/waiter_add_product_to_table/" target="order_iframe" method="post">
+                        {% csrf_token %}
+                         <input class="for_input" name="product_name"  value="{{ product.name }}" >
+                        <input class="productAddButton" type="image" src="{% static "imgs/add.png" %}" value="add">
+                     </form>
+
+
+
+
+                </span>
+
             </li>
             {% endif %}
             {% endfor %}
