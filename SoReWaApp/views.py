@@ -122,6 +122,7 @@ def get_products_from_category(request, offset):
 
 def get_products(request):
     try:
+
         all_products = Product.objects.all().order_by("name")
         return render(request, 'waiter_simple_product_list.html', {'products_list': all_products})
 
@@ -586,20 +587,24 @@ def waiter_add_product(request):
 
             except Table.DoesNotExist:
                 print "Table does not in order table"
-                t = Table.objects.get(number=selected_table)
-                order = Order(order_number=1,
-                              table_number=t,
-                              date=datetime.datetime.now(), sent_to_kitchen=False,
-                              product=chosen_product)
-                order.save()
-                table_order = TableOrders(table_id=t, actual_order=order )
-                table_order.save()
-                request.session["table_order_number"] = "1"
-                return redirect('SoReWaApp.views.waiter_view_table_order')
+                try:
+                    t = Table.objects.get(number=selected_table)
+                    order = Order(order_number=1,
+                                  table_number=t,
+                                  date=datetime.datetime.now(), sent_to_kitchen=False,
+                                  product=chosen_product)
+                    order.save()
+                    table_order = TableOrders(table_id=t, actual_order=order )
+                    table_order.save()
+                    request.session["table_order_number"] = "1"
+                    return redirect('SoReWaApp.views.waiter_view_table_order')
+                except Table.DoesNotExist:
+                    print"table to add product doesnt exist"
+                    return render(request, 'waiter_v_order.html', )
 
     else:
         print "waiter add product didnt get selected table"
-        raise Http404()
+        return redirect('SoReWaApp.views.waiter_view_table_order')
 
 
 def waiter_remove_product(request):
@@ -642,10 +647,10 @@ def waiter_remove_product(request):
                                         print "waiter remove product got product list!!!!"
                                         table_order = TableOrders(table_id=t, actual_order=product_list[0] )
                                         table_order.save()
-                                        return render(request, 'waiter_view_order.html', {'products_list': tableorder, 'table_number': table_number, 'table_order_number': order_number})
+                                        return render(request, 'waiter_v_order.html', {'products_list': product_list, 'table_number': table_number, 'table_order_number': order_number})
 
                                     else:
-                                        return redirect('SoReWaApp.views.waiter_view_table_order ')
+                                        return render(request, 'waiter_v_order.html', {'products_list': product_list, 'table_number': table_number, 'table_order_number': order_number})
 
                                 except Order.DoesNotExist:# no more products in order
                                     print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
@@ -661,7 +666,7 @@ def waiter_remove_product(request):
 
                     tableorder = Order.objects.filter(table_number=table_number,
                                                       order_number=order_number)
-                    return render(request, 'waiter_view_order.html', {'products_list': tableorder, 'table_number': table_number, 'table_order_number': order_number})
+                    return render(request, 'waiter_v_order.html', {'products_list': tableorder, 'table_number': table_number, 'table_order_number': order_number})
                 else:
 
                     return redirect('SoReWaApp.views.waiter_view_table_order ')
@@ -680,7 +685,8 @@ def waiter_check_tables(request):
         if table_list:
             return render(request, 'table_list.html', {'table_list': table_list})
         else:
-
+            if 'selected_table' in request.session:
+                del request.session['selected_table']
             return render(request, 'table_list.html')
 
     except Table.DoesNotExist:
@@ -710,22 +716,59 @@ def waiter_view_table_order(request, offset):
             if order:
                 request.session["selected_table_order_number"] = table_order.actual_order.order_number
 
-            return render(request, 'waiter_view_order.html', {'products_list': order, 'table_number': offset, 'table_order_number':table_order.actual_order.order_number})
+            return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': offset, 'table_order_number':table_order.actual_order.order_number})
         else:
 
-            return render(request, 'waiter_view_order.html', )
+            return render(request, 'waiter_v_order.html', )
 
     except TableOrders.DoesNotExist:
         print "waiter_view_table_order: no table order"
 
-        return render(request, 'waiter_view_order.html', )
+        return render(request, 'waiter_v_order.html', )
+
+
+def waiter_view_table_order_added_product(request):
+    # need table nr, order nr
+    try:
+        if 'selected_table' in request.session:
+            selected_table = request.session['selected_table']
+        else:
+            request.session['selected_table'] = 0
+            selected_table = 0
+        try:
+            table = Table.objects.get(number=selected_table)
+        except Table.DoesNotExist:
+            print "offset number not in table number list"
+            return render(request, 'waiter_v_order.html', )
+        else:
+            print "selected table %s" % selected_table
+            request.session["selected_table"] = selected_table
+
+        if selected_table < 100 and selected_table != 0: # url offset has a 2 digit number
+            table_order = TableOrders.objects.get(table_id=selected_table, is_paid=False)
+
+            order = Order.objects.filter(table_number=table_order.table_id,
+                                         order_number=table_order.actual_order.order_number)
+
+            if order:
+                request.session["selected_table_order_number"] = table_order.actual_order.order_number
+
+            return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': selected_table, 'table_order_number':table_order.actual_order.order_number})
+        else:
+
+            return render(request, 'waiter_v_order.html', )
+
+    except TableOrders.DoesNotExist:
+        print "waiter_view_table_order: no table order"
+
+        return render(request, 'waiter_v_order.html', )
 
 
 def waiter_mark_table_as_paid(request):
     pass
 
 
-def waiter_manage_tables (request):
+def waiter_manage_tables(request):
     return render(request, 'waiterScreen.html')
 
 

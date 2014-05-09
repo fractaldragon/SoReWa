@@ -15,14 +15,6 @@
 
 
    </script>
-    <div>
-    <form action="/add_product_to_order/" method="post">
-        {% csrf_token %}
-        <p>table number: </p> <input type="text" name="product_name"  value="{{ product.name }}">
-
-        <input type="submit" value="Submit">
-    </form>
-    </div>
 
     <div>
 
@@ -52,7 +44,7 @@
                         <input class="for_input" name="product_name"  value="{{ order_product.product.name }}" >
                         <input class="for_input" name="table_number"  value="{{ table_number }}" >
                         <input class="for_input" name="order_number"  value="{{ table_order_number }}" >
-                        <input class="productRemoveButton" type="submit" value=" - ">
+                        <input class="productRemoveButton" type="image" src="{% static "imgs/remove.png" %}" value="remove">
                      </form>
 
 
