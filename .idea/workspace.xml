@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWa/urls.py" afterPath="$PROJECT_DIR$/SoReWa/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/views.py" afterPath="$PROJECT_DIR$/SoReWaApp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/waiter_simple_product_list.html" afterPath="$PROJECT_DIR$/templates/waiter_simple_product_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SoReWa.iws" />
@@ -583,7 +579,11 @@
       <created>1399581922934</created>
       <updated>1399581922934</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="waiter add product, waiter remove product(on going)">
+      <created>1399594408667</created>
+      <updated>1399594408667</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -646,7 +646,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="loads products from category in table page" />
     <MESSAGE value="css, colors," />
     <MESSAGE value="food item css" />
     <MESSAGE value="food item css, admin page css" />
@@ -671,7 +670,8 @@
     <MESSAGE value="bill button blocked if you dont have items or order" />
     <MESSAGE value="waiter html css and some waiter functions" />
     <MESSAGE value="table html, css and general design changed, on waiter, table list auto refresh, some bug fixes on call waiter" />
-    <option name="LAST_COMMIT_MESSAGE" value="table html, css and general design changed, on waiter, table list auto refresh, some bug fixes on call waiter" />
+    <MESSAGE value="waiter add product, waiter remove product(on going)" />
+    <option name="LAST_COMMIT_MESSAGE" value="waiter add product, waiter remove product(on going)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
