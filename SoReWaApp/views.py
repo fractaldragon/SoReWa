@@ -764,12 +764,99 @@ def waiter_view_table_order_added_product(request):
         return render(request, 'waiter_v_order.html', )
 
 
-def waiter_mark_table_as_paid(request):
-    pass
-
-
 def waiter_manage_tables(request):
     return render(request, 'waiterScreen.html')
+
+
+def waiter_mark_table_as_paid(request):
+    if 'selected_table' in request.session:
+        table_number = request.session['selected_table']
+
+        try:
+            table = Table.objects.get(number=table_number)
+            table_order = TableOrders.get(table_id=table, is_paid=False)
+        except Table.DoesNotExist:
+            print "waiter clear table: table number does not exist"
+            pass
+        else:
+
+            table.calls_bill = False
+            table_order.is_paid = True
+            return redirect('SoReWaApp.views.waiter_manage_tables')
+    else:
+        return redirect('SoReWaApp.views.waiter_manage_tables')
+
+
+def waiter_clear_table(request):
+
+    if 'selected_table' in request.session:
+        table_number = request.session['selected_table']
+
+        try:
+            table = Table.objects.get(number=table_number)
+        except Table.DoesNotExist:
+            print "waiter clear table: table number does not exist"
+            pass
+        else:
+            table.is_occupied = False
+            table.calls_bill = False
+            table.calls_order = False
+            table.calls_waiter = False
+            return redirect('SoReWaApp.views.waiter_manage_tables')
+    else:
+        return redirect('SoReWaApp.views.waiter_manage_tables')
+
+
+def waiter_attend_waiter_call(request):
+
+    if 'selected_table' in request.session:
+        table_number = request.session['selected_table']
+
+        try:
+            table = Table.objects.get(number=table_number)
+        except Table.DoesNotExist:
+            print "waiter clear table: table number does not exist"
+            pass
+        else:
+            table.calls_waiter = False
+            return redirect('SoReWaApp.views.waiter_manage_tables')
+    else:
+        return redirect('SoReWaApp.views.waiter_manage_tables')
+
+
+def waiter_attend_order_call(request):
+
+    if 'selected_table' in request.session:
+        table_number = request.session['selected_table']
+
+        try:
+            table = Table.objects.get(number=table_number)
+        except Table.DoesNotExist:
+            print "waiter clear table: table number does not exist"
+            pass
+        else:
+            table.calls_order = False
+            return redirect('SoReWaApp.views.waiter_manage_tables')
+    else:
+        return redirect('SoReWaApp.views.waiter_manage_tables')
+
+
+def waiter_attend_pay_call(request):
+    if 'selected_table' in request.session:
+        table_number = request.session['selected_table']
+
+        try:
+            table = Table.objects.get(number=table_number)
+        except Table.DoesNotExist:
+            print "waiter clear table: table number does not exist"
+            pass
+        else:
+            table.calls_bill = False
+            return redirect('SoReWaApp.views.waiter_manage_tables')
+    else:
+        return redirect('SoReWaApp.views.waiter_manage_tables')
+
+
 
 
 
