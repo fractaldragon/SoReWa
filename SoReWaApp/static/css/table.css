@@ -114,7 +114,7 @@ li a:hover {
 
 .categoriesContainer
 {
-
+    min-height:600px;
 	position:absolute;
 	top:95px;
 	left:1%;
@@ -127,7 +127,7 @@ li a:hover {
 
 .productContainer
 {
-
+    min-height:600px;
 	position:absolute;
 	top:95px;
 	left:20%;
@@ -153,7 +153,7 @@ li a:hover {
 
 .orderContainer
 {
-
+    min-height:600px;
 	position:absolute;
 	top:95px;
 	left:50%;
@@ -168,15 +168,19 @@ li a:hover {
 .buttonContainer
 {
     min-width:600px;
-    min-height:259px;
+    min-height:160px;
 	position:fixed;
     float:bottom;
 	z-index:1;
 	bottom:0px;
-	height:259px;
 	width:100%;
 	background: #E3CEB6;
 
+}
+
+.barraInferior
+{
+    min-height:100px;
 }
 
 .waiterButton
@@ -217,7 +221,7 @@ li a:hover {
 {
     position:absolute;
     left:40%;
-    top:20%;
+    top:-10%;
 
 }
 

@@ -92,6 +92,7 @@
 
 
 ul {
+top:8%;
 position:absolute;
 	list-style-type: none;
   	width: 90%;
@@ -127,4 +128,14 @@ position:absolute;
 	left:2%;
 	text-align:center;
 
+}
+
+.orderTotal
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:fixed;
+    background-color: #E3CEB6;
+    top:0px;
+    height:10%;
+    width:100%;
 }

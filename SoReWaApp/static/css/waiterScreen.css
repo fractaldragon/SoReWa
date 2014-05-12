@@ -129,3 +129,60 @@ li a:hover {
     height:80%;
     border:none;
 }
+
+.buttonContainer
+{
+
+    min-height:100px;
+
+    float:bottom;
+	z-index:1;
+    width:100%;
+
+	background: #E3CEB6;
+
+}
+
+
+.waiterButton
+{
+    position:absolute;
+    left:0px;
+    width:25%;
+    height:100%;
+
+
+}
+.orderButton
+{
+    position:absolute;
+    left:25%;
+    width:25%;
+    height:100%;
+
+}
+.payButton
+{
+    position:absolute;
+    left:50%;
+    width:25%;
+    height:100%;
+
+}
+.wallButton
+{
+    position:absolute;
+    left:75%;
+    width:25%;
+    height:100%;
+
+}
+
+.buttonImg
+{
+    position:absolute;
+    height:100px;
+    width:100px;
+    left:40%;
+
+}

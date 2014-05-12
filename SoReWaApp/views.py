@@ -165,7 +165,11 @@ def add_to_order(request):
                                     try:
                                         tableorder = Order.objects.filter(table_number=request.session["table_number"],
                                                                           order_number=request.session["table_order_number"])
-                                        return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'product_name': product_name, 'message': " has been added to order"})
+                                        return render(request, 'view_order.html', {'products_list': tableorder,
+                                                                                   'show_notification': True,
+                                                                                   'product_name': product_name,
+                                                                                   'message': " has been added to order",
+                                                                                   'cost': get_table_total(tableorder)})
 
                                     except Order.DoesNotExist:
                                         print "No Order in the database yet."
@@ -291,7 +295,7 @@ def remove_from_order(request):  #todo check if order number exist for the given
                                                 try:
                                                     tableorder = Order.objects.filter(table_number=request.session["table_number"],
                                                                           order_number=request.session["table_order_number"])
-                                                    return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'product_name': product_name, 'message': " has been Removed from order"})
+                                                    return render(request, 'view_order.html', {'products_list': tableorder, 'cost': get_table_total(tableorder), 'show_notification': True, 'product_name': product_name, 'message': " has been Removed from order"})
 
                                                 except Order.DoesNotExist:
                                                     print "No Order in the database yet."
@@ -361,16 +365,16 @@ def view_table_order(request):
                                                   order_number=request.session["table_order_number"])
 
                 if tableorder:
-                    return render(request, 'view_order.html', {'products_list': tableorder})
+                    return render(request, 'view_order.html', {'products_list': tableorder, 'cost': get_table_total(tableorder)})
                 else:
-                    return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have products in the order yet."})
+                    return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have products in the order yet.", 'cost': 0})
 
             except Order.DoesNotExist:
                 print "No Order in the database yet."
-                return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet."})
+                return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet.", 'cost': 0})
         else:
             print "No Order in session "
-            return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet."})
+            return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet.", 'cost': 0})
 
         return render(request, 'view_order.html')
 
@@ -560,7 +564,32 @@ def waiter_add_product(request):
                           date=datetime.datetime.now(), sent_to_kitchen=False,
                           product=chosen_product)
             order.save()
-            return redirect('SoReWaApp.views.waiter_view_table_order')
+            try:
+                print "waiter remove product checking more order products!!!!"
+                product_list = Order.objects.filter(table_number=t,
+                                               order_number=table_order.actual_order.order_number)
+
+
+                if product_list:
+                    return render(request, 'waiter_v_order.html', {'products_list': product_list,
+                                                                   'table_number': t.number,
+                                                                   'table_order_number': table_order.actual_order.order_number,
+                                                                   'show_notification': True,
+                                                                   'product_name': product_name,
+                                                                   'message': ' Added to Order order',
+                                                                   'cost': get_table_total(product_list)})
+
+                else:
+                    return render(request, 'waiter_v_order.html', {'products_list': product_list,
+                                                                   'table_number': t.number,
+                                                                   'table_order_number': table_order.actual_order.order_number,
+                                                                   'show_notification': True,
+                                                                   'product_name': product_name,
+                                                                   'message': ' Added, No more products in order', 'cost': 0})
+
+            except Order.DoesNotExist:# no more products in order
+                print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
+                return redirect('SoReWaApp.views.waiter_view_table_order ')
 
 
         except TableOrders.DoesNotExist:
@@ -600,7 +629,7 @@ def waiter_add_product(request):
                     return redirect('SoReWaApp.views.waiter_view_table_order')
                 except Table.DoesNotExist:
                     print"table to add product doesnt exist"
-                    return render(request, 'waiter_v_order.html', )
+                    return render(request, 'waiter_v_order.html', {'cost': 0})
 
     else:
         print "waiter add product didnt get selected table"
@@ -633,7 +662,8 @@ def waiter_remove_product(request):
                             p.delete()
 
                             try:
-                                table_order = TableOrders.objects.get(table_id=request.session["table_number"] ,actual_order=request.session["table_order_number"])
+                                table_order = TableOrders.objects.get(table_id=request.session["table_number"],
+                                                                      actual_order=request.session["table_order_number"])
                             except TableOrders.DoesNotExist:
                                 print "waiter remove product NO TABLE ORDER!!!!"
 
@@ -647,10 +677,22 @@ def waiter_remove_product(request):
                                         print "waiter remove product got product list!!!!"
                                         table_order = TableOrders(table_id=t, actual_order=product_list[0] )
                                         table_order.save()
-                                        return render(request, 'waiter_v_order.html', {'products_list': product_list, 'table_number': table_number, 'table_order_number': order_number})
+                                        return render(request, 'waiter_v_order.html', {'products_list': product_list,
+                                                                                       'table_number': table_number,
+                                                                                       'table_order_number': order_number,
+                                                                                       'show_notification': True,
+                                                                                       'product_name': product_name,
+                                                                                       'message': 'Removed from order',
+                                                                                       'cost': get_table_total(product_list)})
 
                                     else:
-                                        return render(request, 'waiter_v_order.html', {'products_list': product_list, 'table_number': table_number, 'table_order_number': order_number})
+                                        return render(request, 'waiter_v_order.html', {'products_list': product_list,
+                                                                                       'table_number': table_number,
+                                                                                       'table_order_number': order_number,
+                                                                                       'show_notification': True,
+                                                                                       'product_name': product_name,
+                                                                                       'message': ' Removed, No more products in order',
+                                                                                       'cost': get_table_total(product_list)})
 
                                 except Order.DoesNotExist:# no more products in order
                                     print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
@@ -666,7 +708,8 @@ def waiter_remove_product(request):
 
                     tableorder = Order.objects.filter(table_number=table_number,
                                                       order_number=order_number)
-                    return render(request, 'waiter_v_order.html', {'products_list': tableorder, 'table_number': table_number, 'table_order_number': order_number})
+                    return render(request, 'waiter_v_order.html', {'products_list': tableorder, 'table_number': table_number, 'table_order_number': order_number,
+                                                                                       'cost': get_table_total(product_list)})
                 else:
 
                     return redirect('SoReWaApp.views.waiter_view_table_order ')
@@ -716,15 +759,15 @@ def waiter_view_table_order(request, offset):
             if order:
                 request.session["selected_table_order_number"] = table_order.actual_order.order_number
 
-            return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': offset, 'table_order_number':table_order.actual_order.order_number})
+            return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': offset, 'table_order_number':table_order.actual_order.order_number, 'cost': get_table_total(order)})
         else:
 
-            return render(request, 'waiter_v_order.html', )
+            return render(request, 'waiter_v_order.html', {'cost': 0})
 
     except TableOrders.DoesNotExist:
         print "waiter_view_table_order: no table order"
 
-        return render(request, 'waiter_v_order.html', )
+        return render(request, 'waiter_v_order.html', {'cost': 0})
 
 
 def waiter_view_table_order_added_product(request):
@@ -753,15 +796,15 @@ def waiter_view_table_order_added_product(request):
             if order:
                 request.session["selected_table_order_number"] = table_order.actual_order.order_number
 
-            return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': selected_table, 'table_order_number':table_order.actual_order.order_number})
+            return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': selected_table, 'table_order_number':table_order.actual_order.order_number, 'cost': get_table_total(order)})
         else:
 
-            return render(request, 'waiter_v_order.html', )
+            return render(request, 'waiter_v_order.html', {'cost': 0})
 
     except TableOrders.DoesNotExist:
         print "waiter_view_table_order: no table order"
 
-        return render(request, 'waiter_v_order.html', )
+        return render(request, 'waiter_v_order.html', {'cost': 0})
 
 
 def waiter_manage_tables(request):
@@ -819,9 +862,9 @@ def waiter_attend_waiter_call(request):
             pass
         else:
             table.calls_waiter = False
-            return redirect('SoReWaApp.views.waiter_manage_tables')
+            return redirect('SoReWaApp.views.waiter_view_table_order')
     else:
-        return redirect('SoReWaApp.views.waiter_manage_tables')
+        return redirect('SoReWaApp.views.waiter_view_table_order')
 
 
 def waiter_attend_order_call(request):
@@ -836,9 +879,9 @@ def waiter_attend_order_call(request):
             pass
         else:
             table.calls_order = False
-            return redirect('SoReWaApp.views.waiter_manage_tables')
+            return redirect('SoReWaApp.views.waiter_view_table_order')
     else:
-        return redirect('SoReWaApp.views.waiter_manage_tables')
+        return redirect('SoReWaApp.views.waiter_view_table_order')
 
 
 def waiter_attend_pay_call(request):
@@ -852,15 +895,25 @@ def waiter_attend_pay_call(request):
             pass
         else:
             table.calls_bill = False
-            return redirect('SoReWaApp.views.waiter_manage_tables')
+            return redirect('SoReWaApp.views.waiter_view_table_order')
     else:
-        return redirect('SoReWaApp.views.waiter_manage_tables')
+        return redirect('SoReWaApp.views.waiter_view_table_order')
 
 
+def get_table_total(order):
+    try:
+        print order
+        order_total = 0
 
+        for p in order:
+            order_total = order_total+p.product.price
+            print order_total
+        ###################################
+        print 'el costo total es %s' % order_total
+        return order_total
 
-
-
+    except Order.DoesNotExist:
+        return 0
 
 
 
