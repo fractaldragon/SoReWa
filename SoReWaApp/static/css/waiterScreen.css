@@ -186,3 +186,28 @@ li a:hover {
     left:40%;
 
 }
+
+
+#noty
+{
+  	position:absolute;
+  	background: #E3EFDF;
+	top:20%;
+	left:20%;
+	width:400px;
+	height:200px;
+
+	border:2px solid black;
+
+	border-radius:25px;
+	margin:0px auto;
+}
+
+#notytext
+{
+	position:absolute;
+	top:20%;
+	left:2%;
+	text-align:center;
+
+}

@@ -751,19 +751,26 @@ def waiter_view_table_order(request, offset):
             request.session["selected_table"] = offset
 
         if offset < 100 and offset != 0: # url offset has a 2 digit number
-            table_order = TableOrders.objects.filter(table_id=offset, is_paid=False)
+            table_order_list = TableOrders.objects.filter(table_id=offset, is_paid=False)
 
-            if len(table_order) > 1:
-                index = len(table_order)-1
-                table_order = table_order[index]
+            if table_order_list:
 
-            order = Order.objects.filter(table_number=table_order.table_id,
-                                         order_number=table_order.actual_order.order_number)
+                if len(table_order_list) > 1:
+                    index = len(table_order_list)-1
+                    table_order = table_order_list[index]
+                else:
+                    table_order = table_order_list[0]
 
-            if order:
-                request.session["selected_table_order_number"] = table_order.actual_order.order_number
+                order = Order.objects.filter(table_number=table_order.table_id,
+                                             order_number=table_order.actual_order.order_number)
 
-            return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': offset, 'table_order_number':table_order.actual_order.order_number, 'cost': get_table_total(order)})
+                if order:
+                    request.session["selected_table_order_number"] = table_order.actual_order.order_number
+
+                return render(request, 'waiter_v_order.html', {'products_list': order, 'table_number': offset, 'table_order_number':table_order.actual_order.order_number, 'cost': get_table_total(order)})
+            else:
+                return render(request, 'waiter_v_order.html', {'cost': 0})
+
         else:
 
             return render(request, 'waiter_v_order.html', {'cost': 0})
@@ -866,9 +873,13 @@ def waiter_attend_waiter_call(request):
             print "waiter clear table: table number does not exist"
             pass
         else:
-            table.calls_waiter = False
-            table.save()
-            return redirect('SoReWaApp.views.waiter_manage_tables')
+            if table.calls_waiter:
+                table.calls_waiter = False
+                table.save()
+                return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'attended table %s call' % table_number})
+                #return redirect('SoReWaApp.views.waiter_manage_tables')
+            else:
+                return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'table %s has no waiter call' % table_number})
     else:
         return redirect('SoReWaApp.views.waiter_manage_tables')
 
@@ -884,9 +895,13 @@ def waiter_attend_order_call(request):
             print "waiter clear table: table number does not exist"
             pass
         else:
-            table.calls_order = False
-            table.save()
-            return redirect('SoReWaApp.views.waiter_manage_tables')
+            if table.calls_order:
+                table.calls_order = False
+                table.save()
+                return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'attended table %s Order call' % table_number})
+                #return redirect('SoReWaApp.views.waiter_manage_tables')
+            else:
+                return render(request, 'waiterScreen.html', {'show_notification': True, 'message': ' table %s has no Order call' % table_number})
     else:
         return redirect('SoReWaApp.views.waiter_manage_tables')
 
@@ -901,9 +916,13 @@ def waiter_attend_pay_call(request):
             print "waiter clear table: table number does not exist"
             pass
         else:
-            table.calls_bill = False
-            table.save()
-            return redirect('SoReWaApp.views.waiter_manage_tables')
+            if table.calls_bill:
+                table.calls_bill = False
+                table.save()
+                return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'attended table %s Pay Bill call' % table_number})
+                #return redirect('SoReWaApp.views.waiter_manage_tables')
+            else:
+                return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'table %s has no Pay Bill call' % table_number})
     else:
         return redirect('SoReWaApp.views.waiter_manage_tables')
 
