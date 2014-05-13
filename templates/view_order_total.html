@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+    <link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+
+       function hideStuff(stuffid)
+       {
+            document.getElementById(stuffid).style.visibility="hidden";
+       }
+
+
+   </script>
+
+</head>
+<body >
+
+
+
+    <div>
+
+        <ul id="orderList">
+            {% for order_product in products_list %}
+
+
+            <li class="productListItem">
+                <span  class="productName">
+                    {{ order_product.product.name }}
+                </span>
+                <span  class="productThumbnail">
+                    <!-- <img src="/media/ url producto}}"> -->
+
+                        <img src="/media/{{ order_product.product.image }}">
+
+
+                </span>
+                <span  class="productDescription">{{order_product.product.description}}</span>
+                <span  class="productPrice">
+                    <p>${{order_product.product.price}}</p>
+                </span>
+                {% if not order_product.sent_to_kitchen %}
+                <span class="productAddRemoveButtons">
+                    <form action="/remove_product_from_order/" target="order_iframe"method="post">
+                        {% csrf_token %}
+                         <input class="for_input" name="product_name"  value="{{ order_product.product.name }}" >
+                        <input class="productRemoveButton" type="image" src="{% static "imgs/remove.png" %}" value=" remove ">
+                     </form>
+
+
+                </span>
+                {% endif %}
+            </li>
+
+            {% endfor %}
+
+        </ul>
+        <div class="orderTotal">Cost: $ {{ cost }}
+
+<input type="button" value="Go to Resturant Menu" onclick="location.reload(true);" /></div>
+
+
+
+    {% if show_notification %}
+            <div id="noty" onclick="hideStuff('noty')"><span id="notytext">{{ product_name }} {{ message }}</span></div>
+        {% endif %}
+    </div>
+
+
+</body>
+</html>

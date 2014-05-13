@@ -524,7 +524,7 @@ def call_bill(request):
                     #request.session["table_order_number"] = 0
 
 
-                    return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'message': "Your Order cost is: $ %s " % order_total })
+                    return render(request, 'view_order_total.html', {'products_list': tableorder, 'show_notification': True, 'message': "Your Order cost is: $ %s " % order_total, 'cost': order_total })
 
                 except Order.DoesNotExist:
                     print "No Order in the database yet."
@@ -751,7 +751,11 @@ def waiter_view_table_order(request, offset):
             request.session["selected_table"] = offset
 
         if offset < 100 and offset != 0: # url offset has a 2 digit number
-            table_order = TableOrders.objects.get(table_id=offset, is_paid=False)
+            table_order = TableOrders.objects.filter(table_id=offset, is_paid=False)
+
+            if len(table_order) > 1:
+                index = len(table_order)-1
+                table_order = table_order[index]
 
             order = Order.objects.filter(table_number=table_order.table_id,
                                          order_number=table_order.actual_order.order_number)
@@ -845,6 +849,7 @@ def waiter_clear_table(request):
             table.calls_bill = False
             table.calls_order = False
             table.calls_waiter = False
+            table.save()
             return redirect('SoReWaApp.views.waiter_manage_tables')
     else:
         return redirect('SoReWaApp.views.waiter_manage_tables')
@@ -862,9 +867,10 @@ def waiter_attend_waiter_call(request):
             pass
         else:
             table.calls_waiter = False
-            return redirect('SoReWaApp.views.waiter_view_table_order')
+            table.save()
+            return redirect('SoReWaApp.views.waiter_manage_tables')
     else:
-        return redirect('SoReWaApp.views.waiter_view_table_order')
+        return redirect('SoReWaApp.views.waiter_manage_tables')
 
 
 def waiter_attend_order_call(request):
@@ -879,9 +885,10 @@ def waiter_attend_order_call(request):
             pass
         else:
             table.calls_order = False
-            return redirect('SoReWaApp.views.waiter_view_table_order')
+            table.save()
+            return redirect('SoReWaApp.views.waiter_manage_tables')
     else:
-        return redirect('SoReWaApp.views.waiter_view_table_order')
+        return redirect('SoReWaApp.views.waiter_manage_tables')
 
 
 def waiter_attend_pay_call(request):
@@ -895,9 +902,10 @@ def waiter_attend_pay_call(request):
             pass
         else:
             table.calls_bill = False
-            return redirect('SoReWaApp.views.waiter_view_table_order')
+            table.save()
+            return redirect('SoReWaApp.views.waiter_manage_tables')
     else:
-        return redirect('SoReWaApp.views.waiter_view_table_order')
+        return redirect('SoReWaApp.views.waiter_manage_tables')
 
 
 def get_table_total(order):
