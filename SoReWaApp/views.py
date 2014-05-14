@@ -726,7 +726,10 @@ def waiter_check_tables(request):
 # todo logic if table is occupied
         # if occupied, but no paid , dont give link
         if table_list:
-            return render(request, 'table_list.html', {'table_list': table_list})
+            if 'selected_table' in request.session:
+                return render(request, 'table_list.html', {'table_list': table_list, 'selectedtable': request.session['selected_table']})
+            else:
+                return render(request, 'table_list.html', {'table_list': table_list})
         else:
             if 'selected_table' in request.session:
                 del request.session['selected_table']

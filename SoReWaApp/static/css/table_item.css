@@ -69,3 +69,11 @@ li:hover {
   background: #f6f6f6;
 }
 
+
+.tableItemSelected
+{
+    font-size: 30px;
+     background: #ffffff;
+     color:white;
+}
+

@@ -10,19 +10,37 @@
     function timedRefresh(timeoutPeriod) {
         setTimeout("location.reload(true);",timeoutPeriod);
     }
+
+     function changeClass(a)
+    {
+        c=document.getElementsByClassName("tableItemSelected");
+        if( c.length > 0 && c.id != a )
+        {
+            c[0].className = "tableItem";
+        }
+        s = document.getElementById(a);
+        s.className = "tableItemSelected";
+
+    }
+
     //   -->
 </script>
 </head>
-<body onload="JavaScript:timedRefresh(5000);">
+<body onload="JavaScript:timedRefresh(15000);" >
 
 
 <div>
 <ul class="tableList">
 
     {% for table in table_list %}
-			    <li class="tableItem">
+
+        {% ifequal table.number selectedtable  %}
+            <li id="{{table.number}}" class="tableItemSelected" onclick="changeClass({{table.number}})">
+        {% else %}
+			    <li id="{{table.number}}" class="tableItem" onclick="changeClass({{table.number}})">
+        {% endifequal %}
 			    <div class="tableLabel">
-                    <a  href="/table_order/{{table.number}}" target="order_iframe">
+                    <a  href="/table_order/{{table.number}}" target="order_iframe" >
                         Table {{table.number}}</a></div>
 				    <div class="iconContainer">
                         {% if table.calls_waiter %}
@@ -36,6 +54,7 @@
                         {% endif %}
 				    </div>
 			    </li>
+
     {% endfor %}
 
     </ul>
