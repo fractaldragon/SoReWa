@@ -6,7 +6,7 @@
 .productListItem
 {
 	
-	width:100%;
+	width:90%;
 	height:160px;
 	position:relative;
 	border-bottom: 1px solid #ccc;
@@ -92,7 +92,7 @@
 
 
 ul {
-top:8%;
+top:10%;
 position:absolute;
 	list-style-type: none;
   	width: 90%;
@@ -136,6 +136,14 @@ position:absolute;
     position:fixed;
     background-color: #E3CEB6;
     top:0px;
-    height:10%;
+    height:6%;
     width:100%;
+}
+
+#orderList
+{
+   top:6%;
+    position:absolute;
+	list-style-type: none;
+  	width: 100%;
 }

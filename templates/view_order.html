@@ -6,17 +6,21 @@
     <link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript">
-
+    <!--
        function hideStuff(stuffid)
        {
             document.getElementById(stuffid).style.visibility="hidden";
        }
 
+        function timedRefresh(timeoutPeriod) {
+        setTimeout("location.reload(true);",timeoutPeriod);
+    }
 
+    //   -->
    </script>
 
 </head>
-<body >
+<body onload="JavaScript:timedRefresh(10000);" >
 
 
 
