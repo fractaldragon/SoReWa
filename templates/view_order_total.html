@@ -3,7 +3,7 @@
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     {% load staticfiles %}
-    <link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "css/view_order_total.css" %}" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript">
 
@@ -64,7 +64,7 @@
 
 
     {% if show_notification %}
-            <div id="noty" onclick="hideStuff('noty')"><span id="notytext">{{ product_name }} {{ message }}</span></div>
+            <div id="noty" onclick="hideStuff('noty')"><span id="notytext">{{ product_name }} {{ message }}</span> <img class="closeBtn" src="{% static "imgs/close.png" %}" alt="close"></div>
         {% endif %}
     </div>
 

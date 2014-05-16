@@ -1,11 +1,11 @@
-﻿*
+*
 {
 	margin:0px;
 	padding:0px;
 }
 .productListItem
 {
-	
+
 	width:90%;
 	height:160px;
 	position:relative;
@@ -16,8 +16,8 @@
 {
 	position:absolute;
 	top:20px;
-	left:20px;  	
-  	
+	left:20px;
+
 }
 
 .productThumbnail img
@@ -59,7 +59,7 @@
 {
 	position:absolute;
 	top:120px;
-	left:20px;	
+	left:20px;
 	font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
 
 }
@@ -77,15 +77,15 @@
 
 	width:50px;
 	height:50px;
-	
+
 }
 
 .productRemoveButton
-{	
+{
 
 	width:50px;
 	height:50px;
-	
+
 }
 
 
@@ -123,6 +123,7 @@ position:absolute;
 
 #notytext
 {
+    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
 	position:absolute;
 	top:20%;
 	left:2%;
@@ -141,17 +142,18 @@ position:absolute;
 
 .orderTotal
 {
-    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
     position:fixed;
     background-color: #E3CEB6;
     top:0px;
-    height:6%;
+    height:10%;
     width:100%;
+    text-align:center;
 }
 
 #orderList
 {
-   top:6%;
+   top:10%;
     position:absolute;
 	list-style-type: none;
   	width: 100%;

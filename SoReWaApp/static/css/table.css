@@ -222,6 +222,35 @@ li a:hover {
     position:absolute;
     left:40%;
     top:-10%;
+    width:95%%;
+    height:95%;
 
 }
 
+#callWaiterText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif ;
+    position:absolute;
+    top:65%;
+    left:45%;
+     color:#E3EFDF;
+
+}
+
+#orderText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:absolute;
+    top:65%;
+    left:45%;
+    color:#E3EFDF;
+}
+
+#payOrderText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:absolute;
+    top:65%;
+    left:45%;
+    color:#E3EFDF;
+}

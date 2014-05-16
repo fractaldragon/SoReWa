@@ -2,21 +2,22 @@
 {% load i18n %}
 
 {% block title %}{{ title }} | {% trans 'SoReWa admin' %}{% endblock %}
-
+{% load staticfiles %}
        {% block extrastyle %}
         <style>
 
             #header, .section, .module caption, .module h2
             {
-                background: linear-gradient(#FF8E00, #FFC173) repeat scroll 0 0 rgba(0, 0, 0, 0);
+                background: linear-gradient(#C7AE92, #815B2F) repeat scroll 0 0 rgba(0, 0, 0, 0);
             }
             #branding h1
             {
-                color:#E6FB71;
+                color:#C7AE92;
                 font-size: 18px;
                 font-weight: normal;
                 margin: 8px 0;
                 padding: 0 10px;
+            visibility:hidden;
             }
 
             .img_thumbnail
@@ -27,8 +28,8 @@
 
             .button.default, input.default[type="submit"], .submit-row input.default
             {
-                background: linear-gradient(#FF8E00, #FFC173) repeat scroll 0 0 rgba(0, 0, 0, 0);
-                border: 2px solid #FF8E00;
+                background: linear-gradient(#958777, #E3CEB6) repeat scroll 0 0 rgba(0, 0, 0, 0);
+                border: 2px solid #E3CEB6;
             }
 
             .object-tools a.addlink
@@ -44,6 +45,15 @@
 
 
             }
+            .logo
+            {
+                position:absolute;
+                float:left;
+                left:0px;
+                top:0;
+                height:35px;
+                width:170px;
+            }
 
 
 
@@ -52,6 +62,7 @@
 
 
 {% block branding %}
+         <img class="logo" src="{% static "imgs/logoSoReWa.png" %}" alt='それ は 何 です か.'/>
 <h1 id="site-name">{% trans 'SoReWa administration' %}</h1>
 {% endblock %}
 

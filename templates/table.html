@@ -69,6 +69,7 @@
                 <form action="/call_waiter/" onmouseup="return showWaiterPopup() ">
                     <input type="image" class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Call Waiter" />
                 </form>
+                 <p id="callWaiterText">Call Waiter</p>
              </div>
 
 
@@ -78,7 +79,7 @@
                 <form action="/call_order/" onmouseup="return showOrderSentPopup() ">
                     <input type="image" class="buttonImg" src="{% static "imgs/order-icon.png" %}" alt="Make Order"  />
                 </form>
-
+                <p id="orderText">Order Products</p>
             </div>
 
 
@@ -87,6 +88,7 @@
                 <form action="/call_bill/" onmouseup="return callBill() ">
                     <input type="image" class="buttonImg" src="{% static "imgs/pay-icon.png" %}" alt="Pay"  />
                 </form>
+                <p id="payOrderText">Pay Order</p>
             </div>
          {% endif %}
 

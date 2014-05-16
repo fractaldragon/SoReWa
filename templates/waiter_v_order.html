@@ -57,7 +57,7 @@
         </ul>
         <div class="orderTotal">Total: $ {{ cost }} </div>
     {% if show_notification %}
-            <div id="noty" onclick="hideStuff('noty')"><span id="notytext">{{ product_name }} {{ message }}</span></div>
+            <div id="noty" onclick="hideStuff('noty')"><span id="notytext">{{ product_name }} {{ message }}</span><img class="closeBtn" src="{% static "imgs/close.png" %}" alt="close"></div>
         {% endif %}
     </div>
 
