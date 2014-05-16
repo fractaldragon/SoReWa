@@ -11,7 +11,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='imgs/', default='imgs/logoSoReWa.jpg', ) #settings.STATIC_URL+
 
     def image_tag(self):
-        return u'<img class="img_thumbnail" src="%s" />' % self.image
+        return u'<img class="img_thumbnail" src="/media/%s" />' % self.image  # remove /media/ in src if you want to see them in development
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True
 
