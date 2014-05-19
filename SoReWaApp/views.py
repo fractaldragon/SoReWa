@@ -986,6 +986,8 @@ def get_table_total(order):
         return 0
 
 
+def index(request):
+    return render(request, "index.html")
 
 # todo auto reload order iframe in waiter and table
 
