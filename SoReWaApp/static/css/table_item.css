@@ -8,24 +8,35 @@
 
 .tableItem
 {
-	width:85%;
-	height:10%;
+	width:100%;
+	height:35px;
+	
 }
 
 .tableLabel
 {
+    postition: left;
+    float:left;
+    height:35px;
 	width:50%;
 	float:left;
+
+
 }
 
 .iconContainer
 {
-	width:50%;
 	float:left;
+	postition: left;
+	height:35px;
+	width:50%;
+
 }
 
 .waiterCallIcon
 {
+
+
 	width:35px;
 	height:35px;
 
@@ -33,6 +44,8 @@
 
 .orderCallIcon
 {
+
+
 	width:35px;
 	height:35px;
 
@@ -40,6 +53,7 @@
 
 .payCallIcon
 {
+
 	width:35px;
 	height:35px;
 
@@ -67,6 +81,8 @@ li a {
 li:hover {
   font-size: 30px;
   background: #f6f6f6;
+  width:100%;
+  height:35px;
 }
 
 
@@ -76,4 +92,3 @@ li:hover {
      background: #ffffff;
      color:white;
 }
-

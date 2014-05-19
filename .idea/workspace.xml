@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/models.py" afterPath="$PROJECT_DIR$/SoReWaApp/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/static/css/table_item.css" afterPath="$PROJECT_DIR$/SoReWaApp/static/css/table_item.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SoReWa.iws" />
@@ -45,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table_item.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="table_item.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/table_item.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="14" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="1445">
+            <state line="94" column="0" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.9456" vertical-offset="1007" max-vertical-offset="1700">
               <folding />
             </state>
           </provider>
@@ -63,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="140" selection-start="588" selection-end="588" vertical-scroll-proportion="0.3088" vertical-offset="11" max-vertical-offset="1139">
+            <state line="13" column="140" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1156">
               <folding />
             </state>
           </provider>
@@ -124,8 +124,8 @@
         <option value="$PROJECT_DIR$/templates/waiter_v_order.html" />
         <option value="$PROJECT_DIR$/SoReWaApp/static/css/waiterScreen.css" />
         <option value="$PROJECT_DIR$/templates/waiterScreen.html" />
-        <option value="$PROJECT_DIR$/SoReWaApp/static/css/table_item.css" />
         <option value="$PROJECT_DIR$/SoReWaApp/models.py" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/table_item.css" />
       </list>
     </option>
   </component>
@@ -180,7 +180,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,12 +222,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWaApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWaApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="SoReWa" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -587,7 +627,11 @@
       <created>1400216225100</created>
       <updated>1400216225100</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="on server img view in admin">
+      <created>1400270393654</created>
+      <updated>1400270393654</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -612,10 +656,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31473684" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31473684" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23072916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -650,7 +694,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="css fix" />
     <MESSAGE value="add order to table and add products to order, some admin css changes" />
     <MESSAGE value="add products from table page" />
     <MESSAGE value="view order products after adding them" />
@@ -675,7 +718,8 @@
     <MESSAGE value="waiter table list show selected table" />
     <MESSAGE value="table order list auto update" />
     <MESSAGE value="several bug fix on order list update, gui improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="several bug fix on order list update, gui improvements" />
+    <MESSAGE value="on server img view in admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="on server img view in admin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -917,13 +961,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="625" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/table_item.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="1445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SoReWa/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="625" />
@@ -945,7 +982,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="140" selection-start="588" selection-end="588" vertical-scroll-proportion="0.3088" vertical-offset="11" max-vertical-offset="1139">
+        <state line="13" column="140" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="215" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/table_item.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="0" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.9456" vertical-offset="1007" max-vertical-offset="1700">
           <folding />
         </state>
       </provider>
