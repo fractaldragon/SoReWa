@@ -858,14 +858,17 @@ def waiter_mark_table_as_paid(request):
 
             try:
                 table = Table.objects.get(number=table_number)
-                table_order = TableOrders.get(table_id=table, is_paid=False)
+                table_order = TableOrders.objects.get(table_id=table, is_paid=False)
             except Table.DoesNotExist:
                 print "waiter clear table: table number does not exist"
-                pass
+                return redirect('SoReWaApp.views.waiter_manage_tables')
             else:
 
                 table.calls_bill = False
                 table_order.is_paid = True
+                table.save()
+                table_order.save()
+
                 return redirect('SoReWaApp.views.waiter_manage_tables')
         else:
             return redirect('SoReWaApp.views.waiter_manage_tables')
@@ -882,6 +885,7 @@ def waiter_clear_table(request):
 
             try:
                 table = Table.objects.get(number=table_number)
+                table_order = TableOrders.objects.get(table_id=table, is_paid=False)
             except Table.DoesNotExist:
                 print "waiter clear table: table number does not exist"
                 pass
@@ -890,8 +894,11 @@ def waiter_clear_table(request):
                 table.calls_bill = False
                 table.calls_order = False
                 table.calls_waiter = False
+                table_order.is_paid = True
                 table.save()
-                return redirect('SoReWaApp.views.waiter_manage_tables')
+                table_order.save()
+                #return redirect('SoReWaApp.views.waiter_manage_tables')
+                return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'Table is clear %s' % table_number})
         else:
             return redirect('SoReWaApp.views.waiter_manage_tables')
 
@@ -979,7 +986,7 @@ def get_table_total(order):
             order_total = order_total+p.product.price
             print order_total
         ###################################
-        print 'el costo total es %s' % order_total
+        print 'Total cost is %s' % order_total
         return order_total
 
     except Order.DoesNotExist:
@@ -989,7 +996,6 @@ def get_table_total(order):
 def index(request):
     return render(request, "index.html")
 
-# todo auto reload order iframe in waiter and table
 
 
 
