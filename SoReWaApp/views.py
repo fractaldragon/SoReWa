@@ -885,7 +885,18 @@ def waiter_clear_table(request):
 
             try:
                 table = Table.objects.get(number=table_number)
-                table_order = TableOrders.objects.get(table_id=table, is_paid=False)
+
+                try:
+                    table_order = TableOrders.objects.get(table_id=table, is_paid=False)
+                except TableOrders.DoesNotExist:
+                    table.is_occupied = False
+                    table.calls_bill = False
+                    table.calls_order = False
+                    table.calls_waiter = False
+                    table.save()
+                    #return redirect('SoReWaApp.views.waiter_manage_tables')
+                    return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'Table is clear %s' % table_number})
+
             except Table.DoesNotExist:
                 print "waiter clear table: table number does not exist"
                 pass
