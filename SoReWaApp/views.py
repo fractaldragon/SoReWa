@@ -1,7 +1,7 @@
 import datetime
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from SoReWaApp.models import Category, Product, Table, Order, TableOrders
+from SoReWaApp.models import Category, Product, Table, Order, TableOrders, Wall
 # Create your views here.
 
 
@@ -168,12 +168,12 @@ def add_to_order(request):
                                     try:
                                         tableorder = Order.objects.filter(table_number=request.session["table_number"],
                                                                           order_number=request.session["table_order_number"])
-                                        """return render(request, 'view_order.html', {'products_list': tableorder,
+                                        return render(request, 'view_order.html', {'products_list': tableorder,
                                                                                    'show_notification': True,
                                                                                    'product_name': product_name,
                                                                                    'message': " has been added to order",
-                                                                                   'cost': get_table_total(tableorder)})"""
-                                        return redirect('SoReWaApp.views.view_table_order')
+                                                                                   'cost': get_table_total(tableorder)})
+                                        #return redirect('SoReWaApp.views.view_table_order')
 
                                     except Order.DoesNotExist:
                                         print "No Order in the database yet."
@@ -199,6 +199,9 @@ def add_to_order(request):
                                         table_order.save()
                                         request.session["table_order_number"] = "%s" % val
                                         return redirect('SoReWaApp.views.view_table_order')
+
+
+
 
                                     except Table.DoesNotExist:
                                         print "Table does not in order table"
@@ -299,8 +302,12 @@ def remove_from_order(request):  #todo check if order number exist for the given
                                                 try:
                                                     tableorder = Order.objects.filter(table_number=request.session["table_number"],
                                                                                     order_number=request.session["table_order_number"])
-                                                    #return render(request, 'view_order.html', {'products_list': tableorder, 'cost': get_table_total(tableorder), 'show_notification': True, 'product_name': product_name, 'message': " has been Removed from order"})
-                                                    return redirect('SoReWaApp.views.view_table_order')
+                                                    return render(request, 'view_order.html', {'products_list': tableorder,
+                                                                                               'cost': get_table_total(tableorder),
+                                                                                               'show_notification': True,
+                                                                                               'product_name': product_name,
+                                                                                               'message': " has been Removed from order"})
+                                                    #return redirect('SoReWaApp.views.view_table_order')
                                                 except Order.DoesNotExist:
                                                     print "No Order in the database yet."
                                                     raise Http404()
@@ -512,7 +519,7 @@ def call_bill(request):
                     break
             if has_product_to_pay:
                 print "has to pay"
-                #todo  notify user and block buttons, delete order var and show table order and total,this page must redirect to table, again for next users
+
 
                 try:
                     tableorder = Order.objects.filter(table_number=request.session["table_number"],
@@ -526,8 +533,6 @@ def call_bill(request):
                     print 'el costo total es %s' % order_total
                     del request.session["table_order_number"]# todo comment for testing
                     #request.session["table_order_number"] = 0
-
-
                     return render(request, 'view_order_total.html', {'products_list': tableorder, 'show_notification': True, 'message': "Your Order cost is: $ %s " % order_total, 'cost': order_total })
 
                 except Order.DoesNotExist:
@@ -973,13 +978,16 @@ def waiter_attend_pay_call(request):
 
             try:
                 table = Table.objects.get(number=table_number)
+                table_order = TableOrders.objects.get(table_id=table, is_paid=False)
             except Table.DoesNotExist:
                 print "waiter clear table: table number does not exist"
                 pass
             else:
                 if table.calls_bill:
                     table.calls_bill = False
+                    table_order.is_paid = True
                     table.save()
+                    table_order.save()
                     return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'attended table %s Pay Bill call' % table_number})
                     #return redirect('SoReWaApp.views.waiter_manage_tables')
                 else:
@@ -1008,6 +1016,18 @@ def index(request):
     return render(request, "index.html")
 
 
+def post_on_wall(request):
+
+    if request.method == 'POST':
+        if request.POST.get('author_name', '') and request.POST.get('wall_post', ''):
+            author_name = request.POST['author_name']
+            wall_post = request.POST['wall_post']
+            try:
+                wall = Wall(author=author_name, post=wall_post)
+                wall.save()
+            except:
+                pass
+            pass
 
 
 """Well, that is weird. MayRelatedManager definitely *does* have an
