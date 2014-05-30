@@ -1,7 +1,7 @@
 import datetime
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from SoReWaApp.models import Category, Product, Table, Order, TableOrders, Wall
+from SoReWaApp.models import Category, Product, Table, Order, TableOrders
 # Create your views here.
 
 
@@ -675,7 +675,7 @@ def waiter_remove_product(request):
                                 p.delete()
 
                                 try:
-                                    table_order = TableOrders.objects.get(table_id=table_number,
+                                    table_order = TableOrders.objects.filter(table_id=table_number,
                                                                           actual_order=request.session["table_order_number"])
                                 except TableOrders.DoesNotExist:
                                     print "waiter remove product NO TABLE ORDER!!!!"
@@ -710,10 +710,10 @@ def waiter_remove_product(request):
                                     except Order.DoesNotExist:  # no more products in order
                                         print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
                                         return redirect('SoReWaApp.views.waiter_view_table_order ')
+                                """else:
+                                    return redirect('SoReWaApp.views.waiter_view_table_order ')"""
 
-                                return redirect('SoReWaApp.views.waiter_view_table_order ')
 
-                                break
 
 
 
@@ -1016,7 +1016,7 @@ def index(request):
     return render(request, "index.html")
 
 
-def post_on_wall(request):
+"""def post_on_wall(request):
 
     if request.method == 'POST':
         if request.POST.get('author_name', '') and request.POST.get('wall_post', ''):
@@ -1028,7 +1028,7 @@ def post_on_wall(request):
             except:
                 pass
             pass
-
+"""
 
 """Well, that is weird. MayRelatedManager definitely *does* have an
 attribute 'remove'. With these basic models:

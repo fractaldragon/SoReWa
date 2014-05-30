@@ -2,71 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/changelist-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/changelist-bg_rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/chooser-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/chooser_stacked-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/default-bg-reverse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/default-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/deleted-overlay.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon-no.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon-unknown.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon-yes.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_addlink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_alert.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_calendar.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_changelink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_clock.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_deletelink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_error.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_searchbox.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/icon_success.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/inline-delete-8bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/inline-delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/inline-restore-8bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/inline-restore.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/inline-splitter-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/gis/move_vertex_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/gis/move_vertex_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/nav-bg-grabber.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/nav-bg-reverse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/nav-bg-selected.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/nav-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/selector-icons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/selector-search.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/sorting-icons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tool-left.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tool-left_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tool-right.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tool-right_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tooltag-add.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tooltag-add_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tooltag-arrowright.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/img/tooltag-arrowright_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/admin/DateTimeShortcuts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/LICENSE-JQUERY.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/admin/RelatedObjectLookups.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/SelectBox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/SelectFilter2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/actions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/actions.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/collapse.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/inlines.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/inlines.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/jquery.init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/prepopulate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/prepopulate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/timeparse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SoReWaApp/static/admin/js/urlify.js" />
-      <change type="DELETED" beforePath="C:\Users\Balmung\Documents\DjangoCode\SoReWa\media\imgs\Cola_(CherryX).jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/models.py" afterPath="$PROJECT_DIR$/SoReWaApp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/table.html" afterPath="$PROJECT_DIR$/templates/table.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/views.py" afterPath="$PROJECT_DIR$/SoReWaApp/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -91,40 +27,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="986" column="44" selection-start="50747" selection-end="50747" vertical-scroll-proportion="0.0" vertical-offset="1431" max-vertical-offset="3400">
+            <state line="971" column="26" selection-start="50086" selection-end="50108" vertical-scroll-proportion="0.10240964" vertical-offset="13923" max-vertical-offset="15878">
               <folding>
-                <element signature="e#268#694#0" expanded="false" />
-                <element signature="e#728#2892#0" expanded="false" />
-                <element signature="e#2919#4152#0" expanded="false" />
-                <element signature="e#4208#4743#0" expanded="false" />
-                <element signature="e#4777#5240#0" expanded="false" />
-                <element signature="e#5274#12394#0" expanded="false" />
-                <element signature="e#12509#19452#0" expanded="false" />
-                <element signature="e#19491#20932#0" expanded="false" />
-                <element signature="e#20965#22875#0" expanded="false" />
-                <element signature="e#22907#25858#0" expanded="false" />
-                <element signature="e#25889#29004#0" expanded="false" />
-                <element signature="e#29044#34473#0" expanded="false" />
-                <element signature="e#34516#40038#0" expanded="false" />
-                <element signature="e#40079#41072#0" expanded="false" />
-                <element signature="e#41125#43037#0" expanded="false" />
-                <element signature="e#43096#44868#0" expanded="false" />
-                <element signature="e#44910#45237#0" expanded="false" />
-                <element signature="e#46229#47855#0" expanded="false" />
-                <element signature="e#47902#48962#0" expanded="false" />
-                <element signature="e#49008#50072#0" expanded="false" />
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#20959#22869#0" expanded="false" />
+                <element signature="e#22901#25852#0" expanded="false" />
+                <element signature="e#25883#28998#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1768">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2276" selection-end="2276" vertical-scroll-proportion="0.8549075" vertical-offset="470" max-vertical-offset="1190">
+            <state line="64" column="0" selection-start="2276" selection-end="2276" vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -133,7 +62,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="54" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="986">
+            <state line="34" column="18" selection-start="1705" selection-end="1712" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="833">
               <folding />
             </state>
           </provider>
@@ -199,8 +128,8 @@
         <option value="$PROJECT_DIR$/templates/waiterScreen.html" />
         <option value="$PROJECT_DIR$/SoReWaApp/static/css/waiterScreen.css" />
         <option value="$PROJECT_DIR$/templates/table.html" />
-        <option value="$PROJECT_DIR$/SoReWaApp/views.py" />
         <option value="$PROJECT_DIR$/SoReWaApp/models.py" />
+        <option value="$PROJECT_DIR$/SoReWaApp/views.py" />
       </list>
     </option>
   </component>
@@ -255,6 +184,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -317,7 +247,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -700,7 +629,11 @@
       <created>1400598798404</created>
       <updated>1400598798404</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="table paid, true poup removed">
+      <created>1401122981964</created>
+      <updated>1401122981964</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -725,10 +658,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23263158" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23263158" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -763,7 +696,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="delete single item from order, category button add, order button remove" />
     <MESSAGE value="css min width height for table" />
     <MESSAGE value="titles added to html pages" />
     <MESSAGE value="call waiter button" />
@@ -788,7 +720,8 @@
     <MESSAGE value="clear table button added to waiter screen, fixed bugs on mark table as paid, and clear table" />
     <MESSAGE value="clear table order if table has not orderred" />
     <MESSAGE value="admin css folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin css folder" />
+    <MESSAGE value="table paid, true poup removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="table paid, true poup removed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -996,11 +929,6 @@
         <state line="11" column="91" selection-start="419" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="510" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/table_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="87" selection-start="106" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1190" />
@@ -1038,45 +966,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="2276" selection-end="2276" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1768">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="54" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="833">
+        <state line="34" column="18" selection-start="1705" selection-end="1712" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="833">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="986" column="44" selection-start="50747" selection-end="50747" vertical-scroll-proportion="0.0" vertical-offset="1431" max-vertical-offset="3400">
+        <state line="971" column="26" selection-start="50086" selection-end="50108" vertical-scroll-proportion="0.10240964" vertical-offset="13923" max-vertical-offset="15878">
           <folding>
-            <element signature="e#268#694#0" expanded="false" />
-            <element signature="e#728#2892#0" expanded="false" />
-            <element signature="e#2919#4152#0" expanded="false" />
-            <element signature="e#4208#4743#0" expanded="false" />
-            <element signature="e#4777#5240#0" expanded="false" />
-            <element signature="e#5274#12394#0" expanded="false" />
-            <element signature="e#12509#19452#0" expanded="false" />
-            <element signature="e#19491#20932#0" expanded="false" />
-            <element signature="e#20965#22875#0" expanded="false" />
-            <element signature="e#22907#25858#0" expanded="false" />
-            <element signature="e#25889#29004#0" expanded="false" />
-            <element signature="e#29044#34473#0" expanded="false" />
-            <element signature="e#34516#40038#0" expanded="false" />
-            <element signature="e#40079#41072#0" expanded="false" />
-            <element signature="e#41125#43037#0" expanded="false" />
-            <element signature="e#43096#44868#0" expanded="false" />
-            <element signature="e#44910#45237#0" expanded="false" />
-            <element signature="e#46229#47855#0" expanded="false" />
-            <element signature="e#47902#48962#0" expanded="false" />
-            <element signature="e#49008#50072#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#20959#22869#0" expanded="false" />
+            <element signature="e#22901#25852#0" expanded="false" />
+            <element signature="e#25883#28998#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2276" selection-end="2276" vertical-scroll-proportion="0.8549075" vertical-offset="470" max-vertical-offset="1190">
-          <folding />
         </state>
       </provider>
     </entry>
