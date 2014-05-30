@@ -60,3 +60,6 @@ class Table (models.Model):
     def __unicode__(self):
         return u'table #:%s ' % self.number
 
+
+
+
