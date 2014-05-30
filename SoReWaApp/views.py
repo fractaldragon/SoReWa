@@ -710,8 +710,9 @@ def waiter_remove_product(request):
                                     except Order.DoesNotExist:  # no more products in order
                                         print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
                                         return redirect('SoReWaApp.views.waiter_view_table_order ')
-                                """else:
-                                    return redirect('SoReWaApp.views.waiter_view_table_order ')"""
+                                else:
+                                    #return redirect('SoReWaApp.views.waiter_view_table_order ')
+                                    break
 
 
 
