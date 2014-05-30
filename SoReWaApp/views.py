@@ -711,7 +711,7 @@ def waiter_remove_product(request):
                                         print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
                                         return redirect('SoReWaApp.views.waiter_view_table_order ')
                                 else:
-                                    #return redirect('SoReWaApp.views.waiter_view_table_order ')
+                                    #return redirect('SoReWaApp.views.waiter_view_table_order ')234
                                     break
 
 
