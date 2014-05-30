@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/views.py" afterPath="$PROJECT_DIR$/SoReWaApp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/waiter_v_order.html" afterPath="$PROJECT_DIR$/templates/waiter_v_order.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SoReWa.iws" />
@@ -26,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="713" column="99" selection-start="39315" selection-end="39315" vertical-scroll-proportion="0.7936747" vertical-offset="9656" max-vertical-offset="16473">
+            <state line="713" column="99" selection-start="39315" selection-end="39315" vertical-scroll-proportion="0.0" vertical-offset="10861" max-vertical-offset="16473">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#22901#25852#0" expanded="false" />
@@ -42,7 +43,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1768">
+            <state line="33" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1768">
               <folding />
             </state>
           </provider>
@@ -60,16 +61,16 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="18" selection-start="1705" selection-end="1712" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="833">
+            <state line="34" column="18" selection-start="1705" selection-end="1712" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="986">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="waiter_v_order.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="waiter_v_order.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/waiter_v_order.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="184" selection-start="2054" selection-end="2124" vertical-scroll-proportion="-38.576923" vertical-offset="0" max-vertical-offset="1190">
+            <state line="17" column="5" selection-start="536" selection-end="542" vertical-scroll-proportion="0.4268833" vertical-offset="0" max-vertical-offset="1258">
               <folding />
             </state>
           </provider>
@@ -87,7 +88,7 @@
       <file leaf-file-name="view_order.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/view_order.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="185" selection-start="2127" selection-end="2197" vertical-scroll-proportion="-43.153847" vertical-offset="0" max-vertical-offset="1326">
+            <state line="16" column="5" selection-start="395" selection-end="499" vertical-scroll-proportion="-9.038462" vertical-offset="37" max-vertical-offset="1326">
               <folding />
             </state>
           </provider>
@@ -96,7 +97,7 @@
       <file leaf-file-name="table_list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/table_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="36" selection-start="371" selection-end="371" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="1190">
+            <state line="10" column="36" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1190">
               <folding />
             </state>
           </provider>
@@ -145,7 +146,6 @@
         <option value="$PROJECT_DIR$/SoReWaApp/static/css/food_item.css" />
         <option value="$PROJECT_DIR$/SoReWaApp/static/css/view_order_total.css" />
         <option value="$PROJECT_DIR$/templates/view_order_total.html" />
-        <option value="$PROJECT_DIR$/templates/waiter_v_order.html" />
         <option value="$PROJECT_DIR$/SoReWaApp/static/css/table_item.css" />
         <option value="$PROJECT_DIR$/SoReWaApp/static/css/index.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
@@ -155,6 +155,7 @@
         <option value="$PROJECT_DIR$/templates/table.html" />
         <option value="$PROJECT_DIR$/SoReWaApp/models.py" />
         <option value="$PROJECT_DIR$/SoReWaApp/views.py" />
+        <option value="$PROJECT_DIR$/templates/waiter_v_order.html" />
       </list>
     </option>
   </component>
@@ -693,7 +694,6 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23263158" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -706,11 +706,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -988,10 +989,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/waiter_v_order.html">
+    <entry file="file://$PROJECT_DIR$/templates/waiter_simple_product_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="184" selection-start="2054" selection-end="2124" vertical-scroll-proportion="-38.576923" vertical-offset="0" max-vertical-offset="1190">
+        <state line="33" column="40" selection-start="1074" selection-end="1090" vertical-scroll-proportion="0.82865584" vertical-offset="0" max-vertical-offset="986" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="983" selection-end="983" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="2550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/table_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="36" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1190">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="713" column="99" selection-start="39315" selection-end="39315" vertical-scroll-proportion="0.0" vertical-offset="10861" max-vertical-offset="16473">
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#22901#25852#0" expanded="false" />
+            <element signature="e#25883#28998#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,42 +1024,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/waiter_simple_product_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="40" selection-start="1074" selection-end="1090" vertical-scroll-proportion="0.82865584" vertical-offset="0" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="983" selection-end="983" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="2550">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/view_order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="185" selection-start="2127" selection-end="2197" vertical-scroll-proportion="-43.153847" vertical-offset="0" max-vertical-offset="1326">
+        <state line="16" column="5" selection-start="395" selection-end="499" vertical-scroll-proportion="-9.038462" vertical-offset="37" max-vertical-offset="1326">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/table_list.html">
+    <entry file="file://$PROJECT_DIR$/templates/waiter_v_order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="371" selection-end="371" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="1190">
+        <state line="17" column="5" selection-start="536" selection-end="542" vertical-scroll-proportion="0.4268833" vertical-offset="0" max-vertical-offset="1258">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="713" column="99" selection-start="39315" selection-end="39315" vertical-scroll-proportion="0.7936747" vertical-offset="9656" max-vertical-offset="16473">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#22901#25852#0" expanded="false" />
-            <element signature="e#25883#28998#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
