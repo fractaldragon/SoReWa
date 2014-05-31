@@ -169,6 +169,7 @@ def add_to_order(request):
                                         tableorder = Order.objects.filter(table_number=request.session["table_number"],
                                                                           order_number=request.session["table_order_number"])
                                         return render(request, 'view_order.html', {'products_list': tableorder,
+
                                                                                    'show_notification': True,
                                                                                    'product_name': product_name,
                                                                                    'message': " has been added to order",
@@ -303,6 +304,7 @@ def remove_from_order(request):  #todo check if order number exist for the given
                                                     tableorder = Order.objects.filter(table_number=request.session["table_number"],
                                                                                     order_number=request.session["table_order_number"])
                                                     return render(request, 'view_order.html', {'products_list': tableorder,
+
                                                                                                'cost': get_table_total(tableorder),
                                                                                                'show_notification': True,
                                                                                                'product_name': product_name,
@@ -318,7 +320,7 @@ def remove_from_order(request):  #todo check if order number exist for the given
                                     try:
                                         tableorder = Order.objects.filter(table_number=request.session["table_number"],
                                                               order_number=request.session["table_order_number"])
-                                        return render(request, 'view_order.html', {'products_list': tableorder, 'show_notification': True, 'message': " already ordered, cannot remove product, call a waiter if you need something"})
+                                        return render(request, 'view_order.html', {'products_list': tableorder,  'show_notification': True, 'message': " already ordered, cannot remove product, call a waiter if you need something"})
 
                                     except Order.DoesNotExist:
                                         print "No Order in the database yet."
@@ -376,7 +378,7 @@ def view_table_order(request):
                                                   order_number=request.session["table_order_number"])
 
                 if tableorder:
-                    return render(request, 'view_order.html', {'products_list': tableorder, 'cost': get_table_total(tableorder)})
+                    return render(request, 'view_order.html', {'products_list': tableorder,  'cost': get_table_total(tableorder)})
                 else:
                     return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have products in the order yet.", 'cost': 0})
 
@@ -385,7 +387,7 @@ def view_table_order(request):
                 return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet.", 'cost': 0})
         else:
             print "No Order in session "
-            return render(request, 'view_order.html', {'show_notification': True, 'message': "You dont have an order yet.", 'cost': 0})
+            return render(request, 'view_order.html', { 'show_notification': True, 'message': "You dont have an order yet.", 'cost': 0})
 
         return render(request, 'view_order.html')
 
