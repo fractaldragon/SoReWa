@@ -996,20 +996,29 @@ def waiter_attend_pay_call(request):
 
             try:
                 table = Table.objects.get(number=table_number)
-                table_order = TableOrders.objects.get(table_id=table, is_paid=False)
+
             except Table.DoesNotExist:
                 print "waiter clear table: table number does not exist"
-                pass
+
+                return redirect('SoReWaApp.views.waiter_manage_tables')
             else:
-                if table.calls_bill:
-                    table.calls_bill = False
-                    table_order.is_paid = True
-                    table.save()
-                    table_order.save()
-                    return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'attended table %s Pay Bill call' % table_number})
-                    #return redirect('SoReWaApp.views.waiter_manage_tables')
+                try:
+                    table_order = TableOrders.objects.get(table_id=table, is_paid=False)
+                except TableOrders.DoesNotExist:
+                    if table.calls_bill:
+                        table.calls_bill = False
+                        table.save()
+                    return redirect('SoReWaApp.views.waiter_manage_tables')
                 else:
-                    return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'table %s has no Pay Bill call' % table_number})
+                    if table.calls_bill:
+                        table.calls_bill = False
+                        table_order.is_paid = True
+                        table.save()
+                        table_order.save()
+                        return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'attended table %s Pay Bill call' % table_number})
+                        #return redirect('SoReWaApp.views.waiter_manage_tables')
+                    else:
+                        return render(request, 'waiterScreen.html', {'show_notification': True, 'message': 'table %s has no Pay Bill call' % table_number})
         else:
             return redirect('SoReWaApp.views.waiter_manage_tables')
 
