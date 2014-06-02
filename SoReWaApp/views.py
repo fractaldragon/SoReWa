@@ -78,7 +78,6 @@ def choose_table(request):
 
 def table(request):
     #todo if table occuppied, i have number, and order show order in table
-    #todo use var for waiter call, order, and bill to pop alerts or to block buttons
     if "table_number" in request.session:
         try:
             table_occupied = Table.objects.get(number=request.session["table_number"])
@@ -159,6 +158,9 @@ def add_to_order(request):
                                                   product=chosen_product)
                                     order.save()
                                     #return redirect('SoReWaApp.views.view_table_order')
+
+                                    # if table order doesn't exist when adding product, create table order
+                                    #todo what happens if tables hasn't payed and list returns mukltiple?
                                     try:
                                         table_order = TableOrders.objects.get(table_id=request.session["table_number"], is_paid=False)
                                     except TableOrders.DoesNotExist:
@@ -465,7 +467,7 @@ def call_order(request):
                                 #show categories and products
                                 return render(request, 'table.html', {'category_list': category, 'load_order': True, 'load_product': False, 'show_pay_button': True})
 
-                    else: # todo show alert, notification , a order once made cannot be modified by client, if you have you'll need to call a waiter
+                    else:
                         print"Call Order: no pending products"
                         try:
                                 category = Category.objects.filter(is_available=True)
@@ -496,6 +498,7 @@ def call_bill(request):
     # products that have not been sent to the kitchen will be removed, and the total wil be calculated with the ones that have been sent to the kitchen
     if "table_number" in request.session:
         if "table_order_number" in request.session:
+            print "me meti aca para ver si pago algo"
             # try catch missing here
             table_calling_bill = Table.objects.get(number=request.session["table_number"])
             table_order_products = Order.objects.filter(table_number=request.session["table_number"], order_number=request.session["table_order_number"])
@@ -546,7 +549,19 @@ def call_bill(request):
                 return redirect('SoReWaApp.views.table',)
         else:
             print "Call Bill: no table order number"
-            return redirect('SoReWaApp.views.table')
+            #if there is a not paid in table orders, waiter must clear the table before next service
+            try:
+                table_order = TableOrders.objects.filter(table_id=request.session["table_number"], is_paid=False)
+
+            except TableOrders.DoesNotExist:
+                return redirect('SoReWaApp.views.table')
+
+            else:
+                if table_order:
+                    return render(request, 'view_order_total.html', {'show_notification': True, 'message': "Ask the waiter to clear the table in the system ", 'cost': 0})
+                else:
+                    return redirect('SoReWaApp.views.table')
+
     else:
         print "Call Bill: No table number!!!"
         return redirect('SoReWaApp.views.choose_table')
