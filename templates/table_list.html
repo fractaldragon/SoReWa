@@ -33,15 +33,15 @@
 <ul class="tableList">
 
     {% for table in table_list %}
-
+<a class="table_link" href="/table_order/{{table.number}}" target="order_iframe" >
         {% ifequal table.number selectedtable  %}
             <li id="{{table.number}}" class="tableItemSelected" onclick="changeClass({{table.number}})">
         {% else %}
 			    <li id="{{table.number}}" class="tableItem" onclick="changeClass({{table.number}})">
         {% endifequal %}
 			    <div class="tableLabel">
-                    <a  href="/table_order/{{table.number}}" target="order_iframe" >
-                        Table {{table.number}}</a></div>
+
+                        Table {{table.number}}</div>
 				    <div class="iconContainer">
                         {% if table.calls_waiter %}
 					    <img class="waiterCallIcon" src="{% static "imgs/waiter-icon.png" %}">
@@ -53,7 +53,10 @@
 					    <img class="payCallIcon" src="{% static "imgs/pay-icon.png" %}">
                         {% endif %}
 				    </div>
+
+
 			    </li>
+    </a>
 
     {% endfor %}
 
