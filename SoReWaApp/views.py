@@ -680,6 +680,8 @@ def waiter_remove_product(request):
                     table_number = int(table_number)
                     order_number = int(order_number)
 
+
+
                     if table_number < 100 and table_number != 0 and len(product_name) <= 100:  # url offset has a 2 digit number
                         chosen_product = Product.objects.get(name=product_name)
                         product_list = Order.objects.filter(table_number=table_number,
@@ -693,7 +695,7 @@ def waiter_remove_product(request):
 
                                 try:
                                     table_order = TableOrders.objects.filter(table_id=table_number,
-                                                                          actual_order=request.session["table_order_number"])
+                                                                          actual_order=order_number)
                                 except TableOrders.DoesNotExist:
                                     print "waiter remove product NO TABLE ORDER!!!!"
 
@@ -722,14 +724,20 @@ def waiter_remove_product(request):
                                                                                            'show_notification': True,
                                                                                            'product_name': product_name,
                                                                                            'message': ' Removed, No more products in order',
-                                                                                           'cost': get_table_total(product_list)})
+                                                                                           'cost': 0.0})
 
                                     except Order.DoesNotExist:  # no more products in order
                                         print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
                                         return redirect('SoReWaApp.views.waiter_view_table_order ')
                                 else:
-                                    #return redirect('SoReWaApp.views.waiter_view_table_order ')234
-                                    break
+                                    return render(request, 'waiter_v_order.html', {
+                                                                                           'table_number': table_number,
+                                                                                           'table_order_number': order_number,
+                                                                                           'show_notification': True,
+                                                                                           'product_name': product_name,
+                                                                                           'message': ' Removed, No more products in order',
+                                                                                           'cost': 0.0})
+
 
 
 
@@ -818,6 +826,10 @@ def waiter_view_table_order(request, offset):
             print "waiter_view_table_order: no table order"
 
             return render(request, 'waiter_v_order.html', {'cost': 0})
+
+
+def waiter_view_table_order_empty (request):
+    return render(request, 'waiter_v_order.html', {'cost': 0})
 
 
 def waiter_view_table_order_added_product(request):
