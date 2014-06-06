@@ -672,13 +672,14 @@ def waiter_remove_product(request):
             print "Waiter remove from table:got post"
             if request.POST.get('product_name', ''):
                 product_name = request.POST['product_name']
-                # todo , on table link check , wen order loads, save table oactual table number and order and use them here
+                # todo , on table link check , wen order loads, save table actual table number and order and use them here
                 table_number = request.session['selected_table']
                 order_number = request.POST['order_number']
 
                 try:
                     table_number = int(table_number)
                     order_number = int(order_number)
+                    print "Waiter remove from table:got table %s , order %s" %(table_number, order_number)
 
 
 
@@ -687,15 +688,18 @@ def waiter_remove_product(request):
                         product_list = Order.objects.filter(table_number=table_number,
                                                             order_number=order_number,
                                                             product=chosen_product)
+                        print "Waiter remove from table:got chosen prod: %s , and list %s" % (chosen_product.name, product_list)
 
                         if product_list: # if i have multiple, i have to check just 1 to remove
 
                             for p in product_list:
                                 p.delete()
+                                print "removi el producto"
 
                                 try:
-                                    table_order = TableOrders.objects.filter(table_id=table_number,
+                                    table_order = TableOrders.objects.get(table_id=table_number,
                                                                           actual_order=order_number)
+                                    print "Waiter remove from table:got table order"
                                 except TableOrders.DoesNotExist:
                                     print "waiter remove product NO TABLE ORDER!!!!"
 
@@ -730,13 +734,39 @@ def waiter_remove_product(request):
                                         print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
                                         return redirect('SoReWaApp.views.waiter_view_table_order ')
                                 else:
-                                    return render(request, 'waiter_v_order.html', {
+
+                                    try:
+                                        print "waiter remove product checking more order products!!!!"
+                                        product_list = Order.objects.filter(table_number=table_number,
+                                                                            order_number=order_number)
+
+
+                                        if product_list:
+                                            print "waiter remove product got product list!!!!"
+
+                                            return render(request, 'waiter_v_order.html', {'products_list': product_list,
+                                                                                           'table_number': table_number,
+                                                                                           'table_order_number': order_number,
+                                                                                           'show_notification': True,
+                                                                                           'product_name': product_name,
+                                                                                           'message': 'Removed from order',
+                                                                                           'cost': get_table_total(product_list)})
+
+                                        else:
+                                            return render(request, 'waiter_v_order.html', {'products_list': product_list,
                                                                                            'table_number': table_number,
                                                                                            'table_order_number': order_number,
                                                                                            'show_notification': True,
                                                                                            'product_name': product_name,
                                                                                            'message': ' Removed, No more products in order',
                                                                                            'cost': 0.0})
+
+                                    except Order.DoesNotExist:  # no more products in order
+                                        print "NO MORE PRODUCTS IN CLIENTS ORDER!!!!!!!!!!"
+                                        return redirect('SoReWaApp.views.waiter_view_table_order ')
+
+
+
 
 
 
