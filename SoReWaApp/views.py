@@ -697,8 +697,8 @@ def waiter_remove_product(request):
                                 print "removi el producto"
 
                                 try:
-                                    table_order = TableOrders.objects.get(table_id=table_number,
-                                                                          actual_order=order_number)
+                                    table_order = TableOrders.objects.filter(table_id=table_number,
+                                                                          actual_order=order_number, is_paid=False)
                                     print "Waiter remove from table:got table order"
                                 except TableOrders.DoesNotExist:
                                     print "waiter remove product NO TABLE ORDER!!!!"
@@ -711,8 +711,14 @@ def waiter_remove_product(request):
                                         t = Table.objects.get(number=table_number)
                                         if product_list:
                                             print "waiter remove product got product list!!!!"
-                                            table_order = TableOrders(table_id=t, actual_order=product_list[0] )
-                                            table_order.save()
+                                            try:
+                                                new_table_order = TableOrders(table_id=t, actual_order=product_list[0].order_number )
+                                            except TableOrders.DoesNotExist:
+                                                print "panico!!!!"
+                                                return redirect('SoReWaApp.views.waiter_view_table_order ')
+                                            else:
+                                                new_table_order.save()
+                                            print "table order saved"
                                             return render(request, 'waiter_v_order.html', {'products_list': product_list,
                                                                                            'table_number': table_number,
                                                                                            'table_order_number': order_number,
@@ -735,6 +741,15 @@ def waiter_remove_product(request):
                                         return redirect('SoReWaApp.views.waiter_view_table_order ')
                                 else:
 
+                                    #todo !!!!!!! find a cleaner way to check multiple not paid table orders, Danger!!! if filter doesnot find anithing it returns an empty table must check table size
+
+                                    if len(table_order)> 1:
+
+                                        for to in table_order:
+                                            if len(table_order)> 1:
+                                                to.delete()
+
+
                                     try:
                                         print "waiter remove product checking more order products!!!!"
                                         product_list = Order.objects.filter(table_number=table_number,
@@ -742,9 +757,29 @@ def waiter_remove_product(request):
 
 
                                         if product_list:
-                                            print "waiter remove product got product list!!!!"
+                                            print "waiter remove product got product list asdasfdasdf!!!!"
 
-                                            return render(request, 'waiter_v_order.html', {'products_list': product_list,
+                                            #check if there is a table order, if not create a newone
+                                            try:
+                                                table_order = TableOrders.objects.filter(table_id=table_number,
+                                                                                         actual_order=order_number,
+                                                                                         is_paid=False)
+                                                print len(table_order)
+                                            except TableOrders.DoesNotExist:
+                                                print"panico mucho no?"
+                                                return redirect('SoReWaApp.views.waiter_view_table_order ')
+
+                                            else:
+                                                if len(table_order) < 1:
+                                                    try:
+                                                        t = Table.objects.get(number=table_number)
+                                                        new_table_order = TableOrders(table_id=t, actual_order=product_list[0] )
+                                                    except TableOrders.DoesNotExist:
+                                                        print "panico!!!!"
+                                                        return redirect('SoReWaApp.views.waiter_view_table_order ')
+                                                    else:
+                                                        new_table_order.save()
+                                                return render(request, 'waiter_v_order.html', {'products_list': product_list,
                                                                                            'table_number': table_number,
                                                                                            'table_order_number': order_number,
                                                                                            'show_notification': True,
