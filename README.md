@@ -1,7 +1,7 @@
 SoReWa
 ======
 
-Restaurant ordering web app
+Restaurant table ordering and table order manager web app
 
 ===========================
 This Application was developed for  a graduation project in EAFIT university in Colombia.
@@ -9,8 +9,14 @@ But it is also a vision of a future need for the restaurant businesses here and 
 
 
 
-
-
+Developed with:
+•HTML5
+•CSS3
+•Python 2.7.6
+•	Sqlite3
+•	Apache2
+•	Django 1.6.2
+==========================
 Atributtions:
 Programming: Alejandro Arbelaez
 UX by Alejandro Arbelaez  https://github.com/fractaldragon/
