@@ -16,6 +16,8 @@ Developed with:
 •	Sqlite3
 •	Apache2
 •	Django 1.6.2
+
+
 ==========================
 Atributtions:
 Programming: Alejandro Arbelaez
