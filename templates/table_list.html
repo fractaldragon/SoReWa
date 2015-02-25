@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+    <link href=" {% static "css/table_item.css" %}" rel="stylesheet" type="text/css" />
+    <title>Table list</title>
+    <script type="text/JavaScript">
+    <!--
+    function timedRefresh(timeoutPeriod) {
+        setTimeout("location.reload(true);",timeoutPeriod);
+    }
+
+     function changeClass(a)
+    {
+        c=document.getElementsByClassName("tableItemSelected");
+        if( c.length > 0 && c.id != a )
+        {
+            c[0].className = "tableItem";
+        }
+        s = document.getElementById(a);
+        s.className = "tableItemSelected";
+
+    }
+
+    //   -->
+</script>
+</head>
+<body onload="JavaScript:timedRefresh(5000);" >
+
+
+<div>
+<ul class="tableList">
+
+    {% for table in table_list %}
+<a class="table_link" href="/table_order/{{table.number}}" target="order_iframe" >
+        {% ifequal table.number selectedtable  %}
+            <li id="{{table.number}}" class="tableItemSelected" onclick="changeClass({{table.number}})">
+        {% else %}
+			    <li id="{{table.number}}" class="tableItem" onclick="changeClass({{table.number}})">
+        {% endifequal %}
+			    <div class="tableLabel">
+
+                        Table {{table.number}}</div>
+				    <div class="iconContainer">
+                        {% if table.calls_waiter %}
+					    <img class="waiterCallIcon" src="{% static "imgs/waiter-icon.png" %}">
+                        {% endif %}
+                        {% if table.calls_order %}
+					    <img class="orderCallIcon" src="{% static "imgs/order-icon.png" %}" >
+                        {% endif %}
+                        {% if table.calls_bill  %}
+					    <img class="payCallIcon" src="{% static "imgs/pay-icon.png" %}">
+                        {% endif %}
+				    </div>
+
+
+			    </li>
+    </a>
+
+    {% endfor %}
+
+    </ul>
+</div>
+
+
+</body>
+</html>

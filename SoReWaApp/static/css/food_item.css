@@ -1,0 +1,158 @@
+﻿*
+{
+	margin:0px;
+	padding:0px;
+}
+.productListItem
+{
+	
+	width:90%;
+	height:160px;
+	position:relative;
+	border-bottom: 1px solid #ccc;
+  	}
+
+.productThumbnail
+{
+	position:absolute;
+	top:20px;
+	left:20px;  	
+  	
+}
+
+.productThumbnail img
+{
+	height:100px;
+	width:100px;
+	max-height:100px;
+	max-width:100px;
+}
+
+
+.productName
+{
+	position:absolute;
+	top:20px;
+	left:130px;
+	font: bold 15px/1.5 Helvetica, Verdana, sans-serif;
+	width:55%;
+	min-height:50px;
+	overflow:auto;
+
+
+}
+
+.productDescription
+{
+	position:absolute;
+
+	top:60px;
+	left:130px;
+	width:55%;
+	height:150px;
+	font: 200 12px/1.5 Georgia, Times New Roman, serif;
+
+	overflow:auto;
+}
+
+.productPrice
+{
+	position:absolute;
+	top:120px;
+	left:20px;	
+	font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+
+}
+
+.productAddRemoveButtons
+{
+	position:absolute;
+	top:40px;
+	left:95%;
+	width:50px;
+}
+
+.productAddButton
+{
+
+	width:50px;
+	height:50px;
+	
+}
+
+.productRemoveButton
+{	
+
+	width:50px;
+	height:50px;
+	
+}
+
+
+
+
+ul {
+top:10%;
+position:absolute;
+	list-style-type: none;
+  	width: 90%;
+  }
+
+.for_input
+{
+    visibility:hidden;
+    width:2px;
+    height;2px;
+}
+
+
+#noty
+{
+  	position:absolute;
+  	background: #E3EFDF;
+	top:0px;
+	left:0px;
+	width:98%;
+	height:200px;
+
+	border:2px solid black;
+
+	border-radius:25px;
+	margin:0px auto;
+}
+
+#notytext
+{
+	position:absolute;
+	top:20%;
+	left:2%;
+	text-align:center;
+
+}
+
+.closeBtn
+{
+    position:absolute;
+    top:60%;
+	left:40%;
+    width:70px;
+	height:70px;
+}
+
+.orderTotal
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:fixed;
+    background-color: #E3CEB6;
+    top:0px;
+    height:6%;
+    width:100%;
+}
+
+#orderList
+{
+   top:6%;
+    position:absolute;
+	list-style-type: none;
+  	width: 100%;
+}

@@ -1,25 +1,6 @@
 from django.contrib import admin
-from models import Product, Category
+from models import Product, Category, Table, Order, TableOrders
 # Register your models here.
-
-
-from django.contrib.admin.widgets import AdminFileWidget
-from django.utils.translation import ugettext as _
-from django.utils.safestring import mark_safe
-
-class AdminImageWidget(AdminFileWidget):
-    def render(self, name, value, attrs=None):
-        output = []
-        if value and getattr(value, "url", None):
-            image_url = value.url
-            file_name=str(value)
-            output.append(u' <a href="%s" target="_blank"><img src="%s" alt="%s" /></a> %s ' % \
-                (image_url, image_url, file_name, _('Change:')))
-        output.append(super(AdminFileWidget, self).render(name, value, attrs))
-        return mark_safe(u''.join(output))
-
-
-
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -29,9 +10,20 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'price', 'description', 'is_available', 'image', 'image_tag')
+    list_display = ( 'name', 'price', 'description', 'is_available', 'image', 'image_tag')
     #readonly_fields = ('image',)
 
+
+class TableAdmin(admin.ModelAdmin):
+    list_display = ('number', 'is_occupied', 'calls_waiter', 'calls_order', 'calls_bill')
+
+
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('order_number', 'table_number', 'date', 'product', 'sent_to_kitchen')
+
+
+class TableOrdersAdmin(admin.ModelAdmin):
+    list_display = ('table_id', 'actual_order', 'is_paid')
 
 
 
@@ -39,3 +31,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Table, TableAdmin)
+admin.site.register(Order, OrderAdmin)
+admin.site.register(TableOrders, TableOrdersAdmin)
+

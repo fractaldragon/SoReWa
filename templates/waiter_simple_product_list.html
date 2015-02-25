@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+    <link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+
+        <ul>
+            {% for product in products_list %}
+            {% if product.is_available %}
+
+            <li class="productListItem">
+                <span  class="productName">
+                    {{ product.name }}
+                </span>
+                <span  class="productThumbnail">
+                    <!-- <img src="/media/ url producto}}"> -->
+
+                        <img src="/media/{{ product.image }}">
+
+
+                </span>
+                <span  class="productDescription">{{product.description}}</span>
+                <span  class="productPrice">
+                    <p>${{product.price}}</p>
+                </span>
+
+
+                <span class="productAddRemoveButtons">
+                    <form action="/waiter_add_product_to_table/" target="order_iframe" method="post">
+                        {% csrf_token %}
+                         <input class="for_input" name="product_name"  value="{{ product.name }}" >
+                        <input class="productAddButton" type="image" src="{% static "imgs/add.png" %}" value="add">
+                     </form>
+
+
+
+
+
+                </span>
+
+            </li>
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+
+    </div>
+</body>
+</html>

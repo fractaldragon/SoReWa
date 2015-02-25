@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+<link href="{% static "css/waiterScreen.css" %}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+
+       function hideStuff(stuffid)
+       {
+            document.getElementById(stuffid).style.visibility="hidden";
+       }
+
+
+   </script>
+<title>SoReWa Waiter UI</title>
+</head>
+
+<body>
+	<div id="big_container">
+		<div id="barra" class="logoBar" onclick="hidestuff('barra');">
+            <img class="barraSuperior" src="{% static "imgs/Barra_superior2.png" %}"><img class="logo" src="{% static "imgs/logoSoReWa.png" %}" alt='それ は 何 です か.'/>
+        </div>
+        <div class="buttonContainer"  >
+             <div class="waiterButton">
+                <form action="/waiter_attend_waiter_call/"   onmouseup="">
+                    <input type="image" class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Call Waiter" />
+                </form>
+                 <p id="callWaiterText">Attend Waiter Call</p>
+             </div>
+
+            <div class="orderButton">
+                <form action="/waiter_attend_order_call/"  onmouseup="">
+                    <input type="image" class="buttonImg" src="{% static "imgs/order-icon.png" %}" alt="Make Order"  />
+                </form>
+                <p id="orderText">Attend Order Call</p>
+            </div>
+
+            <div class="payButton">
+                <form action="/waiter_attend_pay_call/"  onmouseup="">
+                    <input type="image" class="buttonImg" src="{% static "imgs/pay-icon.png" %}" alt="Pay"  />
+                </form>
+                <p id="payOrderText">Pay Call</p>
+            </div>
+            <div class="clearButton">
+                <form action="/waiter_clear_table/"  onmouseup="">
+                    <input type="image" class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Pay"  />
+                </form>
+                <p id="clearTableText">Clear Table</p>
+            </div>
+    </div>
+		<div id="table_list_container">
+			<h2>Tables</h2>
+			
+			<iframe class="iframeContainer" src="/view_tables/" name="table_iframe"></iframe>
+			
+		  	
+			    
+			</ul>
+		</div>
+		<div id="order_container">
+			<h2>Order</h2>
+			<iframe class="iframeContainer" src="" name="order_iframe"></iframe>
+
+
+		</div>
+		<div id="product_container">
+			<h2>Products</h2>
+			<iframe class="iframeContainer" src="/products/" name="product_iframe"></iframe>
+
+			
+		</div>	
+	</div>
+        {% if show_notification %}
+            <div id="noty" onclick="hideStuff('noty')"><span id="notytext">{{ message }}</span> <img class="closeBtn" src="{% static "imgs/close.png" %}" alt="close"></div>
+        {% endif %}
+</body>
+
+</html>

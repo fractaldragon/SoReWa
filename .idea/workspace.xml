@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="" />
+    <list default="true" id="f9d9387c-48f7-413a-98ba-98a7b304974c" name="Default" comment="waiter table icons more big">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoReWaApp/views.py" afterPath="$PROJECT_DIR$/SoReWaApp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="SoReWa.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,19 +25,73 @@
   <component name="FavoritesManager">
     <favorites_list name="SoReWa" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="767" column="0" selection-start="42754" selection-end="42754" vertical-scroll-proportion="0.31014493" vertical-offset="12774" max-vertical-offset="19516">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+>>>>>>> origin/master
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/SoReWa/urls.py" />
-        <option value="$PROJECT_DIR$/SoReWaApp/views.py" />
+        <option value="$PROJECT_DIR$/LICENSE" />
+        <option value="$PROJECT_DIR$/templates/admin/css/base.css" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/base.css" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/admin/css/base.css" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/admin/css/login.css" />
         <option value="$PROJECT_DIR$/SoReWa/settings.py" />
+        <option value="$PROJECT_DIR$/templates/add_product.html" />
         <option value="$PROJECT_DIR$/SoReWaApp/admin.py" />
+        <option value="$PROJECT_DIR$/templates/waiter_remove_product_from_order.html" />
+        <option value="$PROJECT_DIR$/templates/waiter_view_order.html" />
+        <option value="$PROJECT_DIR$/templates/products.html" />
+        <option value="$PROJECT_DIR$/templates/waiter_simple_product_list.html" />
+        <option value="$PROJECT_DIR$/templates/table_selector.html" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/table_selector.css" />
+        <option value="$PROJECT_DIR$/templates/registration/base.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/templates/admin/base_site.html" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/table.css" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/food_item.css" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/view_order_total.css" />
+        <option value="$PROJECT_DIR$/templates/view_order_total.html" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/index.css" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/waiterScreen.html" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/waiterScreen.css" />
+        <option value="$PROJECT_DIR$/templates/table.html" />
+        <option value="$PROJECT_DIR$/templates/view_order.html" />
+        <option value="$PROJECT_DIR$/templates/waiter_v_order.html" />
+        <option value="$PROJECT_DIR$/SoReWa/urls.py" />
         <option value="$PROJECT_DIR$/SoReWaApp/models.py" />
+        <option value="$PROJECT_DIR$/templates/table_list.html" />
+        <option value="$PROJECT_DIR$/SoReWaApp/static/css/table_item.css" />
+        <option value="$PROJECT_DIR$/SoReWaApp/views.py" />
       </list>
     </option>
   </component>
@@ -42,6 +100,25 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyMandatoryEncodingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -97,7 +174,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="SoReWaApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWaApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SoReWa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+>>>>>>> origin/master
+              <option name="myItemId" value="SoReWaApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -121,12 +255,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysite" />
     <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -135,7 +271,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\imgs\None" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\SoReWaApp\static\admin" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\templates" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\SoReWaApp\static\imgs" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\media\imgs" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\templates\admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\SoReWaApp\static\admin\css" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\SoReWaApp\static" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\SoReWaApp\static\css" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa\SoReWaApp\static\imgs" />
+      <recent name="C:\Users\Balmung\Documents\DjangoCode\SoReWa" />
     </key>
   </component>
   <component name="RunManager">
@@ -287,30 +434,299 @@
       <created>1396370351872</created>
       <updated>1396370351872</updated>
     </task>
+    <task id="LOCAL-00001" summary="sorewa logo added">
+      <created>1396988407806</created>
+      <updated>1396988407806</updated>
+    </task>
+    <task id="LOCAL-00002" summary="html and css table ui added">
+      <created>1396990569673</created>
+      <updated>1396990569673</updated>
+    </task>
+    <task id="LOCAL-00003" summary="some changes on image upload, and view on django admin page, also tabl etemplate with css tests">
+      <created>1396993151254</created>
+      <updated>1396993151254</updated>
+    </task>
+    <task id="LOCAL-00004" summary="GPL3">
+      <created>1396994597363</created>
+      <updated>1396994597363</updated>
+    </task>
+    <task id="LOCAL-00005" summary="view image in user webpage from media folder, not working on admin page thou">
+      <created>1397069284766</created>
+      <updated>1397069284766</updated>
+    </task>
+    <task id="LOCAL-00006" summary="generate category in table page">
+      <created>1397089072227</created>
+      <updated>1397089072227</updated>
+    </task>
+    <task id="LOCAL-00007" summary="css for admin page">
+      <created>1397166216849</created>
+      <updated>1397166216849</updated>
+    </task>
+    <task id="LOCAL-00008" summary="iframe test">
+      <created>1397175136082</created>
+      <updated>1397175136082</updated>
+    </task>
+    <task id="LOCAL-00009" summary="loads products from category in table page">
+      <created>1397185514061</created>
+      <updated>1397185514061</updated>
+    </task>
+    <task id="LOCAL-00010" summary="css, colors,">
+      <created>1397237301624</created>
+      <updated>1397237301624</updated>
+    </task>
+    <task id="LOCAL-00011" summary="food item css">
+      <created>1397497002164</created>
+      <updated>1397497002164</updated>
+    </task>
+    <task id="LOCAL-00012" summary="food item css, admin page css">
+      <created>1397512549574</created>
+      <updated>1397512549574</updated>
+    </task>
+    <task id="LOCAL-00013" summary="order iframe acces through img from products just a test">
+      <created>1397513547595</created>
+      <updated>1397513547595</updated>
+    </task>
+    <task id="LOCAL-00014" summary="removed test category items">
+      <created>1397576932465</created>
+      <updated>1397576932465</updated>
+    </task>
+    <task id="LOCAL-00015" summary="button icons on bottom bar">
+      <created>1397682561516</created>
+      <updated>1397682561516</updated>
+    </task>
+    <task id="LOCAL-00016" summary="new model, order and table, also new view for logging a table to the restaurant">
+      <created>1397838470242</created>
+      <updated>1397838470242</updated>
+    </task>
+    <task id="LOCAL-00017" summary="table number assign and mark occupied">
+      <created>1398182249264</created>
+      <updated>1398182249264</updated>
+    </task>
+    <task id="LOCAL-00018" summary="lenguage changes in the html files, validation in the number_table page, is_available now works for the menu, img resize in admin, and delete button  has border">
+      <created>1398200157416</created>
+      <updated>1398200157416</updated>
+    </task>
+    <task id="LOCAL-00019" summary="css fix">
+      <created>1398205874804</created>
+      <updated>1398205874804</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add order to table and add products to order, some admin css changes">
+      <created>1398291892222</created>
+      <updated>1398291892222</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add products from table page">
+      <created>1398378345652</created>
+      <updated>1398378345652</updated>
+    </task>
+    <task id="LOCAL-00022" summary="view order products after adding them">
+      <created>1398445528377</created>
+      <updated>1398445528377</updated>
+    </task>
+    <task id="LOCAL-00023" summary="new todo">
+      <created>1398534411863</created>
+      <updated>1398534411864</updated>
+    </task>
+    <task id="LOCAL-00024" summary="check table session in restaurant menu">
+      <created>1398699909313</created>
+      <updated>1398699909313</updated>
+    </task>
+    <task id="LOCAL-00025" summary="delete single item from order, category button add, order button remove">
+      <created>1398713784896</created>
+      <updated>1398713784896</updated>
+    </task>
+    <task id="LOCAL-00026" summary="css min width height for table">
+      <created>1398722196793</created>
+      <updated>1398722196793</updated>
+    </task>
+    <task id="LOCAL-00027" summary="titles added to html pages">
+      <created>1398723631395</created>
+      <updated>1398723631395</updated>
+    </task>
+    <task id="LOCAL-00028" summary="call waiter button">
+      <created>1398790501349</created>
+      <updated>1398790501349</updated>
+    </task>
+    <task id="LOCAL-00029" summary="order button">
+      <created>1398813911303</created>
+      <updated>1398813911303</updated>
+    </task>
+    <task id="LOCAL-00030" summary="order button, bill button, notifications for products in order when ordering and calling bill">
+      <created>1399321550896</created>
+      <updated>1399321550896</updated>
+    </task>
+    <task id="LOCAL-00031" summary="bill button blocked if you dont have items or order">
+      <created>1399324493582</created>
+      <updated>1399324493582</updated>
+    </task>
+    <task id="LOCAL-00032" summary="waiter html css and some waiter functions">
+      <created>1399439942283</created>
+      <updated>1399439942283</updated>
+    </task>
+    <task id="LOCAL-00033" summary="table html, css and general design changed, on waiter, table list auto refresh, some bug fixes on call waiter">
+      <created>1399581922934</created>
+      <updated>1399581922934</updated>
+    </task>
+    <task id="LOCAL-00034" summary="waiter add product, waiter remove product(on going)">
+      <created>1399594408667</created>
+      <updated>1399594408667</updated>
+    </task>
+    <task id="LOCAL-00035" summary="waiter add product, waiter remove product(on going)">
+      <created>1399594559694</created>
+      <updated>1399594559694</updated>
+    </task>
+    <task id="LOCAL-00036" summary="waiter add product, waiter remove product, some minor bug fixes on waiter view order">
+      <created>1399608157541</created>
+      <updated>1399608157541</updated>
+    </task>
+    <task id="LOCAL-00037" summary="waiter screen css and design changes">
+      <created>1399609357660</created>
+      <updated>1399609357660</updated>
+    </task>
+    <task id="LOCAL-00038" summary="waiter actions, attend table calls, clear table, mark table order as paid">
+      <created>1399665327096</created>
+      <updated>1399665327096</updated>
+    </task>
+    <task id="LOCAL-00039" summary="waiter buttons and pay info table and waiter">
+      <created>1399932317228</created>
+      <updated>1399932317228</updated>
+    </task>
+    <task id="LOCAL-00040" summary="waiter buttons actions, table total return button, multiple tableOrder Fix">
+      <created>1400011295535</created>
+      <updated>1400011295535</updated>
+    </task>
+    <task id="LOCAL-00041" summary="waiter buttons actions notifications">
+      <created>1400017374204</created>
+      <updated>1400017374204</updated>
+    </task>
+    <task id="LOCAL-00042" summary="waiter table list show selected table">
+      <created>1400109538207</created>
+      <updated>1400109538207</updated>
+    </task>
+    <task id="LOCAL-00043" summary="table order list auto update">
+      <created>1400111120217</created>
+      <updated>1400111120217</updated>
+    </task>
+    <task id="LOCAL-00044" summary="several bug fix on order list update, gui improvements">
+      <created>1400216225100</created>
+      <updated>1400216225100</updated>
+    </task>
+    <task id="LOCAL-00045" summary="on server img view in admin">
+      <created>1400270393654</created>
+      <updated>1400270393654</updated>
+    </task>
+    <task id="LOCAL-00046" summary="table item css improved">
+      <created>1400514908987</created>
+      <updated>1400514908987</updated>
+    </task>
+    <task id="LOCAL-00047" summary="index page">
+      <created>1400529813001</created>
+      <updated>1400529813001</updated>
+    </task>
+    <task id="LOCAL-00048" summary="clear table button added to waiter screen, fixed bugs on mark table as paid, and clear table">
+      <created>1400596325706</created>
+      <updated>1400596325706</updated>
+    </task>
+    <task id="LOCAL-00049" summary="clear table order if table has not orderred">
+      <created>1400598234578</created>
+      <updated>1400598234578</updated>
+    </task>
+    <task id="LOCAL-00050" summary="admin css folder">
+      <created>1400598798404</created>
+      <updated>1400598798404</updated>
+    </task>
+    <task id="LOCAL-00051" summary="table paid, true poup removed">
+      <created>1401122981964</created>
+      <updated>1401122981964</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Waiter remove product from table fix">
+      <created>1401425100432</created>
+      <updated>1401425100432</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Waiter remove product from table  fix">
+      <created>1401427211035</created>
+      <updated>1401427211035</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Waiter order products auto refresh">
+      <created>1401429394856</created>
+      <updated>1401429394856</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Waiter orde, table order  auto refresh fix">
+      <created>1401559024911</created>
+      <updated>1401559024911</updated>
+    </task>
+    <task id="LOCAL-00056" summary="table order not paid fix">
+      <created>1401738997647</created>
+      <updated>1401738997647</updated>
+    </task>
+    <task id="LOCAL-00057" summary="table bill call, clear from waiter attend pay call">
+      <created>1401741035540</created>
+      <updated>1401741035540</updated>
+    </task>
+    <task id="LOCAL-00058" summary="waiter bugs, fixed, error in call bill when removing product, also on order refresh,">
+      <created>1401890853730</created>
+      <updated>1401890853730</updated>
+    </task>
+    <task id="LOCAL-00059" summary="waiter table icons more big">
+      <created>1401899038156</created>
+      <updated>1401899038156</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15519765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23263158" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> origin/master
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2168421" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32947367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -325,94 +741,45 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <MESSAGE value="waiter add product, waiter remove product(on going)" />
+    <MESSAGE value="waiter add product, waiter remove product, some minor bug fixes on waiter view order" />
+    <MESSAGE value="waiter screen css and design changes" />
+    <MESSAGE value="waiter actions, attend table calls, clear table, mark table order as paid" />
+    <MESSAGE value="waiter buttons and pay info table and waiter" />
+    <MESSAGE value="waiter buttons actions, table total return button, multiple tableOrder Fix" />
+    <MESSAGE value="waiter buttons actions notifications" />
+    <MESSAGE value="waiter table list show selected table" />
+    <MESSAGE value="table order list auto update" />
+    <MESSAGE value="several bug fix on order list update, gui improvements" />
+    <MESSAGE value="on server img view in admin" />
+    <MESSAGE value="table item css improved" />
+    <MESSAGE value="index page" />
+    <MESSAGE value="clear table button added to waiter screen, fixed bugs on mark table as paid, and clear table" />
+    <MESSAGE value="clear table order if table has not orderred" />
+    <MESSAGE value="admin css folder" />
+    <MESSAGE value="table paid, true poup removed" />
+    <MESSAGE value="Waiter remove product from table fix" />
+    <MESSAGE value="Waiter remove product from table  fix" />
+    <MESSAGE value="Waiter order products auto refresh" />
+    <MESSAGE value="Waiter orde, table order  auto refresh fix" />
+    <MESSAGE value="table order not paid fix" />
+    <MESSAGE value="table bill call, clear from waiter attend pay call" />
+    <MESSAGE value="waiter bugs, fixed, error in call bill when removing product, also on order refresh," />
+    <MESSAGE value="waiter table icons more big" />
+    <option name="LAST_COMMIT_MESSAGE" value="waiter table icons more big" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/SoReWa/urls.py</url>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="62" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="680">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="680">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1649" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="799" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="680">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1649" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="799" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="5" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="578">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649" />
@@ -430,86 +797,351 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="122" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="122" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="68" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="68" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="425">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="782" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="24" column="62" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="680">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="29" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="680">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+=======
+        <state line="36" column="122" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="765" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765" />
+=======
+        <state line="9" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="18" column="13" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1649" />
+=======
+        <state line="36" column="122" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="34" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="799" />
+=======
+        <state line="15" column="68" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="68" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="425" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="18" column="13" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1649" />
+=======
+        <state line="673" column="50" selection-start="35038" selection-end="35038" vertical-scroll-proportion="0.0" vertical-offset="10864" max-vertical-offset="11543" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/imgs/waiter-icon.psd">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/imgs/pay-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/imgs/order-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/imgs/Barra_inferior.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/imgs/Barra_superior.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/imgs/Barra_superior2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/products.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="34" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="799" />
+=======
+        <state line="32" column="99" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.44875777" vertical-offset="255" max-vertical-offset="918" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/table_selector.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="-9.153846" vertical-offset="323" max-vertical-offset="1190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/table_selector.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="765" />
+=======
+        <state line="93" column="18" selection-start="916" selection-end="916" vertical-scroll-proportion="0.69552237" vertical-offset="1115" max-vertical-offset="1853" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWa/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Color Palette Sorewa by Color Scheme Generator.htm">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323" />
+=======
+        <state line="21" column="44" selection-start="834" selection-end="834" vertical-scroll-proportion="0.375" vertical-offset="153" max-vertical-offset="4641" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Color Palette 2 Sorewa by Color Scheme Generator.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2703" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/base_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="27" selection-start="694" selection-end="694" vertical-scroll-proportion="-0.085141905" vertical-offset="459" max-vertical-offset="1275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/view_order_total.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="1" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.6192" vertical-offset="1993" max-vertical-offset="2822" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="7" selection-start="308" selection-end="308" vertical-scroll-proportion="0.42570952" vertical-offset="0" max-vertical-offset="599" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/table.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="255" column="1" selection-start="2086" selection-end="3167" vertical-scroll-proportion="0.0" vertical-offset="3812" max-vertical-offset="4437" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="625" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWa/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="625" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="13" column="0" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="408" />
+=======
+        <state line="31" column="42" selection-start="836" selection-end="836" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="91" selection-start="419" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="9" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="64" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="772" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="746" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
+=======
+        <state line="13" column="62" selection-start="241" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="527" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/waiterScreen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="15" selection-start="1822" selection-end="1833" vertical-scroll-proportion="0.0" vertical-offset="2101" max-vertical-offset="5117" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWa/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
+=======
+        <state line="33" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1768" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/waiter_simple_product_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="40" selection-start="1074" selection-end="1090" vertical-scroll-proportion="0.82865584" vertical-offset="0" max-vertical-offset="986" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/waiterScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153" />
+=======
+        <state line="55" column="93" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1462" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/view_order.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765" />
+=======
+        <state line="16" column="54" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1360" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/waiter_v_order.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="34" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="782" />
+=======
+        <state line="17" column="66" selection-start="604" selection-end="604" vertical-scroll-proportion="-7.3846154" vertical-offset="97" max-vertical-offset="1292" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/view_order_total.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="48" selection-start="1834" selection-end="1854" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1326" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="983" selection-end="983" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="3" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.21969697" vertical-offset="2024" max-vertical-offset="3757" />
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWa/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="11" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323" />
+=======
+        <state line="4" column="210" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <folding />
+        </state>
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="14" selection-start="2153" selection-end="2163" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/table_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="20" selection-start="849" selection-end="859" vertical-scroll-proportion="0.35155097" vertical-offset="357" max-vertical-offset="1241" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/food_item.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="0" selection-start="1347" selection-end="1438" vertical-scroll-proportion="2.6201992" vertical-offset="402" max-vertical-offset="2788" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/static/css/table_item.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="18" column="13" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649" />
+=======
+        <state line="36" column="14" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1887">
+          <folding />
+        </state>
+>>>>>>> origin/master
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoReWaApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="24" column="62" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="680">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+=======
+        <state line="767" column="0" selection-start="42754" selection-end="42754" vertical-scroll-proportion="0.31014493" vertical-offset="12774" max-vertical-offset="19516">
+          <folding />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>

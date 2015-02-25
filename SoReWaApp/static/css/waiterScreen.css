@@ -1,0 +1,296 @@
+*
+{
+	margin:0px;
+	padding:0px;
+
+}
+
+body,html
+{
+
+	background: #E3EFDF; /* Old browsers */
+	background-image:url();
+    height:100%;
+
+}
+
+.bigContainer
+{
+    min-width:1000px;
+    min-height:800px;
+	position:relative;
+	height:100%;
+
+
+}
+
+.logoBar
+{
+    min-width:1000px;
+	position:fixed;
+	z-index:1;
+	top:0px;
+	left:0px;
+	height:85px;
+	width:100%;
+	background: #C7AE92;
+}
+.barraSuperior
+{
+    position:absolute;
+	float:left;
+
+	top:10px;
+	left:0px;
+}
+
+.logo{
+	 position:absolute;
+	float:left;
+	left:0px;
+	height:75px;
+	width:340px;
+
+
+}
+
+#table_list_container
+{
+
+	position:absolute;
+	top:95px;
+	left:1%;
+	width:18%;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
+	border-radius:25px;
+	}
+
+#order_container
+{
+	position:absolute;
+	top:95px;
+	left:20%;
+	width:28%;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
+	border-radius:25px;
+
+}
+
+#product_container
+{
+	position:absolute;
+	top:95px;
+	left:50%;
+	width:28%;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92 ;
+	border-radius:25px;
+
+
+}
+
+
+
+
+h2 {
+  font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #815B2F;
+
+}
+
+li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 90%x;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
+.iframeContainer
+{
+    width:99%;
+    height:80%;
+    border:none;
+}
+
+
+.buttonContainer
+{
+    min-width:600px;
+    min-height:160px;
+	position:fixed;
+    float:bottom;
+	z-index:1;
+	bottom:0px;
+	width:100%;
+	background: #E3CEB6;
+
+}
+
+.barraInferior
+{
+    min-height:100px;
+}
+
+.waiterButton
+{
+    position:absolute;
+    left:0px;
+    width:25%;
+    height:100%;
+
+
+}
+.orderButton
+{
+    position:absolute;
+    left:25%;
+    width:25%;
+    height:100%;
+
+}
+.payButton
+{
+    position:absolute;
+    left:50%;
+    width:25%;
+    height:100%;
+
+}
+
+.clearButton
+{
+    position:absolute;
+    left:75%;
+    width:25%;
+    height:100%;
+
+}
+
+.wallButton
+{
+    position:absolute;
+    left:75%;
+    width:25%;
+    height:100%;
+
+}
+
+.buttonImg
+{
+    position:absolute;
+    left:40%;
+    top:-10%;
+    width:95%%;
+    height:95%;
+
+}
+
+#callWaiterText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif ;
+    position:absolute;
+    top:65%;
+    left:40%;
+     color:#815B2F;
+
+}
+
+#orderText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:absolute;
+    top:65%;
+    left:45%;
+    color:#815B2F;
+}
+
+#payOrderText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:absolute;
+    top:65%;
+    left:50%;
+    color:#815B2F;
+}
+
+#clearTableText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif ;
+    position:absolute;
+    top:65%;
+    left:40%;
+     color:#815B2F;
+
+}
+
+
+#noty
+{
+  	position:absolute;
+  	background: #E3EFDF;
+	top:20%;
+	left:20%;
+	width:400px;
+	height:200px;
+
+	border:2px solid black;
+
+	border-radius:25px;
+	margin:0px auto;
+}
+
+#notytext
+{
+	position:absolute;
+	top:20%;
+	left:2%;
+	text-align:center;
+
+}
+.closeBtn
+{
+    position:absolute;
+    top:60%;
+	left:40%;
+    width:70px;
+	height:70px;
+}
+
+
+#loginForm
+{
+    position:absolute;
+	top:20%;
+	left:40%;
+	width:300px;
+	height:120px;
+	text-align:center;
+	background-color:#C7AE92;
+	border:2px solid #815B2F;
+	border-radius:25px;
+}
+
+#linkList
+{
+    position:absolute;
+    top:15%;
+    left:5%;
+}

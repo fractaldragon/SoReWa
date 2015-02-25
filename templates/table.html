@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+<link href="{% static "css/table.css" %}" rel="stylesheet" type="text/css" />
+<link href="{% static "css/food_item.css" %}" rel="stylesheet" type="text/css" />
+
+<title>SoReWa</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+       function hideStuff(stuffid)
+       {
+            document.getElementById(stuffid).style.visibility="hidden";
+       }
+
+        function showNotification()
+        {
+            alert(" {{ notification_message }} ")
+            return false;
+        }
+
+        function showWaiterPopup()
+        {
+          alert("a Waiter has been notified, please wait");
+          return false;
+        }
+
+        function showOrderSentPopup()
+        {
+          alert("Your order has been sent, please wait. Remember if you add another product, press again order button to notify the waiters");
+          return false;
+        }
+
+        function callBill()
+        {
+
+            var call_bill = confirm("Once you have ordered the bill, unordered products will be removed, and table orders will be blocked");
+            if(call_bill == true)
+            {
+                 window.location.replace("/call_bill/");
+
+
+            }
+            else
+            {
+
+
+            }
+        }
+
+
+   </script>
+
+
+<div class="bigContainer">
+	<div id="barra" class="logoBar" onclick="hidestuff('barra');"><img class="barraSuperior" src="{% static "imgs/Barra_superior2.png" %}"><img class="logo" src="{% static "imgs/logoSoReWa.png" %}" alt='それ は 何 です か.'/></div>
+    <div class="buttonContainer"  >
+        <img class="barraInferior" src="{% static "imgs/Barra_inferior.png" %}">
+
+
+
+             <div class="waiterButton">
+                <form action="/call_waiter/" onmouseup="return showWaiterPopup() ">
+                    <input type="image" class="buttonImg" src="{% static "imgs/waiter-icon.png" %}" alt="Call Waiter" />
+                </form>
+                 <p id="callWaiterText">Call Waiter</p>
+             </div>
+
+
+
+
+            <div class="orderButton">
+                <form action="/call_order/" onmouseup="return showOrderSentPopup() ">
+                    <input type="image" class="buttonImg" src="{% static "imgs/order-icon.png" %}" alt="Make Order"  />
+                </form>
+                <p id="orderText">Order Products</p>
+            </div>
+
+
+         {% if show_pay_button %}
+            <div class="payButton">
+                <form action="/call_bill/" onmouseup="return callBill() ">
+                    <input type="image" class="buttonImg" src="{% static "imgs/pay-icon.png" %}" alt="Pay"  />
+                </form>
+                <p id="payOrderText">Pay Order</p>
+            </div>
+         {% endif %}
+
+
+
+
+
+
+    </div>
+
+	<div class="categoriesContainer">
+		<h2>Categories</h2>
+	  	<ul class="categoryList">
+            {% for category in category_list %}
+                <li class="categoryItem"><a href="/category_products/{{ category.name }}/ " target="product_iframe">{{ category.name }}</a></li>
+            {% endfor %}
+
+		</ul>
+	</div>
+	<div class="productContainer">
+        <h2>Products</h2>
+        {% if load_product %}
+         <iframe class="iframeContainer" src="/category_products/0"  name="product_iframe">
+
+        </iframe>
+        {% else %}
+        <iframe class="iframeContainer"  name="product_iframe">
+
+        </iframe>
+        {% endif %}
+
+
+</div>
+	<div class="orderContainer">
+	<h2>Your Order</h2>
+        {% if load_order %}
+       <iframe class="iframeContainer" src="/view_table_order/"  name="order_iframe">
+
+       </iframe>
+        {% else %}
+         <iframe class="iframeContainer"  name="order_iframe">
+
+       </iframe>
+        {% endif %}
+	</div>
+
+    {% if show_notification %}
+        <div id="noty" onclick="hideStuff('noty')"><p>{{ noty_message }}</p></div>
+    {% endif %}
+</div>
+</body>
+
+</html>

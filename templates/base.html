@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <link href="{% static "css/waiterScreen.css" %}" rel="stylesheet" type="text/css" />
+    <title>SoReWa</title>
+</head>
+<body>
+<div id="big_container">
+		<div id="barra" class="logoBar" onclick="hidestuff('barra');">
+            <img class="barraSuperior" src="{% static "imgs/Barra_superior2.png" %}">
+            <img class="logo" src="{% static "imgs/logoSoReWa.png" %}" alt='それ は 何 です か.'/>
+        </div>
+
+{% block content %}{% endblock %}
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

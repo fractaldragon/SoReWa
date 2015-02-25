@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    {% load staticfiles %}
+<link href="{% static "css/table_selector.css" %}" rel="stylesheet" type="text/css" />
+<title>Choose Table</title>
+</head>
+
+<body>
+<script type="text/javascript">
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+        
+        function validateForm()
+{
+var x=document.forms["myForm"]["table_number"].value;
+if (x==null || x=="")
+  {
+  alert("You must type the number of your table");
+  return false;
+  }
+}
+    </script>
+<div>
+<div id="barra" class="logoBar" onclick="hidestuff('barra');"><img class="barraSuperior" src="{% static "imgs/Barra_superior2.png" %}"><img class="logo" src="{% static "imgs/logoSoReWa.png" %}" alt='それ は 何 です か.'/></div>
+
+
+<div class="bigContainer">
+	<div id="table_number_label"> Select the number of your Table:</div>
+	<div id="table_number_form">
+		<form   name="myForm" action="" method="get" onsubmit="return validateForm()" >
+			<input id="table_number_list" list="table_numbers" name="table_number" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" >
+				<datalist id="table_numbers">
+					{% for table in table_list %}
+                     <option class="option_table_number" value="{{table.number}}">
+                    {% endfor %}
+				</datalist>
+
+			<input id="table_number_button" type="submit" value="Choose Table" >
+            <span class="Error" id="error" style=" display: none">* Input digits (0 - 9)</span>
+            {% if error %}
+                <span class="Error">table is already occupied, please select another</span>
+            {% endif %}
+		</form>
+	</div>
+</div>
+<div>
+
+    
+
+</div>
+
+</div>
+</body>
+
+</html>

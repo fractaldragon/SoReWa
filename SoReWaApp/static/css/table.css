@@ -1,0 +1,256 @@
+﻿*
+{
+	margin:0px;
+	padding:0px;
+
+}
+
+body,html
+{
+
+	background: #E3EFDF; /* Old browsers */
+	background-image:url();
+    height:100%;
+
+}
+
+h2 {
+  font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #815B2F;
+
+}
+
+
+
+#background_img
+{
+    float:right;
+    height:40%;
+    width:50%;
+}
+
+.categoryItem
+{
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #958777;
+}
+
+li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 90%x;
+ 
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+ 
+
+.bigContainer
+{
+    min-width:1000px;
+    min-height:800px;
+	position:relative;
+	height:100%;
+
+
+}
+
+.logoBar
+{
+    min-width:1000px;
+	position:fixed;
+	z-index:1;
+	top:0px;
+	left:0px;
+	height:85px;
+	width:100%;
+	background: #C7AE92;
+}
+.barraSuperior
+{
+    position:absolute;
+	float:left;
+
+	top:10px;
+	left:0px;
+}
+
+.barraInferior
+{
+    position:absolute;
+	float:left;
+
+	top:0px;
+	left:0px;
+}
+
+.logo{
+	 position:absolute;
+	float:left;
+	left:0px;
+	height:75px;
+	width:340px;
+
+
+}
+
+.name
+{
+	
+	float:left;
+
+}
+
+.categoriesContainer
+{
+    min-height:600px;
+	position:absolute;
+	top:95px;
+	left:1%;
+	width:18%;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
+	border-radius:25px;
+}
+
+.productContainer
+{
+    min-height:600px;
+	position:absolute;
+	top:95px;
+	left:20%;
+	width:28%;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92;
+	border-radius:25px;
+
+}
+
+.categoryList
+{
+    width:95%;
+}
+
+.iframeContainer
+{
+    width:99%;
+    height:80%;
+    border:none;
+}
+
+.orderContainer
+{
+    min-height:600px;
+	position:absolute;
+	top:95px;
+	left:50%;
+	width:28%;
+	height:61%;
+	background-color:#C7AE92;
+	border:2px solid #C7AE92 ;
+	border-radius:25px;
+
+}
+
+.buttonContainer
+{
+    min-width:600px;
+    min-height:160px;
+	position:fixed;
+    float:bottom;
+	z-index:1;
+	bottom:0px;
+	width:100%;
+	background: #E3CEB6;
+
+}
+
+.barraInferior
+{
+    min-height:100px;
+}
+
+.waiterButton
+{
+    position:absolute;
+    left:0px;
+    width:25%;
+    height:100%;
+
+
+}
+.orderButton
+{
+    position:absolute;
+    left:25%;
+    width:25%;
+    height:100%;
+
+}
+.payButton
+{
+    position:absolute;
+    left:50%;
+    width:25%;
+    height:100%;
+
+}
+.wallButton
+{
+    position:absolute;
+    left:75%;
+    width:25%;
+    height:100%;
+
+}
+
+.buttonImg
+{
+    position:absolute;
+    left:40%;
+    top:-10%;
+    width:95%%;
+    height:95%;
+
+}
+
+#callWaiterText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif ;
+    position:absolute;
+    top:65%;
+    left:45%;
+     color:#E3EFDF;
+
+}
+
+#orderText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:absolute;
+    top:65%;
+    left:45%;
+    color:#E3EFDF;
+}
+
+#payOrderText
+{
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    position:absolute;
+    top:65%;
+    left:45%;
+    color:#E3EFDF;
+}

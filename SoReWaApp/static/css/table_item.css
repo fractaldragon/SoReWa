@@ -1,0 +1,105 @@
+*
+{
+	margin:0px;
+	padding:0px;
+
+}
+
+
+.tableItem
+{
+	width:100%;
+	height:55px;
+	
+}
+
+.tableLabel
+{
+    postition: left;
+    float:left;
+    height:55px;
+	width:46%;
+	float:left;
+	color:black;
+
+
+}
+
+.iconContainer
+{
+	float:left;
+	postition: left;
+	height:55px;
+	width:54%;
+
+}
+
+.waiterCallIcon
+{
+
+
+	width:55px;
+	height:55px;
+
+}
+
+.orderCallIcon
+{
+
+
+	width:55px;
+	height:55px;
+
+}
+
+.payCallIcon
+{
+
+	width:55px;
+	height:55px;
+
+}
+
+.categoryItem
+{
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #C936D3;
+}
+
+li a {
+  text-decoration: none;
+  color: #000;
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #C936D3;
+  display: block;
+  width: 100%;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.table_link {
+color: black;
+}
+
+
+
+
+li:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+  width:100%;
+  height:55px;
+}
+
+
+.tableItemSelected
+{
+    font-size: 30px;
+     background: #ffffff;
+     color:white;
+     height:55px;
+}

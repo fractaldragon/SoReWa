@@ -1,0 +1,103 @@
+﻿
+*
+{
+	margin:0px;
+	padding:0px;
+}
+
+body,html
+{
+
+	background: #E3EFDF; /* Old browsers */
+	background-image:url();
+    height:100%;
+
+}
+
+h2 {
+  font: 400 38px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #815B2F;
+
+}
+
+.bigContainer
+{
+    min-width:1000px;
+    min-height:800px;
+	position:relative;
+	height:100%;
+}
+
+
+.logoBar
+{
+    min-width:1000px;
+	position:fixed;
+	z-index:1;
+	top:0px;
+	left:0px;
+	height:85px;
+	width:100%;
+	background: #C7AE92;
+}
+.barraSuperior
+{
+    position:absolute;
+	float:left;
+
+	top:10px;
+	left:0px;
+}
+
+.logo{
+	 position:absolute;
+	float:left;
+	left:0px;
+	height:75px;
+	width:340px;
+
+
+}
+
+.name
+{
+	
+	float:left;
+	 top:90px;
+
+}
+
+#table_number_label
+{
+     position:absolute;
+    top:90px;
+}
+
+#table_number_form
+{
+ position:absolute;
+ top:120px;
+
+}
+
+#table_number_list
+{
+
+    width:15%;
+    font-size:50px;
+}
+
+#table_number_button
+{
+position:absolute;
+
+}
+
+.Error
+{
+    color:#9C02A7;
+}
+
+
